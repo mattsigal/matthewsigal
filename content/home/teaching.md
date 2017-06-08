@@ -10,13 +10,11 @@ subtitle = ""
 widget = "custom"
 
 # Order that this section will appear in.
-weight = 60
+weight = 25
 
 +++
 
-This is an example of using the *custom* widget to create your own homepage section.
-
-I was the course director for the following classes:
+I have had the pleasure of being the course director for the following classes:
 
 - PSYC 3256: Design and Analysis (Laurentian University)
 - PSYC 3031: Intermediate Statistics Laboratory (York University)
