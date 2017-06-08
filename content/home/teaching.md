@@ -16,12 +16,8 @@ weight = 60
 
 This is an example of using the *custom* widget to create your own homepage section.
 
-I am a teaching instructor for the following courses at University X:
+I was the course director for the following classes:
 
-- CS101: An intro to computer science
-- CS102: An intro to computer science
-- CS103: An intro to computer science
-- CS104: An intro to computer science
-- CS105: An intro to computer science
-- CS106: An intro to computer science
-- CS107: An intro to computer science
+- PSYC 3256: Design and Analysis (Laurentian University)
+- PSYC 3031: Intermediate Statistics Laboratory (York University)
+- PSYC 2021: Introduction to Statistics (York University)

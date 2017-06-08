@@ -12,31 +12,32 @@ weight = 1
 # List your academic interests.
 [interests]
   interests = [
-    "Artificial Intelligence",
-    "Computational Linguistics",
-    "Information Retrieval"
+    "Quantitative Methods",
+    "Data Visualization",
+    "Multivariate Statistics",
+    "Psychometrics"
   ]
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
-  year = 2012
+  course = "Doctoral Candidate in Quantitative Methods"
+  institution = "York University"
+  year = "201x"
 
 [[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
+  course = "MA in the History of Psychology"
+  institution = "York University"
+  year = 2011
 
 [[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
+  course = "BA (Hons.) in Experimental Psychology"
+  institution = "Bishop's University"
   year = 2008
  
 +++
 
 # Biography
 
-Lena Smith is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+I am a doctoral candidate in the relatively new Quantitative Methods area of Psychology at York University, a field that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+I am a member of Dr. Michael Friendly's lab and am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.  Some of my recent research pertains to the implementation of interactive graphics for model diagnostics.
