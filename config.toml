@@ -150,21 +150,31 @@ defaultContentLanguageInSubdir = false
   name = "Publications"
   url = "#publications"
   weight = 2
-
+  
 [[menu.main]]
-  name = "Posts"
-  url = "#posts"
-  weight = 4
+  name = "Scholarships & Awards"
+  url = "#Scholarships"
+  weight = 3
 
 [[menu.main]]
   name = "Teaching"
   url = "#teaching"
-  weight = 3
+  weight = 4
+  
+[[menu.main]]
+  name = "Lectures"
+  url = "#talks"
+  weight = 5
+  
+[[menu.main]]
+  name = "Posts"
+  url = "#posts"
+  weight = 6
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 7
 
 # Taxonomies.
 [taxonomies]

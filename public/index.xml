@@ -11,11 +11,29 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Table Dressing: Strategies for improving tabular displays of Monte Carlo simulation results</title>
+      <link>/talk/sigal2017-03/</link>
+      <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/sigal2017-03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Graphical methods for multivariate linear models in psychological research: An R tutorial</title>
       <link>/publication/friendly2017/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
       <guid>/publication/friendly2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing tests for equality of covariance matrices</title>
+      <link>/talk/friendly2017-01/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/friendly2017-01/</guid>
       <description></description>
     </item>
     
@@ -29,6 +47,42 @@
     </item>
     
     <item>
+      <title>Chronological celluloid cartography: Mapping the history of psychology&#39;s films</title>
+      <link>/talk/belliveau2016-08/</link>
+      <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/belliveau2016-08/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing multivariate linear models in R</title>
+      <link>/talk/friendly2016-06/</link>
+      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/friendly2016-06/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Everything on the Table: Demystifying the Results of Simulation Studies and Other Complex Tables</title>
+      <link>/talk/sigal2016-02/</link>
+      <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/sigal2016-02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Introduction to Linear and Multiple Regression</title>
+      <link>/talk/sigal2015-12/</link>
+      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/sigal2015-12/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Visualizing likert-type data.</title>
       <link>/publication/sigal2015/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
@@ -38,11 +92,29 @@
     </item>
     
     <item>
+      <title>Introduction to R for Psychometrics</title>
+      <link>/talk/sigal2015-03/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/sigal2015-03/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>The Milestones Project: A database for the history of data visualization</title>
       <link>/publication/friendly2015a/</link>
       <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>/publication/friendly2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MSCEIT meets MIRT: Assessing the Psychometric Properties of Emotional Intelligence</title>
+      <link>/talk/sigal2015-01/</link>
+      <pubDate>Mon, 23 Feb 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/talk/sigal2015-01/</guid>
       <description></description>
     </item>
     
@@ -65,38 +137,11 @@
     </item>
     
     <item>
-      <title>Information overload, professionalization, and the origins of the Publication Manual of the American Psychological Association.</title>
-      <link>/publication/sigal2012c/</link>
-      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      <title>Introduction to computerized adaptive testing</title>
+      <link>/talk/sigal2013-12/</link>
+      <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>/publication/sigal2012c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>An Applied Introduction to SPSS.</title>
-      <link>/publication/sigal2012b/</link>
-      <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/sigal2012b/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Is exposure to visual media related to cognitive ability? Testing Neisser&#39;s hypothesis for the Flynn effect.</title>
-      <link>/publication/sigal2012a/</link>
-      <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/sigal2012a/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[Review of J. Goodwin’s A History of Modern Psychology: Third Edition]</title>
-      <link>/publication/sigal2010/</link>
-      <pubDate>Mon, 01 Feb 2010 00:00:00 +0000</pubDate>
-      
-      <guid>/publication/sigal2010/</guid>
+      <guid>/talk/sigal2013-12/</guid>
       <description></description>
     </item>
     
