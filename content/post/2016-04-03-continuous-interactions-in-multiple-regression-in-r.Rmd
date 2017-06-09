@@ -9,7 +9,9 @@ tags:
   - R
   - Regression
   - Interactions
+summary: "A brief vignette on incorporating interactions with continuous predictors."
 ---
+
 
 After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R's default behaviour when using the built-in convenience functions (specifically `*`, but also applies to formulas that use `^`).
 

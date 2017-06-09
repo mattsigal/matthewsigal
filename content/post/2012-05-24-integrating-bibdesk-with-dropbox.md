@@ -11,6 +11,7 @@ tags:
   - Dropbox
   - LaTeX
   - OS X
+summary: "A brief demonstration on how to access BibDesk entries across computers."
 ---
 
 I've implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder `~\Dropbox` exists).

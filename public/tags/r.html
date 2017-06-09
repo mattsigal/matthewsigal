@@ -28,13 +28,13 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="/tags/r/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
-  <link rel="feed" href="/tags/r/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="alternate" href="http://www.matthewsigal.com/tags/r/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="feed" href="http://www.matthewsigal.com/tags/r/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="/tags/r.html">
+  <link rel="canonical" href="http://www.matthewsigal.com/tags/r.html">
 
   
 
@@ -169,18 +169,16 @@
   
   
   <div>
-    <h2><a href="/post/continuous-interactions-in-multiple-regression-in-r.html">Continuous Interactions in Multiple Regression in R</a></h2>
+    <h2><a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html">Continuous Interactions in Multiple Regression in R</a></h2>
     <div class="article-style">
       
-      After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically *, but also applies to formulas that use ^).
-The vignette is posted here: <a href="http://rpubs.com/mattsigal/reg_interactions" target="_blank">http://rpubs.com/mattsigal/reg_interactions</a>
-The short-version: *, when used with summary() does not center the variables, and so models will have issues with VIF.
+      A brief vignette on incorporating interactions with continuous predictors.
       
     </div>
   </div>
   
   <div>
-    <h2><a href="/post/stratified-norms.html">Stratified Norms</a></h2>
+    <h2><a href="http://www.matthewsigal.com/post/stratified-norms.html">Stratified Norms</a></h2>
     <div class="article-style">
       
       This post describes how to use stratifiedNorm() to create a stratified random sample, given an arbitrary number of factors. The function is available via source_gist():
@@ -191,7 +189,7 @@ set.seed(77) dat &lt;- data.frame(Gender=sample(c(&quot;Male&quot;, &quot;Female
   </div>
   
   <div>
-    <h2><a href="/post/the-grammar-of-interactive-graphics.html">The Grammar of (Interactive) Graphics</a></h2>
+    <h2><a href="http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html">The Grammar of (Interactive) Graphics</a></h2>
     <div class="article-style">
       
       I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.
@@ -200,25 +198,7 @@ set.seed(77) dat &lt;- data.frame(Gender=sample(c(&quot;Male&quot;, &quot;Female
   </div>
   
   <div>
-    <h2><a href="/post/the-grammar-of-interactive-graphics.html">The Grammar of (Interactive) Graphics</a></h2>
-    <div class="article-style">
-      
-      I gave a presentation today (October 21st, 2013) on the &ldquo;Grammar of (Interactive) Graphics&rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&rsquo;s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&rsquo;s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/post/the-grammar-of-interactive-graphics.html">The Grammar of (Interactive) Graphics</a></h2>
-    <div class="article-style">
-      
-      I gave a presentation today (October 21st, 2013) on the &ldquo;Grammar of (Interactive) Graphics&rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&rsquo;s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&rsquo;s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="/post/splitting-a-dataframe-by-cluster.html">Splitting a Dataframe by Cluster</a></h2>
+    <h2><a href="http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html">Splitting a Dataframe by Cluster</a></h2>
     <div class="article-style">
       
       As part of an assignment for a course I’m taking on the Applications of Mixed Models, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the split command, or daply from the plyr package).

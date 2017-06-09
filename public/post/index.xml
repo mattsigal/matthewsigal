@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Matthew J. Sigal</title>
-    <link>/post.html</link>
+    <link>http://www.matthewsigal.com/post.html</link>
     <description>Recent content in Posts on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Continuous Interactions in Multiple Regression in R</title>
-      <link>/post/continuous-interactions-in-multiple-regression-in-r.html</link>
+      <link>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
+      <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -29,10 +29,10 @@
     
     <item>
       <title>Stratified Norms</title>
-      <link>/post/stratified-norms.html</link>
+      <link>http://www.matthewsigal.com/post/stratified-norms.html</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/stratified-norms.html</guid>
+      <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -165,10 +165,10 @@ identical(full.data1, full.data2)
     
     <item>
       <title>The Grammar of (Interactive) Graphics</title>
-      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <link>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <guid>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -180,35 +180,11 @@ identical(full.data1, full.data2)
     </item>
     
     <item>
-      <title>The Grammar of (Interactive) Graphics</title>
-      <link>/post/the-grammar-of-interactive-graphics.html</link>
-      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
-      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the &amp;ldquo;Grammar of (Interactive) Graphics&amp;rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&amp;rsquo;s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&amp;rsquo;s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
-
-&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; target=&#34;_blank&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; target=&#34;_blank&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Grammar of (Interactive) Graphics</title>
-      <link>/post/the-grammar-of-interactive-graphics.html</link>
-      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
-      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the &amp;ldquo;Grammar of (Interactive) Graphics&amp;rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&amp;rsquo;s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&amp;rsquo;s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
-
-&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; target=&#34;_blank&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; target=&#34;_blank&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Splitting a Dataframe by Cluster</title>
-      <link>/post/splitting-a-dataframe-by-cluster.html</link>
+      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/splitting-a-dataframe-by-cluster.html</guid>
+      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -256,10 +232,10 @@ length(unique(testing$school)) # 106 schools.&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Converting a Curriculum Vitae to LaTeX</title>
-      <link>/post/converting-a-curriculum-vitae-to-latex.html</link>
+      <link>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/converting-a-curriculum-vitae-to-latex.html</guid>
+      <guid>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</guid>
       <description>&lt;p&gt;A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.&lt;/p&gt;
 
 &lt;p&gt;First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have. I believe that TeX typesetting can be fairly easily differentiated from other programs, and showing this knowledge - especially if the CV is being distributed as part of a job search - can definitely make you a more appealing candidate.&lt;/p&gt;
@@ -368,10 +344,10 @@ defaults &lt;code&gt;write com.apple.Finder AppleShowAllFiles YES&lt;/code&gt; i
     
     <item>
       <title>Integrating BibDesk with Dropbox.</title>
-      <link>/post/integrating-bibdesk-with-dropbox.html</link>
+      <link>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/integrating-bibdesk-with-dropbox.html</guid>
+      <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder &lt;code&gt;~\Dropbox&lt;/code&gt; exists).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Reference Management&lt;/strong&gt;: I have used a few different applications to deal with references (e.g. Mendeley, Papers, JabRef, and so on).  Each of these applications have their strengths and weaknesses, however I have found that I&amp;rsquo;ve fallen in love with one in particular: BibDesk.  I believe BibDesk balances aesthetics with functionality better than the aforementioned applications.  It is easy to use, customizable using scripts (a useful selection of which I will document in a future post), and extremely stable.&lt;/p&gt;

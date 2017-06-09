@@ -8,6 +8,7 @@ categories:
 tags:
   - LaTeX
   - BibDesk
+summary: 'A quick demonstration of how to generate a curriculum vitae that is linked with BibDesk.'
 ---
 
 A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.

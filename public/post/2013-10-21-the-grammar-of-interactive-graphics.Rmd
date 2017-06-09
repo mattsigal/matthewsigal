@@ -8,6 +8,7 @@ categories:
 tags:
   - R
   - Data Visualization
+summary: "Lecture slides from a presentation on the structure and implementation of interactive graphics."
 ---
 
 I gave a presentation today (October 21st, 2013) on the "Grammar of (Interactive) Graphics". The overarching ideas behind the talk were to discuss Leland Wilkinson's _Grammar of Graphics_, its implementation in the `R` package `ggplot2`, to introduce some fundamental characteristics of interactive graphics and their present implementations (via `R` and some `JavaScript` libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham's latest `R` packages, `ggvis`, which refines the previous packages grammar to include some of these goals.
