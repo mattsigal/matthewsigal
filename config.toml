@@ -1,12 +1,13 @@
-baseurl = "/"  # End your URL with a `/` trailing slash.
+baseurl = "http://www.matthewsigal.com/"  # End your URL with a `/` trailing slash.
 title = "Matthew J. Sigal"
 copyright = "&copy; 2016 Matthew J. Sigal"
 theme = "hugo-academic"
 enableEmoji = true
 footnotereturnlinkcontents = "<sup>^</sup>"
+uglyURLs = true
 
 # Enable comments by entering your Disqus shortname
-disqusShortname = "matthewsigal"
+disqusShortname = "matthew-sigal"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-21690929-2"
