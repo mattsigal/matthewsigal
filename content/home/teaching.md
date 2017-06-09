@@ -10,7 +10,7 @@ weight = 25
 
 +++
 
-I have had the pleasure of being the course director for the following classes:
+I have had the pleasure of directing the following classes:
 
 - (2016, Fall) PSYC 3256: Design and Analysis (Laurentian University)
 - (2015, Winter) PSYC 3031: Intermediate Statistics Laboratory (York University)
