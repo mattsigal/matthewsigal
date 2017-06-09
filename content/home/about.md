@@ -30,7 +30,7 @@ weight = 1
   year = 2011
 
 [[education.courses]]
-  course = "BA (Hons.) in Experimental Psychology"
+  course = "BA (Hons.) in Psychology"
   institution = "Bishop's University"
   year = 2008
  

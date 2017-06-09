@@ -1,5 +1,5 @@
 baseurl = "/"  # End your URL with a `/` trailing slash.
-title = "Matthew J. Sigal, MA"
+title = "Matthew J. Sigal"
 copyright = "&copy; 2016 Matthew J. Sigal"
 theme = "hugo-academic"
 enableEmoji = true
@@ -26,7 +26,7 @@ defaultContentLanguageInSubdir = false
   avatar = "me.jpg"
   email = "matthewsigal@gmail.com"
   address = "262 Behavioural Sciences Building, York University, 4700 Keele Street, Toronto, Ontario, Canada, M3J 1P3."
-  office_hours = "Please email for appointment."
+  office_hours = "Please email for an appointment."
   phone = "(647) 835-3554"
   skype = ""
   telegram = ""
@@ -162,7 +162,7 @@ defaultContentLanguageInSubdir = false
   weight = 4
   
 [[menu.main]]
-  name = "Lectures"
+  name = "Presentations"
   url = "#talks"
   weight = 5
   
