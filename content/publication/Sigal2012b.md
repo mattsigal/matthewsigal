@@ -1,7 +1,7 @@
 +++
 
 authors = ["Matthew J. Sigal"]
-title = "An Applied Introduction to SPSS."
+title = "An Applied Introduction to SPSS"
 date = "2012-09-01"
 
 # Publication type.

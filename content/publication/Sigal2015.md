@@ -1,7 +1,7 @@
 +++
 
 authors = ["Matthew J. Sigal"]
-title = "Visualizing likert-type data."
+title = "Visualizing likert-type data"
 date = "2015-04-01"
 
 # Publication type.
