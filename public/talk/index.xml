@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Presentations and Invited Lectures on Matthew J. Sigal</title>
-    <link>/talk.html</link>
+    <link>http://www.matthewsigal.com/talk.html</link>
     <description>Recent content in Presentations and Invited Lectures on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,136 +12,136 @@
     
     <item>
       <title>Table Dressing: Strategies for improving tabular displays of Monte Carlo simulation results</title>
-      <link>/talk/sigal2017-03.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2017-03.html</link>
       <pubDate>Mon, 13 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2017-03.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2017-03.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualizing tests for equality of covariance matrices</title>
-      <link>/talk/friendly2017-01.html</link>
+      <link>http://www.matthewsigal.com/talk/friendly2017-01.html</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/talk/friendly2017-01.html</guid>
+      <guid>http://www.matthewsigal.com/talk/friendly2017-01.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chronological celluloid cartography: Mapping the history of psychology&#39;s films</title>
-      <link>/talk/belliveau2016-08.html</link>
+      <link>http://www.matthewsigal.com/talk/belliveau2016-08.html</link>
       <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
       
-      <guid>/talk/belliveau2016-08.html</guid>
+      <guid>http://www.matthewsigal.com/talk/belliveau2016-08.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualizing multivariate linear models in R</title>
-      <link>/talk/friendly2016-06.html</link>
+      <link>http://www.matthewsigal.com/talk/friendly2016-06.html</link>
       <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>/talk/friendly2016-06.html</guid>
+      <guid>http://www.matthewsigal.com/talk/friendly2016-06.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Everything on the Table: Demystifying the Results of Simulation Studies and Other Complex Tables</title>
-      <link>/talk/sigal2016-02.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2016-02.html</link>
       <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2016-02.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2016-02.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction to Linear and Multiple Regression</title>
-      <link>/talk/sigal2015-12.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2015-12.html</link>
       <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2015-12.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2015-12.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction to R for Psychometrics</title>
-      <link>/talk/sigal2015-03.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2015-03.html</link>
       <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2015-03.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2015-03.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>MSCEIT meets MIRT: Assessing the Psychometric Properties of Emotional Intelligence</title>
-      <link>/talk/sigal2015-01.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2015-01.html</link>
       <pubDate>Mon, 23 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2015-01.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2015-01.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction to computerized adaptive testing</title>
-      <link>/talk/sigal2013-12.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2013-12.html</link>
       <pubDate>Thu, 05 Dec 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2013-12.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2013-12.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiple trait, multiple method models</title>
-      <link>/talk/sigal2013-10.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2013-10.html</link>
       <pubDate>Thu, 24 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2013-10.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2013-10.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>The grammar of (interactive) graphics</title>
-      <link>/talk/sigal2013-10a.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2013-10a.html</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2013-10a.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2013-10a.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Introduction to R Markdown and Inferential Statistics with R</title>
-      <link>/talk/sigal2013.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2013.html</link>
       <pubDate>Thu, 12 Sep 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2013.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2013.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Statistical historiography: Plotting the history of data visualization via the Milestones Project</title>
-      <link>/talk/sigal2013-08.html</link>
+      <link>http://www.matthewsigal.com/talk/sigal2013-08.html</link>
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/sigal2013-08.html</guid>
+      <guid>http://www.matthewsigal.com/talk/sigal2013-08.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Visualizations for multivariate linear models</title>
-      <link>/talk/friendly2013-05.html</link>
+      <link>http://www.matthewsigal.com/talk/friendly2013-05.html</link>
       <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/friendly2013-05.html</guid>
+      <guid>http://www.matthewsigal.com/talk/friendly2013-05.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Extending the Robust Means Modeling Framework</title>
-      <link>/talk/counsel2013-05.html</link>
+      <link>http://www.matthewsigal.com/talk/counsel2013-05.html</link>
       <pubDate>Wed, 01 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/talk/counsel2013-05.html</guid>
+      <guid>http://www.matthewsigal.com/talk/counsel2013-05.html</guid>
       <description></description>
     </item>
     

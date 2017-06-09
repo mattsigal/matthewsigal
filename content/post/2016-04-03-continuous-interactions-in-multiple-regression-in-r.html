@@ -1,0 +1,21 @@
+---
+title: Continuous Interactions in Multiple Regression in R
+author: Matthew Sigal
+date: '2016-04-03'
+slug: continuous-interactions-in-multiple-regression-in-r
+categories:
+  - Data Analysis
+tags:
+  - R
+  - Regression
+  - Interactions
+---
+
+<!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
+
+<!-- BLOGDOWN-BODY-BEFORE -->
+<!-- /BLOGDOWN-BODY-BEFORE -->
+<p>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically <code>*</code>, but also applies to formulas that use <code>^</code>).</p>
+<p>The vignette is posted here: <a href="http://rpubs.com/mattsigal/reg_interactions" class="uri">http://rpubs.com/mattsigal/reg_interactions</a></p>
+<p>The short-version: <code>*</code>, when used with <code>summary()</code> does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with <code>scale()</code> or looking at the effects using <code>car::Anova()</code>.</p>

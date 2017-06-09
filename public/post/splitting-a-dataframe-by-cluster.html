@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.20.5" />
+  <meta name="author" content="Matthew J. Sigal">
+  <meta name="description" content="Doctoral Candidate in Quantitative Methods">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="feed" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html">
+
+  
+
+  <title>Splitting a Dataframe by Cluster | Matthew J. Sigal</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Matthew J. Sigal</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#Scholarships">
+            
+            <span>Scholarships &amp; Awards</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#teaching">
+            
+            <span>Teaching</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#talks">
+            
+            <span>Presentations</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+  <div class="article-container">
+    <h1 itemprop="name">Splitting a Dataframe by Cluster</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2012-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2012-06-18
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-management">Data Management</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/r">R</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fsplitting-a-dataframe-by-cluster.html"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Splitting%20a%20Dataframe%20by%20Cluster&amp;url=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fsplitting-a-dataframe-by-cluster.html"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fsplitting-a-dataframe-by-cluster.html&amp;title=Splitting%20a%20Dataframe%20by%20Cluster"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fsplitting-a-dataframe-by-cluster.html&amp;title=Splitting%20a%20Dataframe%20by%20Cluster"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Splitting%20a%20Dataframe%20by%20Cluster&amp;body=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fsplitting-a-dataframe-by-cluster.html">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
+
+<!-- BLOGDOWN-BODY-BEFORE -->
+<!-- /BLOGDOWN-BODY-BEFORE -->
+<p>As part of an assignment for a course I’m taking on the <a href="http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models">Applications of Mixed Models</a>, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the <code>split</code> command, or <code>daply</code> from the <code>plyr</code> package). However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, “since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other” (2012, p. 126). In this post, I explain a function in <code>R</code> that allows us to split a dataframe into these two components.</p>
+<p>This function, <code>splitdfbygp</code> (for split dataframe by group), takes four arguments: <code>df</code>, a dataframe; <code>group</code>, the name of the grouping variable (e.g. “school”); <code>prop</code>, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a 50/50 split); and <code>seed</code>, where the user can supply a seed value in case they want the case selection to be replicable. The function is as follows:</p>
+<pre class="r"><code>splitdfbygp &lt;- function(df, group, prop = .5, seed = NULL) { 
+     if(missing(group)) stop(&#39;Level 2 grouping variable required.&#39;) 
+     if(prop &gt; 1.0 || prop &lt; 0.0) stop(&#39;Split needs to be between .00 and 1.0&#39;)
+     if(!(group %in% colnames(df))) stop(&#39;Grouping variable needs to be a column within the dataframe.&#39;)
+     if (!is.null(seed)) set.seed(seed)
+     gp &lt;- df[, group]
+     ugp &lt;- unique(gp) 
+     index &lt;- 1:length(ugp)
+
+     trainindex &lt;- sample(index, trunc(length(index) * prop)) 
+     ugp &lt;- as.data.frame(ugp)
+     trainind &lt;- ugp[trainindex, ] 
+
+     trainset &lt;- df[df[,group] %in% trainind, ] 
+     testset &lt;- df[!df[,group] %in% trainind, ]
+
+     invisible(list(trainset=trainset, testset=testset))
+}</code></pre>
+<p>Testing the function:</p>
+<p>First, obtain the datasets for Snijders and Bosker’s book from <a href="http://www.stats.ox.ac.uk/~snijders/mlbook.htm">this link</a>.</p>
+<pre class="r"><code>mlbook_red &lt;- read.table(&quot;mlbook2_r.dat&quot;, header=TRUE) # Load the data. 
+head(mlbook_red) # Included variables - &quot;schoolnr&quot; is level 2.
+
+split &lt;- splitdfbygp(mlbook_red, &quot;schoolnr&quot;, seed=83)
+str(split) # Resulting object is a list with two components.
+lapply(split, head)
+
+training &lt;- split$trainset
+testing &lt;- split$testset
+
+unique(training$school) # School IDs in training dataset.
+unique(testing$school) # School IDs in testing dataset.
+length(unique(training$school)) # 105 schools.
+length(unique(testing$school)) # 106 schools.</code></pre>
+<p>And there you have it! A dataframe split into training and testing datasets, adhering to the independence of schools rather than of pupils. Many thanks to Phil Chalmers for his assistance in tweaking the above code.</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html"><span
+      aria-hidden="true">&larr;</span> Converting a Curriculum Vitae to LaTeX</a></li>
+    
+
+    
+    <li class="next"><a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html">Continuous Interactions in Multiple Regression in R <span
+      aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'matthew-sigal';
+    var disqus_identifier = 'http:\/\/www.matthewsigal.com\/post\/splitting-a-dataframe-by-cluster.html';
+    var disqus_title = 'Splitting a Dataframe by Cluster';
+    var disqus_url = 'http:\/\/www.matthewsigal.com\/post\/splitting-a-dataframe-by-cluster.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
+
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2016 Matthew J. Sigal &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-21690929-2', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+

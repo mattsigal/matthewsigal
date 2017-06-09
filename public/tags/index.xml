@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Matthew J. Sigal</title>
-    <link>/tags.html</link>
+    <link>http://www.matthewsigal.com/tags.html</link>
     <description>Recent content in Tags on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,12 +12,84 @@
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>/tags/academic.html</link>
+      <link>http://www.matthewsigal.com/tags/academic.html</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/academic.html</guid>
+      <guid>http://www.matthewsigal.com/tags/academic.html</guid>
       <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Apa Style</title>
+      <link>http://www.matthewsigal.com/tags/apa-style.html</link>
+      <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/apa-style.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bibdesk</title>
+      <link>http://www.matthewsigal.com/tags/bibdesk.html</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/bibdesk.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dropbox</title>
+      <link>http://www.matthewsigal.com/tags/dropbox.html</link>
+      <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/dropbox.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactions</title>
+      <link>http://www.matthewsigal.com/tags/interactions.html</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/interactions.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
+      <link>http://www.matthewsigal.com/tags/latex.html</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/latex.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Os X</title>
+      <link>http://www.matthewsigal.com/tags/os-x.html</link>
+      <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/os-x.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>http://www.matthewsigal.com/tags/r.html</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/r.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regression</title>
+      <link>http://www.matthewsigal.com/tags/regression.html</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/tags/regression.html</guid>
+      <description></description>
     </item>
     
   </channel>

@@ -28,13 +28,13 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
-  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="alternate" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="feed" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="http://www.matthewsigal.com/">
 
   
 
@@ -175,9 +175,9 @@
     <div id="profile">
 
       
-      <div class="portrait" style="background-image: url('/img/me.jpg');">
+      <div class="portrait" style="background-image: url('http://www.matthewsigal.com/img/me.jpg');">
       </div>
-      <meta itemprop="image" content="/img/me.jpg">
+      <meta itemprop="image" content="http://www.matthewsigal.com/img/me.jpg">
       
 
       <div class="portrait-title">
@@ -192,7 +192,7 @@
         
       </div>
 
-      <link itemprop="url" href="/">
+      <link itemprop="url" href="http://www.matthewsigal.com/">
 
       <ul class="social-icon" aria-hidden="true">
         
@@ -326,7 +326,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="/publication/friendly2017.html">
+<a class="btn btn-primary btn-outline btn-xs" href="http://www.matthewsigal.com/publication/friendly2017.html">
   Details
 </a>
 
@@ -352,7 +352,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="/publication/sigal2016.html">
+<a class="btn btn-primary btn-outline btn-xs" href="http://www.matthewsigal.com/publication/sigal2016.html">
   Details
 </a>
 
@@ -378,7 +378,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="/publication/sigal2015.html">
+<a class="btn btn-primary btn-outline btn-xs" href="http://www.matthewsigal.com/publication/sigal2015.html">
   Details
 </a>
 
@@ -527,7 +527,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="/talk/sigal2017-03.html">Table Dressing: Strategies for improving tabular displays of Monte Carlo simulation results</a></span>
+  <span itemprop="name"><a href="http://www.matthewsigal.com/talk/sigal2017-03.html">Table Dressing: Strategies for improving tabular displays of Monte Carlo simulation results</a></span>
   <p>
     2017-03-13,
     
@@ -539,7 +539,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="/talk/friendly2017-01.html">Visualizing tests for equality of covariance matrices</a></span>
+  <span itemprop="name"><a href="http://www.matthewsigal.com/talk/friendly2017-01.html">Visualizing tests for equality of covariance matrices</a></span>
   <p>
     2017-01-01,
     
@@ -551,7 +551,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="/talk/belliveau2016-08.html">Chronological celluloid cartography: Mapping the history of psychology&#39;s films</a></span>
+  <span itemprop="name"><a href="http://www.matthewsigal.com/talk/belliveau2016-08.html">Chronological celluloid cartography: Mapping the history of psychology&#39;s films</a></span>
   <p>
     2016-08-13,
     
@@ -601,25 +601,47 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="/post/hello-world.html" itemprop="url">Hello World</a>
+    <a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html" itemprop="url">Continuous Interactions in Multiple Regression in R</a>
   </h3>
   
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2017-06-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      2017-06-09
+    <time datetime="2016-04-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2016-04-03
     </time>
   </span>
 
   
   
   
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-analysis">Data Analysis</a
+    >
+    
+  </span>
+  
   
 
   
   
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/r">R</a
+    >, 
+    
+    <a href="/tags/regression">Regression</a
+    >, 
+    
+    <a href="/tags/interactions">Interactions</a
+    >
+    
+  </span>
   
   
 
@@ -629,17 +651,13 @@
 
   <div class="article-style" itemprop="articleBody">
     
-    <!-- BLOGDOWN-HEAD -->
-<!-- /BLOGDOWN-HEAD -->
-
-<!-- BLOGDOWN-BODY-BEFORE -->
-<!-- /BLOGDOWN-BODY-BEFORE -->
-<p>Test post!</p>
-
+    After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically *, but also applies to formulas that use ^).
+The vignette is posted here: http://rpubs.com/mattsigal/reg_interactions
+The short-version: *, when used with summary() does not center the variables, and so models will have issues with VIF.
     
   </div>
   <p class="read-more">
-    <a href="/post/hello-world.html" class="btn btn-primary btn-outline">
+    <a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>
@@ -654,25 +672,41 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="/post/hello-world.html" itemprop="url">Hello World</a>
+    <a href="http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html" itemprop="url">Splitting a Dataframe by Cluster</a>
   </h3>
   
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2017-06-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      2017-06-09
+    <time datetime="2012-06-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2012-06-18
     </time>
   </span>
 
   
   
   
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-management">Data Management</a
+    >
+    
+  </span>
+  
   
 
   
   
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/r">R</a
+    >
+    
+  </span>
   
   
 
@@ -682,12 +716,11 @@
 
   <div class="article-style" itemprop="articleBody">
     
-    <p>Test post!</p>
-
+    As part of an assignment for a course I’m taking on the Applications of Mixed Models, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the split command, or daply from the plyr package).
     
   </div>
   <p class="read-more">
-    <a href="/post/hello-world.html" class="btn btn-primary btn-outline">
+    <a href="http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>
@@ -702,25 +735,44 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="/post/hello-world.html" itemprop="url">Hello World</a>
+    <a href="http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html" itemprop="url">Converting a Curriculum Vitae to LaTeX</a>
   </h3>
   
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2017-06-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      2017-06-09
+    <time datetime="2012-06-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2012-06-04
     </time>
   </span>
 
   
   
   
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/productivity">Productivity</a
+    >
+    
+  </span>
+  
   
 
   
   
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/latex">LaTeX</a
+    >, 
+    
+    <a href="/tags/bibdesk">BibDesk</a
+    >
+    
+  </span>
   
   
 
@@ -730,12 +782,87 @@
 
   <div class="article-style" itemprop="articleBody">
     
-    <p>Test post!</p>
-
+    A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.
+First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have.
     
   </div>
   <p class="read-more">
-    <a href="/post/hello-world.html" class="btn btn-primary btn-outline">
+    <a href="http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+      
+        
+        
+
+
+<div class="article-list-item" itemscope itemprop="blogPost">
+  
+  
+  <h3 class="article-title" itemprop="name">
+    <a href="http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html" itemprop="url">Integrating BibDesk with Dropbox.</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2012-05-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2012-05-24
+    </time>
+  </span>
+
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/productivity">Productivity</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/apa-style">APA style</a
+    >, 
+    
+    <a href="/tags/bibdesk">BibDesk</a
+    >, 
+    
+    <a href="/tags/dropbox">Dropbox</a
+    >, 
+    
+    <a href="/tags/latex">LaTeX</a
+    >, 
+    
+    <a href="/tags/os-x">OS X</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    I&rsquo;ve implemented a powerful workflow for generating reports in APA style. It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers; and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera). This is optimized for OS X. This workflow involves three main components: a reference management system (basically an application that maintains a .
+    
+  </div>
+  <p class="read-more">
+    <a href="http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>

@@ -1,0 +1,53 @@
+---
+title: Splitting a Dataframe by Cluster
+author: Matthew Sigal
+date: '2012-06-18'
+slug: splitting-a-dataframe-by-cluster
+categories:
+  - Data Management
+tags:
+  - R
+---
+
+<!-- BLOGDOWN-HEAD -->
+<!-- /BLOGDOWN-HEAD -->
+
+<!-- BLOGDOWN-BODY-BEFORE -->
+<!-- /BLOGDOWN-BODY-BEFORE -->
+<p>As part of an assignment for a course I’m taking on the <a href="http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models">Applications of Mixed Models</a>, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the <code>split</code> command, or <code>daply</code> from the <code>plyr</code> package). However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, “since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other” (2012, p. 126). In this post, I explain a function in <code>R</code> that allows us to split a dataframe into these two components.</p>
+<p>This function, <code>splitdfbygp</code> (for split dataframe by group), takes four arguments: <code>df</code>, a dataframe; <code>group</code>, the name of the grouping variable (e.g. “school”); <code>prop</code>, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a 50/50 split); and <code>seed</code>, where the user can supply a seed value in case they want the case selection to be replicable. The function is as follows:</p>
+<pre class="r"><code>splitdfbygp &lt;- function(df, group, prop = .5, seed = NULL) { 
+     if(missing(group)) stop(&#39;Level 2 grouping variable required.&#39;) 
+     if(prop &gt; 1.0 || prop &lt; 0.0) stop(&#39;Split needs to be between .00 and 1.0&#39;)
+     if(!(group %in% colnames(df))) stop(&#39;Grouping variable needs to be a column within the dataframe.&#39;)
+     if (!is.null(seed)) set.seed(seed)
+     gp &lt;- df[, group]
+     ugp &lt;- unique(gp) 
+     index &lt;- 1:length(ugp)
+
+     trainindex &lt;- sample(index, trunc(length(index) * prop)) 
+     ugp &lt;- as.data.frame(ugp)
+     trainind &lt;- ugp[trainindex, ] 
+
+     trainset &lt;- df[df[,group] %in% trainind, ] 
+     testset &lt;- df[!df[,group] %in% trainind, ]
+
+     invisible(list(trainset=trainset, testset=testset))
+}</code></pre>
+<p>Testing the function:</p>
+<p>First, obtain the datasets for Snijders and Bosker’s book from <a href="http://www.stats.ox.ac.uk/~snijders/mlbook.htm">this link</a>.</p>
+<pre class="r"><code>mlbook_red &lt;- read.table(&quot;mlbook2_r.dat&quot;, header=TRUE) # Load the data. 
+head(mlbook_red) # Included variables - &quot;schoolnr&quot; is level 2.
+
+split &lt;- splitdfbygp(mlbook_red, &quot;schoolnr&quot;, seed=83)
+str(split) # Resulting object is a list with two components.
+lapply(split, head)
+
+training &lt;- split$trainset
+testing &lt;- split$testset
+
+unique(training$school) # School IDs in training dataset.
+unique(testing$school) # School IDs in testing dataset.
+length(unique(training$school)) # 105 schools.
+length(unique(testing$school)) # 106 schools.</code></pre>
+<p>And there you have it! A dataframe split into training and testing datasets, adhering to the independence of schools rather than of pupils. Many thanks to Phil Chalmers for his assistance in tweaking the above code.</p>
