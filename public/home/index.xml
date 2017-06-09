@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/home.html</link>
+    <link>/home.html</link>
     <description>Recent content in Homes on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
