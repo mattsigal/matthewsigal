@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Os X on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/tags/os-x.html</link>
+    <link>/tags/os-x.html</link>
     <description>Recent content in Os X on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Integrating BibDesk with Dropbox.</title>
-      <link>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</link>
+      <link>/post/integrating-bibdesk-with-dropbox.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
+      <guid>/post/integrating-bibdesk-with-dropbox.html</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder &lt;code&gt;~\Dropbox&lt;/code&gt; exists).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Reference Management&lt;/strong&gt;: I have used a few different applications to deal with references (e.g. Mendeley, Papers, JabRef, and so on).  Each of these applications have their strengths and weaknesses, however I have found that I&amp;rsquo;ve fallen in love with one in particular: BibDesk.  I believe BibDesk balances aesthetics with functionality better than the aforementioned applications.  It is easy to use, customizable using scripts (a useful selection of which I will document in a future post), and extremely stable.&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Management on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/categories/data-management.html</link>
+    <link>/categories/data-management.html</link>
     <description>Recent content in Data Management on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Stratified Norms</title>
-      <link>http://www.matthewsigal.com/post/stratified-norms.html</link>
+      <link>/post/stratified-norms.html</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
+      <guid>/post/stratified-norms.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -148,10 +148,10 @@ identical(full.data1, full.data2)
     
     <item>
       <title>Splitting a Dataframe by Cluster</title>
-      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
+      <link>/post/splitting-a-dataframe-by-cluster.html</link>
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
+      <guid>/post/splitting-a-dataframe-by-cluster.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 

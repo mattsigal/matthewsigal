@@ -10,16 +10,17 @@ tags:
 summary: "A demonstration of a custom function for generating stratified random samples from an arbitrary number of factors."
 ---
 
+
 This post describes how to use `stratifiedNorm()` to create a stratified random sample, given an arbitrary number of factors. The function is available via `source_gist()`:
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 library('devtools')
 source_gist("https://gist.github.com/mattsigal/c17650d8a9b0f5b018af")
 ```
 
 I will create a small dataset to demonstrate how to use the function:
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 set.seed(77)
 dat <- data.frame(Gender=sample(c("Male", "Female"), size = 1500, replace = TRUE),
                   AgeGrp=sample(c("18-39", "40-49", "50+"), size = 1500, replace = TRUE),

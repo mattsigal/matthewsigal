@@ -28,13 +28,13 @@
   <link rel="stylesheet" href="/css/hugo-academic.css">
   
 
-  <link rel="alternate" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
-  <link rel="feed" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="feed" href="/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.matthewsigal.com/">
+  <link rel="canonical" href="/">
 
   
 
@@ -175,9 +175,9 @@
     <div id="profile">
 
       
-      <div class="portrait" style="background-image: url('http://www.matthewsigal.com/img/me.jpg');">
+      <div class="portrait" style="background-image: url('/img/me.jpg');">
       </div>
-      <meta itemprop="image" content="http://www.matthewsigal.com/img/me.jpg">
+      <meta itemprop="image" content="/img/me.jpg">
       
 
       <div class="portrait-title">
@@ -192,7 +192,7 @@
         
       </div>
 
-      <link itemprop="url" href="http://www.matthewsigal.com/">
+      <link itemprop="url" href="/">
 
       <ul class="social-icon" aria-hidden="true">
         
@@ -326,7 +326,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.matthewsigal.com/publication/belliveau2017.html">
+<a class="btn btn-primary btn-outline btn-xs" href="/publication/belliveau2017.html">
   Details
 </a>
 
@@ -348,7 +348,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.matthewsigal.com/publication/friendly2017.html">
+<a class="btn btn-primary btn-outline btn-xs" href="/publication/friendly2017.html">
   Details
 </a>
 
@@ -374,7 +374,7 @@
 
 
 
-<a class="btn btn-primary btn-outline btn-xs" href="http://www.matthewsigal.com/publication/sigal2016.html">
+<a class="btn btn-primary btn-outline btn-xs" href="/publication/sigal2016.html">
   Details
 </a>
 
@@ -523,7 +523,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.matthewsigal.com/talk/belliveau2017-05.html">The big picture: Visualizing issues of post-secondary education access</a></span>
+  <span itemprop="name"><a href="/talk/belliveau2017-05.html">The big picture: Visualizing issues of post-secondary education access</a></span>
   <p>
     2017-06-09,
     
@@ -535,7 +535,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.matthewsigal.com/talk/sigal2017-03.html">Table Dressing: Strategies for improving tabular displays of Monte Carlo simulation results</a></span>
+  <span itemprop="name"><a href="/talk/sigal2017-03.html">Table Dressing: Strategies for improving tabular displays of Monte Carlo simulation results</a></span>
   <p>
     2017-03-13,
     
@@ -547,7 +547,7 @@
       
       <li itemscope itemtype="http://schema.org/CreativeWork">
   <i class="fa-li fa fa-comment-o pub-icon" aria-hidden="true"></i>
-  <span itemprop="name"><a href="http://www.matthewsigal.com/talk/friendly2017-01.html">Visualizing tests for equality of covariance matrices</a></span>
+  <span itemprop="name"><a href="/talk/friendly2017-01.html">Visualizing tests for equality of covariance matrices</a></span>
   <p>
     2017-01-01,
     
@@ -604,7 +604,7 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html" itemprop="url">Continuous Interactions in Multiple Regression in R</a>
+    <a href="/post/continuous-interactions-in-multiple-regression-in-r.html" itemprop="url">Continuous Interactions in Multiple Regression in R</a>
   </h3>
   
 
@@ -658,7 +658,7 @@
     
   </div>
   <p class="read-more">
-    <a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html" class="btn btn-primary btn-outline">
+    <a href="/post/continuous-interactions-in-multiple-regression-in-r.html" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>
@@ -673,7 +673,7 @@
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="http://www.matthewsigal.com/post/stratified-norms.html" itemprop="url">Stratified Norms</a>
+    <a href="/post/stratified-norms.html" itemprop="url">Stratified Norms</a>
   </h3>
   
 
@@ -717,13 +717,11 @@
 
   <div class="article-style" itemprop="articleBody">
     
-    This post describes how to use stratifiedNorm() to create a stratified random sample, given an arbitrary number of factors. The function is available via source_gist():
-library(&#39;devtools&#39;) source_gist(&quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&quot;) I will create a small dataset to demonstrate how to use the function:
-set.seed(77) dat &lt;- data.frame(Gender=sample(c(&quot;Male&quot;, &quot;Female&quot;), size = 1500, replace = TRUE), AgeGrp=sample(c(&quot;18-39&quot;, &quot;40-49&quot;, &quot;50+&quot;), size = 1500, replace = TRUE), Relationship=sample(c(&quot;Direct&quot;, &quot;Manager&quot;, &quot;Coworker&quot;, &quot;Friend&quot;), size = 1500, replace = TRUE), X=rnorm(n=1500, mean=0, sd=1), Y=rnorm(n=1500, mean=0, sd=1), Z=rnorm(n=1500, mean=0, sd=1)) str(dat) ## &#39;data.
+    <p>A demonstration of a custom function for generating stratified random samples from an arbitrary number of factors.</p>
     
   </div>
   <p class="read-more">
-    <a href="http://www.matthewsigal.com/post/stratified-norms.html" class="btn btn-primary btn-outline">
+    <a href="/post/stratified-norms.html" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>
@@ -738,7 +736,7 @@ set.seed(77) dat &lt;- data.frame(Gender=sample(c(&quot;Male&quot;, &quot;Female
   
   
   <h3 class="article-title" itemprop="name">
-    <a href="http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html" itemprop="url">The Grammar of (Interactive) Graphics</a>
+    <a href="/post/the-grammar-of-interactive-graphics.html" itemprop="url">The Grammar of (Interactive) Graphics</a>
   </h3>
   
 
@@ -785,11 +783,11 @@ set.seed(77) dat &lt;- data.frame(Gender=sample(c(&quot;Male&quot;, &quot;Female
 
   <div class="article-style" itemprop="articleBody">
     
-    I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.
+    <p>Lecture slides from a presentation on the structure and implementation of interactive graphics.</p>
     
   </div>
   <p class="read-more">
-    <a href="http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html" class="btn btn-primary btn-outline">
+    <a href="/post/the-grammar-of-interactive-graphics.html" class="btn btn-primary btn-outline">
       CONTINUE READING
     </a>
   </p>
