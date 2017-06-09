@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/post.html</link>
+    <link>/post.html</link>
     <description>Recent content in Posts on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Continuous Interactions in Multiple Regression in R</title>
-      <link>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</link>
+      <link>/post/continuous-interactions-in-multiple-regression-in-r.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
+      <guid>/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -28,11 +28,187 @@
     </item>
     
     <item>
+      <title>Stratified Norms</title>
+      <link>/post/stratified-norms.html</link>
+      <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/stratified-norms.html</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;This post describes how to use &lt;code&gt;stratifiedNorm()&lt;/code&gt; to create a stratified random sample, given an arbitrary number of factors. The function is available via &lt;code&gt;source_gist()&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;devtools&amp;#39;)
+source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I will create a small dataset to demonstrate how to use the function:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(77)
+dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE),
+                  AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE),
+                  Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), 
+                                      size = 1500, replace = TRUE),
+                  X=rnorm(n=1500, mean=0, sd=1),
+                  Y=rnorm(n=1500, mean=0, sd=1),
+                  Z=rnorm(n=1500, mean=0, sd=1))
+str(dat)
+## &amp;#39;data.frame&amp;#39;:    1500 obs. of  6 variables:
+##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 2 1 1 1 1 2 1 1 1 2 ...
+##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 2 2 1 2 1 2 1 3 2 1 ...
+##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 3 3 3 4 2 2 1 4 4 2 ...
+##  $ X           : num  -1.478 0.328 0.149 -0.241 -0.759 ...
+##  $ Y           : num  0.291 -0.403 -0.557 1.615 2.105 ...
+##  $ Z           : num  -0.4025 1.1505 -0.0306 0.3641 -1.0688 ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;stratifiedNorm()&lt;/code&gt; has 6 inputs:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;stratifiedNorm(dat, strata, observations=0, return.grid=FALSE, full.data=FALSE, full.data.id=&amp;quot;sampled&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dat&lt;/code&gt;: a data.frame object.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;strata&lt;/code&gt;: a character vector indicating the strata variables. These need to match the variable names in the dataset.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;observations&lt;/code&gt;: a numeric vector indicating how many cases to sample from each strata. If the length of this vector is 1, it will be repeated for each strata group (e.g., enter 5 to sample 5 cases from each combination.)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;return.grid&lt;/code&gt;: logical, if TRUE will return the strata contingeny table.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;full.data&lt;/code&gt;: logical, if TRUE will return the full dataset, otherwise will only return the sampled data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;full.data.id&lt;/code&gt;: used if full.data = TRUE, indicates the name of the vector added to the data.frame to indicate the observation was sampled.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;using-stratifiednorm&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Using &lt;code&gt;stratifiedNorm()&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;First, we create our strata variable. For this dataset, the relevant factors are: Gender, AgeGroup, and Relationship. Note: the input order will affect the ordering of the contingency table!&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;strata = c(&amp;quot;Gender&amp;quot;, &amp;quot;AgeGrp&amp;quot;, &amp;quot;Relationship&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Next, let’s investigate the ordering of the variables:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(stratifiedNorm(dat, strata, return.grid = TRUE), n = 14)
+##    Gender AgeGrp Relationship Observations
+## 1  Female  18-39     Coworker            0
+## 2    Male  18-39     Coworker            0
+## 3  Female  40-49     Coworker            0
+## 4    Male  40-49     Coworker            0
+## 5  Female    50+     Coworker            0
+## 6    Male    50+     Coworker            0
+## 7  Female  18-39       Direct            0
+## 8    Male  18-39       Direct            0
+## 9  Female  40-49       Direct            0
+## 10   Male  40-49       Direct            0
+## 11 Female    50+       Direct            0
+## 12   Male    50+       Direct            0
+## 13 Female  18-39       Friend            0
+## 14   Male  18-39       Friend            0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When Relationship is entered last, it actually is ordered first (e.g., the first 6 rows of the contingency table refer to Relationship - Direct). Of course, the factors can be entered in a different order.&lt;/p&gt;
+&lt;p&gt;Now that we know the order the variables are entered in, we can define our observations vector, or how many people we want from each combination.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;samples &amp;lt;- c(36,34,72,58,47,38,18,18,15,22,17,10,24,28,11,27,15,25,72,70,52,43,21,27)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;If samples is a scalar, it will be recycled for the entire vector, otherwise it should be the same length as the number of rows in the contingency table. If it is longer or shorter, &lt;code&gt;stratifiedNorm()&lt;/code&gt; will return an error. I recommend running this once with &lt;code&gt;return.grid = TRUE&lt;/code&gt; to double check that the observations were entered correctly.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(stratifiedNorm(dat = dat, strata = strata,
+                    observations = samples, return.grid = TRUE), n = 14)
+##    Gender AgeGrp Relationship Observations
+## 1  Female  18-39     Coworker           36
+## 2    Male  18-39     Coworker           34
+## 3  Female  40-49     Coworker           72
+## 4    Male  40-49     Coworker           58
+## 5  Female    50+     Coworker           47
+## 6    Male    50+     Coworker           38
+## 7  Female  18-39       Direct           18
+## 8    Male  18-39       Direct           18
+## 9  Female  40-49       Direct           15
+## 10   Male  40-49       Direct           22
+## 11 Female    50+       Direct           17
+## 12   Male    50+       Direct           10
+## 13 Female  18-39       Friend           24
+## 14   Male  18-39       Friend           28&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;When we actually sample the data, we can have either the subset returned or the full dataset. Some warnings will be printed if there are less or equal numbers of counts per combination than there are observations in a particular category.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;subset.data &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = FALSE)
+## Combination for (Female|18-39|Manager) has LESS than count. Returning all observations.
+## Combination for (Male|18-39|Manager) has LESS than count. Returning all observations.
+
+full.data &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
+## Combination for (Female|18-39|Manager) has LESS than count. Returning all observations.
+## Combination for (Male|18-39|Manager) has LESS than count. Returning all observations.
+
+str(subset.data)
+## &amp;#39;data.frame&amp;#39;:    775 obs. of  6 variables:
+##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ X           : num  -0.00565 -0.20064 0.97883 0.57349 -0.70991 ...
+##  $ Y           : num  0.457 0.104 -0.388 1.542 1.114 ...
+##  $ Z           : num  -0.0121 -0.5163 0.863 1.2574 0.1687 ...
+
+str(full.data)
+## &amp;#39;data.frame&amp;#39;:    1500 obs. of  7 variables:
+##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 2 1 1 1 1 2 1 1 1 2 ...
+##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 2 2 1 2 1 2 1 3 2 1 ...
+##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 3 3 3 4 2 2 1 4 4 2 ...
+##  $ X           : num  -1.478 0.328 0.149 -0.241 -0.759 ...
+##  $ Y           : num  0.291 -0.403 -0.557 1.615 2.105 ...
+##  $ Z           : num  -0.4025 1.1505 -0.0306 0.3641 -1.0688 ...
+##  $ sampled     : logi  FALSE FALSE TRUE TRUE TRUE TRUE ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The return with full.data has an additional logical vector called &lt;code&gt;sampled&lt;/code&gt;, which indicates cases that were selected. We can check the cases using contingency tables:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ftable(xtabs(~Gender + AgeGrp + Relationship, data = subset.data))
+##               Relationship Coworker Direct Friend Manager
+## Gender AgeGrp                                            
+## Female 18-39                     36     18     24      54
+##        40-49                     72     15     11      52
+##        50+                       47     17     15      21
+## Male   18-39                     34     18     28      63
+##        40-49                     58     22     27      43
+##        50+                       38     10     25      27&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Note, if you want the sample to be reproducible, you should include a set.seed() command first! Compare:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;full.data1 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
+full.data2 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
+identical(full.data1, full.data2)
+## [1] FALSE
+
+set.seed(77)
+full.data1 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
+set.seed(77)
+full.data2 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
+identical(full.data1, full.data2)
+## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Grammar of (Interactive) Graphics</title>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
+&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; class=&#34;uri&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; class=&#34;uri&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Grammar of (Interactive) Graphics</title>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the &amp;ldquo;Grammar of (Interactive) Graphics&amp;rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&amp;rsquo;s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&amp;rsquo;s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
+
+&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; target=&#34;_blank&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; target=&#34;_blank&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Grammar of (Interactive) Graphics</title>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the &amp;ldquo;Grammar of (Interactive) Graphics&amp;rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&amp;rsquo;s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&amp;rsquo;s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
+
+&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; target=&#34;_blank&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; target=&#34;_blank&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Splitting a Dataframe by Cluster</title>
-      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
+      <link>/post/splitting-a-dataframe-by-cluster.html</link>
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
+      <guid>/post/splitting-a-dataframe-by-cluster.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -80,10 +256,10 @@ length(unique(testing$school)) # 106 schools.&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>Converting a Curriculum Vitae to LaTeX</title>
-      <link>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</link>
+      <link>/post/converting-a-curriculum-vitae-to-latex.html</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</guid>
+      <guid>/post/converting-a-curriculum-vitae-to-latex.html</guid>
       <description>&lt;p&gt;A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.&lt;/p&gt;
 
 &lt;p&gt;First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have. I believe that TeX typesetting can be fairly easily differentiated from other programs, and showing this knowledge - especially if the CV is being distributed as part of a job search - can definitely make you a more appealing candidate.&lt;/p&gt;
@@ -192,10 +368,10 @@ defaults &lt;code&gt;write com.apple.Finder AppleShowAllFiles YES&lt;/code&gt; i
     
     <item>
       <title>Integrating BibDesk with Dropbox.</title>
-      <link>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</link>
+      <link>/post/integrating-bibdesk-with-dropbox.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
+      <guid>/post/integrating-bibdesk-with-dropbox.html</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder &lt;code&gt;~\Dropbox&lt;/code&gt; exists).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Reference Management&lt;/strong&gt;: I have used a few different applications to deal with references (e.g. Mendeley, Papers, JabRef, and so on).  Each of these applications have their strengths and weaknesses, however I have found that I&amp;rsquo;ve fallen in love with one in particular: BibDesk.  I believe BibDesk balances aesthetics with functionality better than the aforementioned applications.  It is easy to use, customizable using scripts (a useful selection of which I will document in a future post), and extremely stable.&lt;/p&gt;

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Analysis on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/categories/data-analysis.html</link>
+    <link>/categories/data-analysis.html</link>
     <description>Recent content in Data Analysis on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Continuous Interactions in Multiple Regression in R</title>
-      <link>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</link>
+      <link>/post/continuous-interactions-in-multiple-regression-in-r.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
+      <guid>/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 
@@ -24,6 +24,46 @@
 &lt;p&gt;After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically &lt;code&gt;*&lt;/code&gt;, but also applies to formulas that use &lt;code&gt;^&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;The vignette is posted here: &lt;a href=&#34;http://rpubs.com/mattsigal/reg_interactions&#34; class=&#34;uri&#34;&gt;http://rpubs.com/mattsigal/reg_interactions&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The short-version: &lt;code&gt;*&lt;/code&gt;, when used with &lt;code&gt;summary()&lt;/code&gt; does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with &lt;code&gt;scale()&lt;/code&gt; or looking at the effects using &lt;code&gt;car::Anova()&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Grammar of (Interactive) Graphics</title>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
+&lt;!-- /BLOGDOWN-HEAD --&gt;
+
+&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
+&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
+&lt;p&gt;I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
+&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; class=&#34;uri&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; class=&#34;uri&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Grammar of (Interactive) Graphics</title>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the &amp;ldquo;Grammar of (Interactive) Graphics&amp;rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&amp;rsquo;s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&amp;rsquo;s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
+
+&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; target=&#34;_blank&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; target=&#34;_blank&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Grammar of (Interactive) Graphics</title>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the &amp;ldquo;Grammar of (Interactive) Graphics&amp;rdquo;. The overarching ideas behind the talk were to discuss Leland Wilkinson&amp;rsquo;s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham&amp;rsquo;s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
+
+&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; target=&#34;_blank&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; target=&#34;_blank&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

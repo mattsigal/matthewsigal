@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interactions on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/tags/interactions.html</link>
+    <link>/tags/interactions.html</link>
     <description>Recent content in Interactions on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>Continuous Interactions in Multiple Regression in R</title>
-      <link>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</link>
+      <link>/post/continuous-interactions-in-multiple-regression-in-r.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
+      <guid>/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
       <description>&lt;!-- BLOGDOWN-HEAD --&gt;
 &lt;!-- /BLOGDOWN-HEAD --&gt;
 

@@ -2,7 +2,7 @@
 
 authors = ["Michael Friendly", "Matthew J. Sigal"]
 title = "Recent advances in visualizing multivariate linear models"
-date = "2015-01-01"
+date = "2014-12-01"
 
 # Publication type.
 # Legend:
@@ -16,7 +16,7 @@ date = "2015-01-01"
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "Revista Colombiana de Estadistica, 38(1), 261–283. doi: 10.15446/rce.v37n2spe.47934"
+publication = "Revista Colombiana de Estadistica, 37(2), 261–283. doi: 10.15446/rce.v37n2spe.47934"
 publication_short = ""
 
 # Abstract and optional shortened version.

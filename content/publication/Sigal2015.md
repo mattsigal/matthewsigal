@@ -1,6 +1,5 @@
 +++
 
-# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Matthew J. Sigal"]
 title = "Visualizing likert-type data."
 date = "2015-04-01"

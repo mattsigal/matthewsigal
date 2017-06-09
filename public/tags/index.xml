@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/tags.html</link>
+    <link>/tags.html</link>
     <description>Recent content in Tags on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,83 +12,92 @@
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>http://www.matthewsigal.com/tags/academic.html</link>
+      <link>/tags/academic.html</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/academic.html</guid>
+      <guid>/tags/academic.html</guid>
       <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Apa Style</title>
-      <link>http://www.matthewsigal.com/tags/apa-style.html</link>
+      <link>/tags/apa-style.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/apa-style.html</guid>
+      <guid>/tags/apa-style.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bibdesk</title>
-      <link>http://www.matthewsigal.com/tags/bibdesk.html</link>
+      <link>/tags/bibdesk.html</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/bibdesk.html</guid>
+      <guid>/tags/bibdesk.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Visualization</title>
+      <link>/tags/data-visualization.html</link>
+      <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data-visualization.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dropbox</title>
-      <link>http://www.matthewsigal.com/tags/dropbox.html</link>
+      <link>/tags/dropbox.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/dropbox.html</guid>
+      <guid>/tags/dropbox.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interactions</title>
-      <link>http://www.matthewsigal.com/tags/interactions.html</link>
+      <link>/tags/interactions.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/interactions.html</guid>
+      <guid>/tags/interactions.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Latex</title>
-      <link>http://www.matthewsigal.com/tags/latex.html</link>
+      <link>/tags/latex.html</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/latex.html</guid>
+      <guid>/tags/latex.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Os X</title>
-      <link>http://www.matthewsigal.com/tags/os-x.html</link>
+      <link>/tags/os-x.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/os-x.html</guid>
+      <guid>/tags/os-x.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>http://www.matthewsigal.com/tags/r.html</link>
+      <link>/tags/r.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/r.html</guid>
+      <guid>/tags/r.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regression</title>
-      <link>http://www.matthewsigal.com/tags/regression.html</link>
+      <link>/tags/regression.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/tags/regression.html</guid>
+      <guid>/tags/regression.html</guid>
       <description></description>
     </item>
     
