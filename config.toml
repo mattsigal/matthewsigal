@@ -166,6 +166,12 @@ defaultContentLanguageInSubdir = false
   url = "#contact"
   weight = 5
 
+# Taxonomies.
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  publication_type = "publication_types"
+  
 # Languages
 #   Create a [languages.X] block for each language you want, where X is the language ID.
 
