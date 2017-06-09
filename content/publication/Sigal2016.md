@@ -1,7 +1,7 @@
 +++
 
 authors = ["Matthew J. Sigal", "R. P. Chalmers"]
-title = "Play it again: Teaching statistics with Monte Carlo simulation."
+title = "Play it again: Teaching statistics with Monte Carlo simulation"
 date = "2016-10-01"
 
 # Publication type.

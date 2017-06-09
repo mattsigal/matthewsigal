@@ -1,7 +1,7 @@
 +++
 
 authors = ["Matthew J. Sigal", "Michael Pettit"]
-title = "Information overload, professionalization, and the origins of the Publication Manual of the American Psychological Association."
+title = "Information overload, professionalization, and the origins of the Publication Manual of the American Psychological Association"
 date = "2012-12-01"
 
 # Publication type.

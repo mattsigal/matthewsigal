@@ -1,7 +1,7 @@
 +++
 
 authors = ["Matthew J. Sigal", "Stuart J. McKelvie"]
-title = "Is exposure to visual media related to cognitive ability? Testing Neisser's hypothesis for the Flynn effect."
+title = "Is exposure to visual media related to cognitive ability? Testing Neisser's hypothesis for the Flynn effect"
 date = "2012-07-01"
 
 # Publication type.
