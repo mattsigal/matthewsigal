@@ -11,11 +11,92 @@
     <atom:link href="/publication/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title></title>
-      <link>/publication/publication1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>Graphical methods for multivariate linear models in psychological research: An R tutorial</title>
+      <link>/publication/friendly2017/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>/publication/publication1/</guid>
+      <guid>/publication/friendly2017/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Play it again: Teaching statistics with Monte Carlo simulation.</title>
+      <link>/publication/sigal2016/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sigal2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing likert-type data.</title>
+      <link>/publication/sigal2015/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sigal2015/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Milestones Project: A database for the history of data visualization</title>
+      <link>/publication/friendly2015a/</link>
+      <pubDate>Sun, 01 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/friendly2015a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent advances in visualizing multivariate linear models</title>
+      <link>/publication/friendly2015b/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/friendly2015b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Some prehistory of CARME: Visual language and visual thinking</title>
+      <link>/publication/friendly2014/</link>
+      <pubDate>Tue, 01 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/friendly2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Information overload, professionalization, and the origins of the Publication Manual of the American Psychological Association.</title>
+      <link>/publication/sigal2012c/</link>
+      <pubDate>Sat, 01 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sigal2012c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Applied Introduction to SPSS.</title>
+      <link>/publication/sigal2012b/</link>
+      <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sigal2012b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Is exposure to visual media related to cognitive ability? Testing Neisser&#39;s hypothesis for the Flynn effect.</title>
+      <link>/publication/sigal2012a/</link>
+      <pubDate>Sun, 01 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sigal2012a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>[Review of J. Goodwin’s A History of Modern Psychology: Third Edition]</title>
+      <link>/publication/sigal2010/</link>
+      <pubDate>Mon, 01 Feb 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/sigal2010/</guid>
       <description></description>
     </item>
     
