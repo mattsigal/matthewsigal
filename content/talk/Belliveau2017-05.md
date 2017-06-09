@@ -1,6 +1,6 @@
 +++
 date = "2017-06-09"
-title = "The big picture: Visualizing issues of post-secondary education access"
+title = "Reevaluating the Essen Climate Evaluation Schema"
 abstract = ""
 event = "Poster presented at the Canadian Psychological Association (with Arlie Belliveau and Laura Ball)"
 event_url = ""
