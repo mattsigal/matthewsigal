@@ -91,9 +91,6 @@ defaultContentLanguageInSubdir = false
   custom_js  = []
 
   # Publication types.
-  #   Used to categorize publications.
-  #   The index of the publication type in the list is used as its unique numerical identifier.
-  #   The numeric ID is used in a publication's frontmatter to categorize it.
   publication_types = [
     'Uncategorized',  # 0
     'Conference proceedings',  # 1
@@ -107,19 +104,12 @@ defaultContentLanguageInSubdir = false
   # Social/Academic Networking
   #
   # Icon pack "fa" includes the following social network icons:
-  #
   #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
   #   youtube, instagram, soundcloud
-  #
-  #   For email icon, use "fa" icon pack, "envelope" icon, and
-  #   "mailto:your@email.com" as the link.
-  #
   #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
   #
   # Icon pack "ai" includes the following academic network icons:
-  #
   #   google-scholar, arxiv, orcid, researchgate, mendeley
-  #
   #   Full list: https://jpswalsh.github.io/academicons/
 
   [[params.social]]
@@ -150,18 +140,18 @@ defaultContentLanguageInSubdir = false
   weight = 2
   
 [[menu.main]]
-  name = "Scholarships & Awards"
-  url = "#Scholarships"
+  name = "Presentations"
+  url = "#talks"
   weight = 3
 
 [[menu.main]]
   name = "Teaching"
   url = "#teaching"
   weight = 4
-  
+
 [[menu.main]]
-  name = "Presentations"
-  url = "#talks"
+  name = "Scholarships & Awards"
+  url = "#Scholarships"
   weight = 5
   
 [[menu.main]]

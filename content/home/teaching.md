@@ -6,7 +6,7 @@ draft = false
 title = "Teaching"
 subtitle = ""
 widget = "custom"
-weight = 25
+weight = 30
 
 +++
 
@@ -16,16 +16,16 @@ I have had the pleasure of directing the following classes:
 - PSYC3031: Intermediate Statistics Laboratory (York University, 2015)
 - PSYC2021: Introduction to Statistics (York University, 2013)
 
-In addition, I have also run the following short courses and workshops: 
+In addition, I have run the following short courses and workshops: 
 
-* (2014, Summer) An Introduction to Data Analysis with R, APA
-* (2014, Summer) An Introduction to Data Analysis with R, ISR
-* (2014, Winter) An Introduction to Data Analysis with R, ISR
-* (2013, Summer) An Introduction to Data Analysis with R, APA
-* (2013, Spring) An Applied Introduction to SPSS, ISR
-* (2013, Winter) An Applied Introduction to SPSS, ISR
-* (2012, Fall) An Applied Introduction to SPSS, ISR
-* (2011, April) Introduction to SPSS, Ministry of Child and Youth Services
+* (2014, Summer) Data Analysis with R, APA
+* (2014, Summer) Data Analysis with R, ISR
+* (2014, Winter) Data Analysis with R, ISR
+* (2013, Summer) Data Analysis with R, APA
+* (2013, Spring) Introduction to SPSS, ISR
+* (2013, Winter) Introduction to SPSS, ISR
+* (2012, Fall) Introduction to SPSS, ISR
+* (2011) Introduction to SPSS, Ministry of Child and Youth Services
 
 Finally, I have held the following teaching assistantships:
 

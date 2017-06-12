@@ -6,7 +6,7 @@ draft = false
 title = "Scholarships & Awards"
 subtitle = ""
 widget = "custom"
-weight = 22
+weight = 35
 
 +++
 
