@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.20.5" />
+  <meta name="generator" content="Hugo 0.21" />
   <meta name="author" content="Matthew J. Sigal">
   <meta name="description" content="Doctoral Candidate in Quantitative Methods">
 
@@ -253,12 +253,7 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <!-- BLOGDOWN-HEAD -->
-<!-- /BLOGDOWN-HEAD -->
-
-<!-- BLOGDOWN-BODY-BEFORE -->
-<!-- /BLOGDOWN-BODY-BEFORE -->
-<p>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically <code>*</code>, but also applies to formulas that use <code>^</code>).</p>
+      <p>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically <code>*</code>, but also applies to formulas that use <code>^</code>).</p>
 <p>The vignette is posted here: <a href="http://rpubs.com/mattsigal/reg_interactions" class="uri">http://rpubs.com/mattsigal/reg_interactions</a></p>
 <p>The short-version: <code>*</code>, when used with <code>summary()</code> does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with <code>scale()</code> or looking at the effects using <code>car::Anova()</code>.</p>
 
@@ -363,6 +358,8 @@
       
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
       
 
       

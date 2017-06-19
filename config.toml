@@ -1,4 +1,4 @@
-baseurl = "http://www.matthewsigal.com/"  # End your URL with a `/` trailing slash.
+baseurl = "http://www.matthewsigal.com/"
 title = "Matthew J. Sigal"
 copyright = "&copy; 2016 Matthew J. Sigal"
 theme = "hugo-academic"
@@ -32,16 +32,10 @@ defaultContentLanguageInSubdir = false
   skype = ""
   telegram = ""
 
-
-  # Enable Keybase in Contact section by entering your keybase.io username.
-  keybase = ""
-
   # Date format (refer to Go's date format: http://flippinggodateformat.com )
-  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
   date_format = "2006-01-02"
 
   # Enable global LaTeX math rendering?
-  #   If false, you can enable it locally on a per page basis.
   math = true
 
   # Highlight.js options
@@ -57,7 +51,7 @@ defaultContentLanguageInSubdir = false
   #     can also set this variable for a particular page in that
   #     page's preamble.
   #
-  #     Example: highlight_languages = ["r", "go", "lisp", "ocaml"]
+  #     Example: highlight_languages = ["go", "lisp", "ocaml"]
   #
   #   highlight_style
   #     Choose a different CSS style for highlighting source
@@ -78,7 +72,7 @@ defaultContentLanguageInSubdir = false
   #   For more info on the highlighting options, see:
   #   https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/#highlighting-options
   highlight = true
-  highlight_languages = []
+  highlight_languages = ["r"]
   # highlight_style = "github"
   # highlight_version = "9.9.0"
 
