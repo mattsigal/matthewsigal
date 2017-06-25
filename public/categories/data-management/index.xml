@@ -197,5 +197,113 @@ length(unique(testing$school)) # 106 schools.&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
+    <item>
+      <title>Splitting a Dataframe by Cluster</title>
+      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
+      <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
+      <description>&lt;p&gt;As part of an assignment for a course I&amp;rsquo;m taking on the &lt;a href=&#34;http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models&#34; target=&#34;_blank&#34;&gt;Applications of Mixed Models&lt;/a&gt;, we were asked to partition a multi-level dataset into two components: a training and a testing set.  In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the &lt;code&gt;split&lt;/code&gt; command, or &lt;code&gt;daply&lt;/code&gt; from the &lt;code&gt;plyr&lt;/code&gt; package).  However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, &amp;ldquo;since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other&amp;rdquo; (2012, p. 126).  In this post, I explain a function in &lt;code&gt;R&lt;/code&gt; that allows us to split a dataframe into these two components.&lt;/p&gt;
+
+&lt;p&gt;This function, &lt;code&gt;splitdfbygp&lt;/code&gt; (for split dataframe by group), takes four arguments: &lt;code&gt;df&lt;/code&gt;, a dataframe; &lt;code&gt;group&lt;/code&gt;, the name of the grouping variable (e.g. &amp;ldquo;school&amp;rdquo;); &lt;code&gt;prop&lt;/code&gt;, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a &lt;sup&gt;50&lt;/sup&gt;&amp;frasl;&lt;sub&gt;50&lt;/sub&gt; split); and &lt;code&gt;seed&lt;/code&gt;, where the user can supply a seed value in case they want the case selection to be replicable.  The function is as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;splitdfbygp &amp;lt;- function(df, group, prop = .5, seed = NULL) { 
+     if(missing(group)) stop(&#39;Level 2 grouping variable required.&#39;) 
+     if(prop &amp;gt; 1.0 || prop &amp;lt; 0.0) stop(&#39;Split needs to be between .00 and 1.0&#39;)
+     if(!(group %in% colnames(df))) stop(&#39;Grouping variable needs to be a column within the dataframe.&#39;)
+     if (!is.null(seed)) set.seed(seed)
+     gp &amp;lt;- df[, group]
+     ugp &amp;lt;- unique(gp) 
+     index &amp;lt;- 1:length(ugp)
+
+     trainindex &amp;lt;- sample(index, trunc(length(index) * prop)) 
+     ugp &amp;lt;- as.data.frame(ugp)
+     trainind &amp;lt;- ugp[trainindex, ] 
+
+     trainset &amp;lt;- df[df[,group] %in% trainind, ] 
+     testset &amp;lt;- df[!df[,group] %in% trainind, ]
+
+     invisible(list(trainset=trainset, testset=testset))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Testing the function:&lt;/p&gt;
+
+&lt;p&gt;First, obtain the datasets for Snijders and Bosker&amp;rsquo;s book from &lt;a href=&#34;http://www.stats.ox.ac.uk/~snijders/mlbook.htm&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mlbook_red &amp;lt;- read.table(&amp;quot;mlbook2_r.dat&amp;quot;, header=TRUE) # Load the data. 
+head(mlbook_red) # Included variables - &amp;quot;schoolnr&amp;quot; is level 2.
+
+split &amp;lt;- splitdfbygp(mlbook_red, &amp;quot;schoolnr&amp;quot;, seed=83)
+str(split) # Resulting object is a list with two components.
+lapply(split, head)
+
+training &amp;lt;- split$trainset
+testing &amp;lt;- split$testset
+
+unique(training$school) # School IDs in training dataset.
+unique(testing$school) # School IDs in testing dataset.
+length(unique(training$school)) # 105 schools.
+length(unique(testing$school)) # 106 schools.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And there you have it! A dataframe split into training and testing datasets, adhering to the independence of schools rather than of pupils. Many thanks to Phil Chalmers for his assistance in tweaking the above code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Splitting a Dataframe by Cluster</title>
+      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
+      <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
+      <description>&lt;p&gt;As part of an assignment for a course I&amp;rsquo;m taking on the &lt;a href=&#34;http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models&#34; target=&#34;_blank&#34;&gt;Applications of Mixed Models&lt;/a&gt;, we were asked to partition a multi-level dataset into two components: a training and a testing set.  In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the &lt;code&gt;split&lt;/code&gt; command, or &lt;code&gt;daply&lt;/code&gt; from the &lt;code&gt;plyr&lt;/code&gt; package).  However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, &amp;ldquo;since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other&amp;rdquo; (2012, p. 126).  In this post, I explain a function in &lt;code&gt;R&lt;/code&gt; that allows us to split a dataframe into these two components.&lt;/p&gt;
+
+&lt;p&gt;This function, &lt;code&gt;splitdfbygp&lt;/code&gt; (for split dataframe by group), takes four arguments: &lt;code&gt;df&lt;/code&gt;, a dataframe; &lt;code&gt;group&lt;/code&gt;, the name of the grouping variable (e.g. &amp;ldquo;school&amp;rdquo;); &lt;code&gt;prop&lt;/code&gt;, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a &lt;sup&gt;50&lt;/sup&gt;&amp;frasl;&lt;sub&gt;50&lt;/sub&gt; split); and &lt;code&gt;seed&lt;/code&gt;, where the user can supply a seed value in case they want the case selection to be replicable.  The function is as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;splitdfbygp &amp;lt;- function(df, group, prop = .5, seed = NULL) { 
+     if(missing(group)) stop(&#39;Level 2 grouping variable required.&#39;) 
+     if(prop &amp;gt; 1.0 || prop &amp;lt; 0.0) stop(&#39;Split needs to be between .00 and 1.0&#39;)
+     if(!(group %in% colnames(df))) stop(&#39;Grouping variable needs to be a column within the dataframe.&#39;)
+     if (!is.null(seed)) set.seed(seed)
+     gp &amp;lt;- df[, group]
+     ugp &amp;lt;- unique(gp) 
+     index &amp;lt;- 1:length(ugp)
+
+     trainindex &amp;lt;- sample(index, trunc(length(index) * prop)) 
+     ugp &amp;lt;- as.data.frame(ugp)
+     trainind &amp;lt;- ugp[trainindex, ] 
+
+     trainset &amp;lt;- df[df[,group] %in% trainind, ] 
+     testset &amp;lt;- df[!df[,group] %in% trainind, ]
+
+     invisible(list(trainset=trainset, testset=testset))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Testing the function:&lt;/p&gt;
+
+&lt;p&gt;First, obtain the datasets for Snijders and Bosker&amp;rsquo;s book from &lt;a href=&#34;http://www.stats.ox.ac.uk/~snijders/mlbook.htm&#34; target=&#34;_blank&#34;&gt;this link&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mlbook_red &amp;lt;- read.table(&amp;quot;mlbook2_r.dat&amp;quot;, header=TRUE) # Load the data. 
+head(mlbook_red) # Included variables - &amp;quot;schoolnr&amp;quot; is level 2.
+
+split &amp;lt;- splitdfbygp(mlbook_red, &amp;quot;schoolnr&amp;quot;, seed=83)
+str(split) # Resulting object is a list with two components.
+lapply(split, head)
+
+training &amp;lt;- split$trainset
+testing &amp;lt;- split$testset
+
+unique(training$school) # School IDs in training dataset.
+unique(testing$school) # School IDs in testing dataset.
+length(unique(training$school)) # 105 schools.
+length(unique(testing$school)) # 106 schools.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And there you have it! A dataframe split into training and testing datasets, adhering to the independence of schools rather than of pupils. Many thanks to Phil Chalmers for his assistance in tweaking the above code.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
