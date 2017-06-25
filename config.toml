@@ -10,7 +10,7 @@ uglyURLs = true
 disqusShortname = "matthew-sigal"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = "UA-21690929-2"
+googleAnalytics = "UA-101644129-1"
 
 # Default language to use (if you setup multilingual support)
 defaultContentLanguage = "en"

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>5 on Matthew J. Sigal</title>
-    <link>/publication_types/5.html</link>
+    <link>http://www.matthewsigal.com/publication_types/5.html</link>
     <description>Recent content in 5 on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,10 +12,10 @@
     
     <item>
       <title>An Applied Introduction to SPSS</title>
-      <link>/publication/sigal2012b.html</link>
+      <link>http://www.matthewsigal.com/publication/sigal2012b.html</link>
       <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>/publication/sigal2012b.html</guid>
+      <guid>http://www.matthewsigal.com/publication/sigal2012b.html</guid>
       <description></description>
     </item>
     
