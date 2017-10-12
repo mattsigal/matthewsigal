@@ -88,12 +88,7 @@
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically &lt;code&gt;*&lt;/code&gt;, but also applies to formulas that use &lt;code&gt;^&lt;/code&gt;).&lt;/p&gt;
+      <description>&lt;p&gt;After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically &lt;code&gt;*&lt;/code&gt;, but also applies to formulas that use &lt;code&gt;^&lt;/code&gt;).&lt;/p&gt;
 &lt;p&gt;The vignette is posted here: &lt;a href=&#34;http://rpubs.com/mattsigal/reg_interactions&#34; class=&#34;uri&#34;&gt;http://rpubs.com/mattsigal/reg_interactions&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The short-version: &lt;code&gt;*&lt;/code&gt;, when used with &lt;code&gt;summary()&lt;/code&gt; does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with &lt;code&gt;scale()&lt;/code&gt; or looking at the effects using &lt;code&gt;car::Anova()&lt;/code&gt;.&lt;/p&gt;
 </description>

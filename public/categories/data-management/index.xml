@@ -16,12 +16,7 @@
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;This post describes how to use &lt;code&gt;stratifiedNorm()&lt;/code&gt; to create a stratified random sample, given an arbitrary number of factors. The function is available via &lt;code&gt;source_gist()&lt;/code&gt;:&lt;/p&gt;
+      <description>&lt;p&gt;This post describes how to use &lt;code&gt;stratifiedNorm()&lt;/code&gt; to create a stratified random sample, given an arbitrary number of factors. The function is available via &lt;code&gt;source_gist()&lt;/code&gt;:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;devtools&amp;#39;)
 source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;I will create a small dataset to demonstrate how to use the function:&lt;/p&gt;
@@ -152,12 +147,7 @@ identical(full.data1, full.data2)
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
-      <description>&lt;!-- BLOGDOWN-HEAD --&gt;
-&lt;!-- /BLOGDOWN-HEAD --&gt;
-
-&lt;!-- BLOGDOWN-BODY-BEFORE --&gt;
-&lt;!-- /BLOGDOWN-BODY-BEFORE --&gt;
-&lt;p&gt;As part of an assignment for a course I’m taking on the &lt;a href=&#34;http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models&#34;&gt;Applications of Mixed Models&lt;/a&gt;, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the &lt;code&gt;split&lt;/code&gt; command, or &lt;code&gt;daply&lt;/code&gt; from the &lt;code&gt;plyr&lt;/code&gt; package). However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, “since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other” (2012, p. 126). In this post, I explain a function in &lt;code&gt;R&lt;/code&gt; that allows us to split a dataframe into these two components.&lt;/p&gt;
+      <description>&lt;p&gt;As part of an assignment for a course I’m taking on the &lt;a href=&#34;http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models&#34;&gt;Applications of Mixed Models&lt;/a&gt;, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the &lt;code&gt;split&lt;/code&gt; command, or &lt;code&gt;daply&lt;/code&gt; from the &lt;code&gt;plyr&lt;/code&gt; package). However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, “since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other” (2012, p. 126). In this post, I explain a function in &lt;code&gt;R&lt;/code&gt; that allows us to split a dataframe into these two components.&lt;/p&gt;
 &lt;p&gt;This function, &lt;code&gt;splitdfbygp&lt;/code&gt; (for split dataframe by group), takes four arguments: &lt;code&gt;df&lt;/code&gt;, a dataframe; &lt;code&gt;group&lt;/code&gt;, the name of the grouping variable (e.g. “school”); &lt;code&gt;prop&lt;/code&gt;, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a 50/50 split); and &lt;code&gt;seed&lt;/code&gt;, where the user can supply a seed value in case they want the case selection to be replicable. The function is as follows:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;splitdfbygp &amp;lt;- function(df, group, prop = .5, seed = NULL) { 
      if(missing(group)) stop(&amp;#39;Level 2 grouping variable required.&amp;#39;) 

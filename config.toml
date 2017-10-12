@@ -16,6 +16,9 @@ googleAnalytics = "UA-101644129-1"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
+# Ignore files
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
 [blackfriday]
   hrefTargetBlank = true
 
@@ -170,3 +173,4 @@ defaultContentLanguageInSubdir = false
 # Configure the English version of the website.
 [languages.en]
   languageCode = "en-us"
+  
