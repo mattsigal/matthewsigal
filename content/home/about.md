@@ -19,9 +19,9 @@ weight = 1
 
 # List your qualifications (such as academic degrees).
 [[education.courses]]
-  course = "Doctoral Candidate in Quantitative Methods"
+  course = "PhD in Quantitative Methods"
   institution = "York University"
-  year = "201x"
+  year = 2017
 
 [[education.courses]]
   course = "MA in the History of Psychology"
@@ -37,6 +37,8 @@ weight = 1
 
 # Biography
 
-I am a doctoral candidate in the relatively new Quantitative Methods area of Psychology at York University, a field that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit [this page](http://www.matthewsigal.com/SigalCV_2017.pdf) to peruse a recent version of my curriculum vitae (last updated: June 9th, 2017).
+I have a PhD in Quantitative Methods of Psychology from York University. QM is a field that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit [this page](http://www.matthewsigal.com/SigalCV_2017.pdf) to peruse a recent version of my curriculum vitae (last updated: June 9th, 2017).
 
-I am a member of Dr. Michael Friendly's lab and am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.  Some of my recent research pertains to the implementation of interactive graphics for model diagnostics.
+I am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.  Some of my recent research pertains to the implementation of interactive graphics for model diagnostics.
+
+As of January 2018, I will be a lecturer in the [Psycholoy Department](https://www.sfu.ca/psychology.html) at [Simon Fraser University](https://www.sfu.ca/). I will be teaching PSYC 210 (Introduction to Data Analysis in Psychology) and PSYC 391/715 (a special topics course on Data Communication) in the Spring semester.

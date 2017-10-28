@@ -23,14 +23,14 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   hrefTargetBlank = true
 
 [params]
-  name = "Matthew J. Sigal"
-  role = "Doctoral Candidate in Quantitative Methods"
-  organization = "York University"
-  organization_url = "http://www.yorku.ca/"
+  name = "Matthew J. Sigal, PhD"
+  role = "Lecturer"
+  organization = "Simon Fraser University"
+  organization_url = "http://www.sfu.ca/"
   avatar = "me.jpg"
-  email = "matthewsigal@gmail.com"
-  address = "262 Behavioural Sciences Building, York University, 4700 Keele Street, Toronto, Ontario, Canada, M3J 1P3."
-  office_hours = "Please email for an appointment."
+  email = "msigal@sfu.ca"
+  address = "6155 RCG Hall, Simon Fraser University, 8888 University Drive, Burnaby, BC, Canada, V5A 1S6."
+#  office_hours = "Please email for an appointment."
   phone = "(647) 835-3554"
   skype = ""
   telegram = ""
