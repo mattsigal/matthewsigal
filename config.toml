@@ -112,7 +112,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:matthewsigal@gmail.com"
+    link = "mailto:msigal@sfu.ca"
   
   [[params.social]]
     icon = "github"
