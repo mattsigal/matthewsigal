@@ -41,4 +41,4 @@ I have a PhD in Quantitative Methods from York University. QM is an area that br
 
 I am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.  Some of my recent research pertains to the implementation of interactive graphics for model diagnostics.
 
-As of January 2018, I will be a lecturer in the [Psychology Department](https://www.sfu.ca/psychology.html) at [Simon Fraser University](https://www.sfu.ca/). I will be teaching PSYC 210 (Introduction to Data Analysis in Psychology) and PSYC 391/715 (a special topics course on Data Communication) in the Spring semester.
+As of January 2018, I am a continuing lecturer in the [Psychology Department](https://www.sfu.ca/psychology.html) at [Simon Fraser University](https://www.sfu.ca/). I am currently teaching PSYC 210 (Introduction to Data Analysis in Psychology) and PSYC 391/715 (a special topics course on Data Communication) in the Spring semester.
