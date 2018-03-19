@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Thu, 24 May 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/os-x.html" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.matthewsigal.com/tags/os-x/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Integrating BibDesk with Dropbox.</title>
@@ -16,64 +18,7 @@
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder &lt;code&gt;~\Dropbox&lt;/code&gt; exists).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Reference Management&lt;/strong&gt;: I have used a few different applications to deal with references (e.g. Mendeley, Papers, JabRef, and so on).  Each of these applications have their strengths and weaknesses, however I have found that I&amp;rsquo;ve fallen in love with one in particular: BibDesk.  I believe BibDesk balances aesthetics with functionality better than the aforementioned applications.  It is easy to use, customizable using scripts (a useful selection of which I will document in a future post), and extremely stable.&lt;/p&gt;
-
-&lt;p&gt;The first step is to install BibDesk.  Once installed, create a new .bib file that you will use to store all of your bibliography entries.  The important point is to not save it in your Documents folder, but somewhere in your Dropbox.  For instance, I called mine &amp;ldquo;ReferenceDesk.bib&amp;rdquo; and placed it in &lt;code&gt;~\Dropbox&lt;/code&gt;.  In the settings for BibDesk, I set the application to load ReferenceDesk.bib upon launch (under General), and changed the Cite Key Format to the present &lt;code&gt;&amp;quot;First Author + : + Year + Sufficient Unique Letters)&lt;/code&gt;.  If you want BibDesk to file your PDFs (e.g. to keep them all in a particular folder, in kind of an iTunes-esque fashion), you can specify how the application does so via the &amp;ldquo;AutoFile&amp;rdquo; settings. Once you have created your bibliography database and changed any settings you deem appropriate, you can start adding references to the database.  Add at least a couple before moving to the next step.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;BibDesk and LaTeX Integration&lt;/strong&gt;: So, we have a bibliographic database.  However, unless we create a LaTeX file in the same directory as our database, calling it will be difficult.  A much better solution is to have our &lt;code&gt;ReferenceDesk.bib&lt;/code&gt; always available to all of our LaTeX documents, no matter where they live on your computer.  To do so, we will create a symbolic link between the folder where our ReferenceDesk.bib exists and the bibtex folder that gets loaded upon launch.&lt;/p&gt;
-
-&lt;p&gt;To create this link, open the Terminal and type in:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /usr/local/texlive/texmf-local/bibtex/bib
-sudo ln -s /Users/TumblesPro/Dropbox/RefenceDesk.bib ReferenceDesk.bib
-sudo texhash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note: you will have to update the second line to point to where your ReferenceDesk.bib file lives.  Now, your master bibliography file is accessible from LaTeX.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;APA Style&lt;/strong&gt;: LaTeX is a fantastic type-setting application that is especially useful for mathematics and other scientific based documents. For working on any TeX file, I currently prefer the LaTeXian editor, although there are many others that could suffice.  It is relatively cheap, has a powerful live preview feature, decent code completion, among other features.  If you wish to write in APA style, it is highly recommended to install the following packages: apa6, and apacite, which pertain to general document style, and reference/bibliography style, respectively. Note: you can check that these are installed either using the TeX Live Utility, or via command line (e.g., in the Terminal type: &lt;code&gt;kpsewhich apa6.cls&lt;/code&gt; and make sure it returns something similar to &lt;code&gt;/usr/local/texlive/2011/texmf-dist/tex/latex/apa6/apa6.cls&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Working and Citing in APA Style&lt;/strong&gt;: So, now all the pieces are in place. The next step is to simply create a new document using your preferred LaTeX editor.  In the preamble you should specify the necessary packages, as well as the information for the title page:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\documentclass[man]{apa6}        % Available classes: journal [jou], manuscript [man], or document [doc]
-\usepackage[american]{babel}     
-\usepackage{csquotes}            % Required for quotation formatting
-\usepackage{apacite}             % Required for bibliography formatting
-\title{Title Placeholder}
-\shorttitle{Running Head Placeholder}
-\author{Matthew J. Sigal}
-\affiliation{York University}
-\abstract{This demonstration paper uses the \textsf{apa6} \LaTeX\ class to format the document in compliance with the $6^{th}$ edition of the American Psychological Association&#39;s \textit{Publication Manual.} The references are managed using \textsf{apacite}.  Sections and subsection commands are also demonstrated.}
-\keywords{APA style, references}  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In the body:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{document}
-\maketitle
-\section{Top Level (Section)}
-\subsection{Second Level (Subsection)}
-\subsubsection{Third Level (Subsubsection)}
-\paragraph{Fourth Level (Paragraph)}
-\subparagraph{Fifth Level (Subparagraph)}
-\bibliographystyle{apacite}         % This is important if you want the references formatted correctly.
-\bibliography{ReferenceDesk}        % Make sure you replace the filename with the one you chose earlier.
-\end{document}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So there you have it!  For citing in-text, here is a handy chart taken from the apacite manual:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;\cite&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; (e.g., Jones, 2001; Ross, 1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeA&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones (2001); Ross (1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeauthor&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones; Ross, p. 11&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeyear&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; (e.g., 2001; 1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeyearNP&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., 2001; 1987, p. 11&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeNP&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones, 2001; Ross, 1987, p. 11&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style. It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers; and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera). This is optimized for OS X. This workflow involves three main components: a reference management system (basically an application that maintains a .</description>
     </item>
     
   </channel>

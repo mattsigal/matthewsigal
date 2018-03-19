@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/r.html" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.matthewsigal.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Continuous Interactions in Multiple Regression in R</title>
@@ -16,10 +18,9 @@
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
-      <description>&lt;p&gt;After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically &lt;code&gt;*&lt;/code&gt;, but also applies to formulas that use &lt;code&gt;^&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;The vignette is posted here: &lt;a href=&#34;http://rpubs.com/mattsigal/reg_interactions&#34; class=&#34;uri&#34;&gt;http://rpubs.com/mattsigal/reg_interactions&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The short-version: &lt;code&gt;*&lt;/code&gt;, when used with &lt;code&gt;summary()&lt;/code&gt; does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with &lt;code&gt;scale()&lt;/code&gt; or looking at the effects using &lt;code&gt;car::Anova()&lt;/code&gt;.&lt;/p&gt;
-</description>
+      <description>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically *, but also applies to formulas that use ^).
+The vignette is posted here: http://rpubs.com/mattsigal/reg_interactions
+The short-version: *, when used with summary() does not center the variables, and so models will have issues with VIF.</description>
     </item>
     
     <item>
@@ -28,129 +29,9 @@
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
-      <description>&lt;p&gt;This post describes how to use &lt;code&gt;stratifiedNorm()&lt;/code&gt; to create a stratified random sample, given an arbitrary number of factors. The function is available via &lt;code&gt;source_gist()&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;devtools&amp;#39;)
-source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I will create a small dataset to demonstrate how to use the function:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(77)
-dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE),
-                  AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE),
-                  Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), 
-                                      size = 1500, replace = TRUE),
-                  X=rnorm(n=1500, mean=0, sd=1),
-                  Y=rnorm(n=1500, mean=0, sd=1),
-                  Z=rnorm(n=1500, mean=0, sd=1))
-str(dat)
-## &amp;#39;data.frame&amp;#39;:    1500 obs. of  6 variables:
-##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 2 1 1 1 1 2 1 1 1 2 ...
-##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 2 2 1 2 1 2 1 3 2 1 ...
-##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 3 3 3 4 2 2 1 4 4 2 ...
-##  $ X           : num  -1.478 0.328 0.149 -0.241 -0.759 ...
-##  $ Y           : num  0.291 -0.403 -0.557 1.615 2.105 ...
-##  $ Z           : num  -0.4025 1.1505 -0.0306 0.3641 -1.0688 ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;stratifiedNorm()&lt;/code&gt; has 6 inputs:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;stratifiedNorm(dat, strata, observations=0, return.grid=FALSE, full.data=FALSE, full.data.id=&amp;quot;sampled&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;dat&lt;/code&gt;: a data.frame object.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;strata&lt;/code&gt;: a character vector indicating the strata variables. These need to match the variable names in the dataset.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;observations&lt;/code&gt;: a numeric vector indicating how many cases to sample from each strata. If the length of this vector is 1, it will be repeated for each strata group (e.g., enter 5 to sample 5 cases from each combination.)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;return.grid&lt;/code&gt;: logical, if TRUE will return the strata contingeny table.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;full.data&lt;/code&gt;: logical, if TRUE will return the full dataset, otherwise will only return the sampled data.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;full.data.id&lt;/code&gt;: used if full.data = TRUE, indicates the name of the vector added to the data.frame to indicate the observation was sampled.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;using-stratifiednorm&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Using &lt;code&gt;stratifiedNorm()&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;First, we create our strata variable. For this dataset, the relevant factors are: Gender, AgeGroup, and Relationship. Note: the input order will affect the ordering of the contingency table!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;strata = c(&amp;quot;Gender&amp;quot;, &amp;quot;AgeGrp&amp;quot;, &amp;quot;Relationship&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, let’s investigate the ordering of the variables:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(stratifiedNorm(dat, strata, return.grid = TRUE), n = 14)
-##    Gender AgeGrp Relationship Observations
-## 1  Female  18-39     Coworker            0
-## 2    Male  18-39     Coworker            0
-## 3  Female  40-49     Coworker            0
-## 4    Male  40-49     Coworker            0
-## 5  Female    50+     Coworker            0
-## 6    Male    50+     Coworker            0
-## 7  Female  18-39       Direct            0
-## 8    Male  18-39       Direct            0
-## 9  Female  40-49       Direct            0
-## 10   Male  40-49       Direct            0
-## 11 Female    50+       Direct            0
-## 12   Male    50+       Direct            0
-## 13 Female  18-39       Friend            0
-## 14   Male  18-39       Friend            0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When Relationship is entered last, it actually is ordered first (e.g., the first 6 rows of the contingency table refer to Relationship - Direct). Of course, the factors can be entered in a different order.&lt;/p&gt;
-&lt;p&gt;Now that we know the order the variables are entered in, we can define our observations vector, or how many people we want from each combination.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;samples &amp;lt;- c(36,34,72,58,47,38,18,18,15,22,17,10,24,28,11,27,15,25,72,70,52,43,21,27)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If samples is a scalar, it will be recycled for the entire vector, otherwise it should be the same length as the number of rows in the contingency table. If it is longer or shorter, &lt;code&gt;stratifiedNorm()&lt;/code&gt; will return an error. I recommend running this once with &lt;code&gt;return.grid = TRUE&lt;/code&gt; to double check that the observations were entered correctly.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(stratifiedNorm(dat = dat, strata = strata,
-                    observations = samples, return.grid = TRUE), n = 14)
-##    Gender AgeGrp Relationship Observations
-## 1  Female  18-39     Coworker           36
-## 2    Male  18-39     Coworker           34
-## 3  Female  40-49     Coworker           72
-## 4    Male  40-49     Coworker           58
-## 5  Female    50+     Coworker           47
-## 6    Male    50+     Coworker           38
-## 7  Female  18-39       Direct           18
-## 8    Male  18-39       Direct           18
-## 9  Female  40-49       Direct           15
-## 10   Male  40-49       Direct           22
-## 11 Female    50+       Direct           17
-## 12   Male    50+       Direct           10
-## 13 Female  18-39       Friend           24
-## 14   Male  18-39       Friend           28&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When we actually sample the data, we can have either the subset returned or the full dataset. Some warnings will be printed if there are less or equal numbers of counts per combination than there are observations in a particular category.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;subset.data &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = FALSE)
-## Combination for (Female|18-39|Manager) has LESS than count. Returning all observations.
-## Combination for (Male|18-39|Manager) has LESS than count. Returning all observations.
-
-full.data &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-## Combination for (Female|18-39|Manager) has LESS than count. Returning all observations.
-## Combination for (Male|18-39|Manager) has LESS than count. Returning all observations.
-
-str(subset.data)
-## &amp;#39;data.frame&amp;#39;:    775 obs. of  6 variables:
-##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ X           : num  -0.00565 -0.20064 0.97883 0.57349 -0.70991 ...
-##  $ Y           : num  0.457 0.104 -0.388 1.542 1.114 ...
-##  $ Z           : num  -0.0121 -0.5163 0.863 1.2574 0.1687 ...
-
-str(full.data)
-## &amp;#39;data.frame&amp;#39;:    1500 obs. of  7 variables:
-##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 2 1 1 1 1 2 1 1 1 2 ...
-##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 2 2 1 2 1 2 1 3 2 1 ...
-##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 3 3 3 4 2 2 1 4 4 2 ...
-##  $ X           : num  -1.478 0.328 0.149 -0.241 -0.759 ...
-##  $ Y           : num  0.291 -0.403 -0.557 1.615 2.105 ...
-##  $ Z           : num  -0.4025 1.1505 -0.0306 0.3641 -1.0688 ...
-##  $ sampled     : logi  FALSE FALSE TRUE TRUE TRUE TRUE ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The return with full.data has an additional logical vector called &lt;code&gt;sampled&lt;/code&gt;, which indicates cases that were selected. We can check the cases using contingency tables:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ftable(xtabs(~Gender + AgeGrp + Relationship, data = subset.data))
-##               Relationship Coworker Direct Friend Manager
-## Gender AgeGrp                                            
-## Female 18-39                     36     18     24      54
-##        40-49                     72     15     11      52
-##        50+                       47     17     15      21
-## Male   18-39                     34     18     28      63
-##        40-49                     58     22     27      43
-##        50+                       38     10     25      27&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note, if you want the sample to be reproducible, you should include a set.seed() command first! Compare:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;full.data1 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-full.data2 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-identical(full.data1, full.data2)
-## [1] FALSE
-
-set.seed(77)
-full.data1 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-set.seed(77)
-full.data2 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-identical(full.data1, full.data2)
-## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
+      <description>This post describes how to use stratifiedNorm() to create a stratified random sample, given an arbitrary number of factors. The function is available via source_gist():
+library(&amp;#39;devtools&amp;#39;) source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;) I will create a small dataset to demonstrate how to use the function:
+set.seed(77) dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE), AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE), Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), size = 1500, replace = TRUE), X=rnorm(n=1500, mean=0, sd=1), Y=rnorm(n=1500, mean=0, sd=1), Z=rnorm(n=1500, mean=0, sd=1)) str(dat) ## &amp;#39;data.</description>
     </item>
     
     <item>
@@ -159,9 +40,7 @@ identical(full.data1, full.data2)
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</guid>
-      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
-&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; class=&#34;uri&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; class=&#34;uri&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.</description>
     </item>
     
     <item>
@@ -170,44 +49,7 @@ identical(full.data1, full.data2)
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
-      <description>&lt;p&gt;As part of an assignment for a course I’m taking on the &lt;a href=&#34;http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models&#34;&gt;Applications of Mixed Models&lt;/a&gt;, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the &lt;code&gt;split&lt;/code&gt; command, or &lt;code&gt;daply&lt;/code&gt; from the &lt;code&gt;plyr&lt;/code&gt; package). However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, “since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other” (2012, p. 126). In this post, I explain a function in &lt;code&gt;R&lt;/code&gt; that allows us to split a dataframe into these two components.&lt;/p&gt;
-&lt;p&gt;This function, &lt;code&gt;splitdfbygp&lt;/code&gt; (for split dataframe by group), takes four arguments: &lt;code&gt;df&lt;/code&gt;, a dataframe; &lt;code&gt;group&lt;/code&gt;, the name of the grouping variable (e.g. “school”); &lt;code&gt;prop&lt;/code&gt;, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a 50/50 split); and &lt;code&gt;seed&lt;/code&gt;, where the user can supply a seed value in case they want the case selection to be replicable. The function is as follows:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;splitdfbygp &amp;lt;- function(df, group, prop = .5, seed = NULL) { 
-     if(missing(group)) stop(&amp;#39;Level 2 grouping variable required.&amp;#39;) 
-     if(prop &amp;gt; 1.0 || prop &amp;lt; 0.0) stop(&amp;#39;Split needs to be between .00 and 1.0&amp;#39;)
-     if(!(group %in% colnames(df))) stop(&amp;#39;Grouping variable needs to be a column within the dataframe.&amp;#39;)
-     if (!is.null(seed)) set.seed(seed)
-     gp &amp;lt;- df[, group]
-     ugp &amp;lt;- unique(gp) 
-     index &amp;lt;- 1:length(ugp)
-
-     trainindex &amp;lt;- sample(index, trunc(length(index) * prop)) 
-     ugp &amp;lt;- as.data.frame(ugp)
-     trainind &amp;lt;- ugp[trainindex, ] 
-
-     trainset &amp;lt;- df[df[,group] %in% trainind, ] 
-     testset &amp;lt;- df[!df[,group] %in% trainind, ]
-
-     invisible(list(trainset=trainset, testset=testset))
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Testing the function:&lt;/p&gt;
-&lt;p&gt;First, obtain the datasets for Snijders and Bosker’s book from &lt;a href=&#34;http://www.stats.ox.ac.uk/~snijders/mlbook.htm&#34;&gt;this link&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mlbook_red &amp;lt;- read.table(&amp;quot;mlbook2_r.dat&amp;quot;, header=TRUE) # Load the data. 
-head(mlbook_red) # Included variables - &amp;quot;schoolnr&amp;quot; is level 2.
-
-split &amp;lt;- splitdfbygp(mlbook_red, &amp;quot;schoolnr&amp;quot;, seed=83)
-str(split) # Resulting object is a list with two components.
-lapply(split, head)
-
-training &amp;lt;- split$trainset
-testing &amp;lt;- split$testset
-
-unique(training$school) # School IDs in training dataset.
-unique(testing$school) # School IDs in testing dataset.
-length(unique(training$school)) # 105 schools.
-length(unique(testing$school)) # 106 schools.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And there you have it! A dataframe split into training and testing datasets, adhering to the independence of schools rather than of pupils. Many thanks to Phil Chalmers for his assistance in tweaking the above code.&lt;/p&gt;
-</description>
+      <description>As part of an assignment for a course I’m taking on the Applications of Mixed Models, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the split command, or daply from the plyr package).</description>
     </item>
     
   </channel>

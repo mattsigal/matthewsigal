@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/post.html" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.matthewsigal.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Continuous Interactions in Multiple Regression in R</title>
@@ -16,10 +18,9 @@
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression-in-r.html</guid>
-      <description>&lt;p&gt;After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically &lt;code&gt;*&lt;/code&gt;, but also applies to formulas that use &lt;code&gt;^&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;The vignette is posted here: &lt;a href=&#34;http://rpubs.com/mattsigal/reg_interactions&#34; class=&#34;uri&#34;&gt;http://rpubs.com/mattsigal/reg_interactions&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The short-version: &lt;code&gt;*&lt;/code&gt;, when used with &lt;code&gt;summary()&lt;/code&gt; does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with &lt;code&gt;scale()&lt;/code&gt; or looking at the effects using &lt;code&gt;car::Anova()&lt;/code&gt;.&lt;/p&gt;
-</description>
+      <description>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically *, but also applies to formulas that use ^).
+The vignette is posted here: http://rpubs.com/mattsigal/reg_interactions
+The short-version: *, when used with summary() does not center the variables, and so models will have issues with VIF.</description>
     </item>
     
     <item>
@@ -28,129 +29,9 @@
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
-      <description>&lt;p&gt;This post describes how to use &lt;code&gt;stratifiedNorm()&lt;/code&gt; to create a stratified random sample, given an arbitrary number of factors. The function is available via &lt;code&gt;source_gist()&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;#39;devtools&amp;#39;)
-source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I will create a small dataset to demonstrate how to use the function:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;set.seed(77)
-dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE),
-                  AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE),
-                  Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), 
-                                      size = 1500, replace = TRUE),
-                  X=rnorm(n=1500, mean=0, sd=1),
-                  Y=rnorm(n=1500, mean=0, sd=1),
-                  Z=rnorm(n=1500, mean=0, sd=1))
-str(dat)
-## &amp;#39;data.frame&amp;#39;:    1500 obs. of  6 variables:
-##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 2 1 1 1 1 2 1 1 1 2 ...
-##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 2 2 1 2 1 2 1 3 2 1 ...
-##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 3 3 3 4 2 2 1 4 4 2 ...
-##  $ X           : num  -1.478 0.328 0.149 -0.241 -0.759 ...
-##  $ Y           : num  0.291 -0.403 -0.557 1.615 2.105 ...
-##  $ Z           : num  -0.4025 1.1505 -0.0306 0.3641 -1.0688 ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;code&gt;stratifiedNorm()&lt;/code&gt; has 6 inputs:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;stratifiedNorm(dat, strata, observations=0, return.grid=FALSE, full.data=FALSE, full.data.id=&amp;quot;sampled&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;dat&lt;/code&gt;: a data.frame object.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;strata&lt;/code&gt;: a character vector indicating the strata variables. These need to match the variable names in the dataset.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;observations&lt;/code&gt;: a numeric vector indicating how many cases to sample from each strata. If the length of this vector is 1, it will be repeated for each strata group (e.g., enter 5 to sample 5 cases from each combination.)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;return.grid&lt;/code&gt;: logical, if TRUE will return the strata contingeny table.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;full.data&lt;/code&gt;: logical, if TRUE will return the full dataset, otherwise will only return the sampled data.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;full.data.id&lt;/code&gt;: used if full.data = TRUE, indicates the name of the vector added to the data.frame to indicate the observation was sampled.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div id=&#34;using-stratifiednorm&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Using &lt;code&gt;stratifiedNorm()&lt;/code&gt;&lt;/h2&gt;
-&lt;p&gt;First, we create our strata variable. For this dataset, the relevant factors are: Gender, AgeGroup, and Relationship. Note: the input order will affect the ordering of the contingency table!&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;strata = c(&amp;quot;Gender&amp;quot;, &amp;quot;AgeGrp&amp;quot;, &amp;quot;Relationship&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Next, let’s investigate the ordering of the variables:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(stratifiedNorm(dat, strata, return.grid = TRUE), n = 14)
-##    Gender AgeGrp Relationship Observations
-## 1  Female  18-39     Coworker            0
-## 2    Male  18-39     Coworker            0
-## 3  Female  40-49     Coworker            0
-## 4    Male  40-49     Coworker            0
-## 5  Female    50+     Coworker            0
-## 6    Male    50+     Coworker            0
-## 7  Female  18-39       Direct            0
-## 8    Male  18-39       Direct            0
-## 9  Female  40-49       Direct            0
-## 10   Male  40-49       Direct            0
-## 11 Female    50+       Direct            0
-## 12   Male    50+       Direct            0
-## 13 Female  18-39       Friend            0
-## 14   Male  18-39       Friend            0&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When Relationship is entered last, it actually is ordered first (e.g., the first 6 rows of the contingency table refer to Relationship - Direct). Of course, the factors can be entered in a different order.&lt;/p&gt;
-&lt;p&gt;Now that we know the order the variables are entered in, we can define our observations vector, or how many people we want from each combination.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;samples &amp;lt;- c(36,34,72,58,47,38,18,18,15,22,17,10,24,28,11,27,15,25,72,70,52,43,21,27)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If samples is a scalar, it will be recycled for the entire vector, otherwise it should be the same length as the number of rows in the contingency table. If it is longer or shorter, &lt;code&gt;stratifiedNorm()&lt;/code&gt; will return an error. I recommend running this once with &lt;code&gt;return.grid = TRUE&lt;/code&gt; to double check that the observations were entered correctly.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;head(stratifiedNorm(dat = dat, strata = strata,
-                    observations = samples, return.grid = TRUE), n = 14)
-##    Gender AgeGrp Relationship Observations
-## 1  Female  18-39     Coworker           36
-## 2    Male  18-39     Coworker           34
-## 3  Female  40-49     Coworker           72
-## 4    Male  40-49     Coworker           58
-## 5  Female    50+     Coworker           47
-## 6    Male    50+     Coworker           38
-## 7  Female  18-39       Direct           18
-## 8    Male  18-39       Direct           18
-## 9  Female  40-49       Direct           15
-## 10   Male  40-49       Direct           22
-## 11 Female    50+       Direct           17
-## 12   Male    50+       Direct           10
-## 13 Female  18-39       Friend           24
-## 14   Male  18-39       Friend           28&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;When we actually sample the data, we can have either the subset returned or the full dataset. Some warnings will be printed if there are less or equal numbers of counts per combination than there are observations in a particular category.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;subset.data &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = FALSE)
-## Combination for (Female|18-39|Manager) has LESS than count. Returning all observations.
-## Combination for (Male|18-39|Manager) has LESS than count. Returning all observations.
-
-full.data &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-## Combination for (Female|18-39|Manager) has LESS than count. Returning all observations.
-## Combination for (Male|18-39|Manager) has LESS than count. Returning all observations.
-
-str(subset.data)
-## &amp;#39;data.frame&amp;#39;:    775 obs. of  6 variables:
-##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ X           : num  -0.00565 -0.20064 0.97883 0.57349 -0.70991 ...
-##  $ Y           : num  0.457 0.104 -0.388 1.542 1.114 ...
-##  $ Z           : num  -0.0121 -0.5163 0.863 1.2574 0.1687 ...
-
-str(full.data)
-## &amp;#39;data.frame&amp;#39;:    1500 obs. of  7 variables:
-##  $ Gender      : Factor w/ 2 levels &amp;quot;Female&amp;quot;,&amp;quot;Male&amp;quot;: 2 1 1 1 1 2 1 1 1 2 ...
-##  $ AgeGrp      : Factor w/ 3 levels &amp;quot;18-39&amp;quot;,&amp;quot;40-49&amp;quot;,..: 2 2 1 2 1 2 1 3 2 1 ...
-##  $ Relationship: Factor w/ 4 levels &amp;quot;Coworker&amp;quot;,&amp;quot;Direct&amp;quot;,..: 3 3 3 4 2 2 1 4 4 2 ...
-##  $ X           : num  -1.478 0.328 0.149 -0.241 -0.759 ...
-##  $ Y           : num  0.291 -0.403 -0.557 1.615 2.105 ...
-##  $ Z           : num  -0.4025 1.1505 -0.0306 0.3641 -1.0688 ...
-##  $ sampled     : logi  FALSE FALSE TRUE TRUE TRUE TRUE ...&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The return with full.data has an additional logical vector called &lt;code&gt;sampled&lt;/code&gt;, which indicates cases that were selected. We can check the cases using contingency tables:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ftable(xtabs(~Gender + AgeGrp + Relationship, data = subset.data))
-##               Relationship Coworker Direct Friend Manager
-## Gender AgeGrp                                            
-## Female 18-39                     36     18     24      54
-##        40-49                     72     15     11      52
-##        50+                       47     17     15      21
-## Male   18-39                     34     18     28      63
-##        40-49                     58     22     27      43
-##        50+                       38     10     25      27&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Note, if you want the sample to be reproducible, you should include a set.seed() command first! Compare:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;full.data1 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-full.data2 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-identical(full.data1, full.data2)
-## [1] FALSE
-
-set.seed(77)
-full.data1 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-set.seed(77)
-full.data2 &amp;lt;- stratifiedNorm(dat, strata, samples, full.data = TRUE)
-identical(full.data1, full.data2)
-## [1] TRUE&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
+      <description>This post describes how to use stratifiedNorm() to create a stratified random sample, given an arbitrary number of factors. The function is available via source_gist():
+library(&amp;#39;devtools&amp;#39;) source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;) I will create a small dataset to demonstrate how to use the function:
+set.seed(77) dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE), AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE), Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), size = 1500, replace = TRUE), X=rnorm(n=1500, mean=0, sd=1), Y=rnorm(n=1500, mean=0, sd=1), Z=rnorm(n=1500, mean=0, sd=1)) str(dat) ## &amp;#39;data.</description>
     </item>
     
     <item>
@@ -159,9 +40,7 @@ identical(full.data1, full.data2)
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</guid>
-      <description>&lt;p&gt;I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s &lt;em&gt;Grammar of Graphics&lt;/em&gt;, its implementation in the &lt;code&gt;R&lt;/code&gt; package &lt;code&gt;ggplot2&lt;/code&gt;, to introduce some fundamental characteristics of interactive graphics and their present implementations (via &lt;code&gt;R&lt;/code&gt; and some &lt;code&gt;JavaScript&lt;/code&gt; libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest &lt;code&gt;R&lt;/code&gt; packages, &lt;code&gt;ggvis&lt;/code&gt;, which refines the previous packages grammar to include some of these goals.&lt;/p&gt;
-&lt;p&gt;The presentation is available online at: &lt;a href=&#34;http://mattsigal.github.io/InteractiveGraphics/&#34; class=&#34;uri&#34;&gt;http://mattsigal.github.io/InteractiveGraphics/&lt;/a&gt; and all source files can be found at: &lt;a href=&#34;https://github.com/mattsigal/InteractiveGraphics&#34; class=&#34;uri&#34;&gt;https://github.com/mattsigal/InteractiveGraphics&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <description>I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.</description>
     </item>
     
     <item>
@@ -170,44 +49,7 @@ identical(full.data1, full.data2)
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
-      <description>&lt;p&gt;As part of an assignment for a course I’m taking on the &lt;a href=&#34;http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models&#34;&gt;Applications of Mixed Models&lt;/a&gt;, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the &lt;code&gt;split&lt;/code&gt; command, or &lt;code&gt;daply&lt;/code&gt; from the &lt;code&gt;plyr&lt;/code&gt; package). However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, “since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other” (2012, p. 126). In this post, I explain a function in &lt;code&gt;R&lt;/code&gt; that allows us to split a dataframe into these two components.&lt;/p&gt;
-&lt;p&gt;This function, &lt;code&gt;splitdfbygp&lt;/code&gt; (for split dataframe by group), takes four arguments: &lt;code&gt;df&lt;/code&gt;, a dataframe; &lt;code&gt;group&lt;/code&gt;, the name of the grouping variable (e.g. “school”); &lt;code&gt;prop&lt;/code&gt;, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a 50/50 split); and &lt;code&gt;seed&lt;/code&gt;, where the user can supply a seed value in case they want the case selection to be replicable. The function is as follows:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;splitdfbygp &amp;lt;- function(df, group, prop = .5, seed = NULL) { 
-     if(missing(group)) stop(&amp;#39;Level 2 grouping variable required.&amp;#39;) 
-     if(prop &amp;gt; 1.0 || prop &amp;lt; 0.0) stop(&amp;#39;Split needs to be between .00 and 1.0&amp;#39;)
-     if(!(group %in% colnames(df))) stop(&amp;#39;Grouping variable needs to be a column within the dataframe.&amp;#39;)
-     if (!is.null(seed)) set.seed(seed)
-     gp &amp;lt;- df[, group]
-     ugp &amp;lt;- unique(gp) 
-     index &amp;lt;- 1:length(ugp)
-
-     trainindex &amp;lt;- sample(index, trunc(length(index) * prop)) 
-     ugp &amp;lt;- as.data.frame(ugp)
-     trainind &amp;lt;- ugp[trainindex, ] 
-
-     trainset &amp;lt;- df[df[,group] %in% trainind, ] 
-     testset &amp;lt;- df[!df[,group] %in% trainind, ]
-
-     invisible(list(trainset=trainset, testset=testset))
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Testing the function:&lt;/p&gt;
-&lt;p&gt;First, obtain the datasets for Snijders and Bosker’s book from &lt;a href=&#34;http://www.stats.ox.ac.uk/~snijders/mlbook.htm&#34;&gt;this link&lt;/a&gt;.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mlbook_red &amp;lt;- read.table(&amp;quot;mlbook2_r.dat&amp;quot;, header=TRUE) # Load the data. 
-head(mlbook_red) # Included variables - &amp;quot;schoolnr&amp;quot; is level 2.
-
-split &amp;lt;- splitdfbygp(mlbook_red, &amp;quot;schoolnr&amp;quot;, seed=83)
-str(split) # Resulting object is a list with two components.
-lapply(split, head)
-
-training &amp;lt;- split$trainset
-testing &amp;lt;- split$testset
-
-unique(training$school) # School IDs in training dataset.
-unique(testing$school) # School IDs in testing dataset.
-length(unique(training$school)) # 105 schools.
-length(unique(testing$school)) # 106 schools.&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And there you have it! A dataframe split into training and testing datasets, adhering to the independence of schools rather than of pupils. Many thanks to Phil Chalmers for his assistance in tweaking the above code.&lt;/p&gt;
-</description>
+      <description>As part of an assignment for a course I’m taking on the Applications of Mixed Models, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the split command, or daply from the plyr package).</description>
     </item>
     
     <item>
@@ -216,110 +58,8 @@ length(unique(testing$school)) # 106 schools.&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</guid>
-      <description>&lt;p&gt;A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.&lt;/p&gt;
-
-&lt;p&gt;First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have. I believe that TeX typesetting can be fairly easily differentiated from other programs, and showing this knowledge - especially if the CV is being distributed as part of a job search - can definitely make you a more appealing candidate.&lt;/p&gt;
-
-&lt;p&gt;Secondly, it is pretty nice not have to worry about references anymore. Just like how we can add references from our database to any paper we are working on, once a paper or conference lecture or any other type of event that you want to add to your CV is in your bibliography file, you can simply cite it anywhere afterward - including your new CV.&lt;/p&gt;
-
-&lt;p&gt;In any case, I decided to make the switch and I&amp;rsquo;m glad I did. See &lt;a href=&#34;http://www.matthewsigal.com/SigalCV_2017.pdf&#34; target=&#34;_blank&#34;&gt;this page&lt;/a&gt; for an example of what you are going to be working toward. The transition took me a few hours, but mainly that was due to a few bumps in the road, which I&amp;rsquo;ll document below to save you the trouble!&lt;/p&gt;
-
-&lt;p&gt;1) Choosing a style. Every document produced in TeX uses some sort of style template - whether it is fairly generic (e.g. &lt;code&gt;\documentclass[]{article}&lt;/code&gt;) or tailored to particular needs (like &lt;code&gt;\documentclass[doc]{apa6}&lt;/code&gt;, which formats your document to match the APA style guidelines). A quick search on Google will reveal that there are quite a few pre-made selections for producing a curriculum vitae (such as here), however not all of them will be fully integrated with your referencing system.&lt;/p&gt;
-
-&lt;p&gt;For my CV, I ended up using a generic document class, but supplementing it with the currvita package, which defines some nice spacing and list rules tailored for producing CVs. The benefit of doing this is that it is fully integrated with natbib, which I will use here to obtain my BibTeX references*. Plus, currvita is included in a basic installation of LaTeX, so you don&amp;rsquo;t even have to worry about installing it manually.&lt;/p&gt;
-
-&lt;p&gt;2) Defining the preamble. My preamble looks a bit intense, but I&amp;rsquo;ll comment about the inclusions I&amp;rsquo;ve made.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\documentclass[10pt]{article}
-\usepackage[NoDate,LabelsAligned]{currvita}
-\usepackage[american]{babel}
-\usepackage{csquotes, natbib, bibentry, anysize, titlesec}
-\usepackage[hmargin=1in,vmargin=1in]{geometry}
-\titlespacing*{\subsubsection}{10pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I redefine the spacing of subsubsections because I wanted them to be indented on the CV. I was happy with the formatting of the other section styles.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\pagestyle{headings}
-\setcounter{page}{1}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I wanted page numbers to start at 1 and appear in the upper right corner.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\newcommand{\bibverse}[1]{\begin{verse} \bibentry{#1}. \end{verse}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is where it gets a little less vanilla. Above, I define a new command &lt;code&gt;\bibverse&lt;/code&gt;, which creates full in-text citations. This is the primary tool used in referencing anything from your BibTeX library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\newcommand{\squishlist}{
-      \begin{list}{$\bullet$}{
-           \setlength{\itemsep}{0pt}
-           \setlength{\parsep}{3pt}
-           \setlength{\topsep}{3pt}
-           \setlength{\partopsep}{0pt}
-           \setlength{\leftmargin}{1.5em}
-           \setlength{\labelwidth}{1em}
-           \setlength{\labelsep}{0.5em}}}
-\newcommand{\squishend}{
-     \end{list}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The above code defines two new functions that define a &amp;ldquo;squished list&amp;rdquo; environment, and is used because the regular itemize environment kept breaking the margins of the page. The first function, &lt;code&gt;\squishlist&lt;/code&gt;, begins a squished list. The second command, &lt;code&gt;\squishend&lt;/code&gt;, finishes it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\newcommand{\sectionline}{
-     \nointerlineskip \vspace{\baselineskip}
-     \hspace{\fill}\rule{0.8\linewidth}{.7pt}\hspace{\fill}
-     \par\nointerlineskip \vspace{\baselineskip}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This final command defines the horizontal lines that I&amp;rsquo;ve placed on the front page of the CV.&lt;/p&gt;
-
-&lt;p&gt;3) Body Template. A simple template would be as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{document}
-  \nobibliography*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The \nobibliography command is invoked because we want all the references to appear in full in-text, not printed in the end as per usual conventions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{cv}{}
-
-\begin{cvlist}{Test List}
-     \item[2010-present] Test test test\\
-\end{cvlist}
-
-\end{cv}
-
-\bibliographystyle{apalike}
-\nobibliography{ReferenceDesk}
-\end{document}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;\bibliographystyle&lt;/code&gt; command defines how the references will look in the document. The \nobibliography command tells LaTeX where to find your .bib file.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Further Troubleshooting&lt;/strong&gt;. If you have gotten this far, your CV will look almost complete. I was perfectly happy with mine, until I noticed one small detail: publications and presentations from the same year were getting letters placed behind them in an extremely unattractive manner. For instance, I have two conference presentations this summer. The apalike package wanted to format the dates as being (2012, Junea) and (2012, Julyb). While in most publications this is how you would approach multiple citations from a particular year from the same author, for the purposes of a CV it makes less sense (especially for citing presentations where the month is usually indicated). After lots of googling to try and solve the problem, I ended up making a post on the extremely helpful TeX StackExchange last night. By this morning, a contributor already had a beautiful and elegant answer for me.&lt;/p&gt;
-
-&lt;p&gt;So, for posterity (and with thanks to Mico) here is how to remove the automatic lettering from &lt;code&gt;apalike&lt;/code&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Navigate to &lt;code&gt;/usr/local/texlive/2011/texmf-dist/bibtex/bst/base/&lt;/code&gt; (Note: You will need to turn on &amp;ldquo;Show Invisible Files&amp;rdquo; to find this folder! (Either use
-defaults &lt;code&gt;write com.apple.Finder AppleShowAllFiles YES&lt;/code&gt; in the Terminal, or install TotalFinder for a handy keyboard shortcut).&lt;/li&gt;
-&lt;li&gt;Copy &lt;code&gt;apalike.bst&lt;/code&gt; to your Desktop.&lt;/li&gt;
-&lt;li&gt;Rename the file to &lt;code&gt;apalikecv.bst&lt;/code&gt; or something similar.&lt;/li&gt;
-&lt;li&gt;Open the file (e.g. with TextWrangler or TexShop).&lt;/li&gt;
-&lt;li&gt;Find the line that says:&lt;code&gt;&amp;quot; (&amp;quot; year * extra.label * &amp;quot;)&amp;quot; *&lt;/code&gt; (on mine it was on line 124).&lt;/li&gt;
-&lt;li&gt;Replace that line with: &lt;code&gt;&amp;quot; (&amp;quot; year * &amp;quot;)&amp;quot; *&lt;/code&gt; (we are getting rid of that pesky &lt;code&gt;&amp;quot;extra.label&amp;quot;&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;Save the file and copy it back to the &lt;code&gt;/usr/local/texlive/2011/texmf-dist/bibtex/bst/base/&lt;/code&gt; directory (this will require you to supply your administrator account password).&lt;/li&gt;
-&lt;li&gt;In the Terminal, run &lt;code&gt;sudo texhash&lt;/code&gt; so LaTeX can find your new file.&lt;/li&gt;
-&lt;li&gt;In your CV, replace the &lt;code&gt;\bibliographystyle{apalike}&lt;/code&gt; line with &lt;code&gt;\bibliographystyle{apalikecv}&lt;/code&gt; or whatever you named the modified file as.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;And there you have it! A complete template/guide for creating a CV in LaTeX. I hope you find it useful!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Careful readers will note that I&amp;rsquo;m not using &lt;code&gt;apacite&lt;/code&gt; here, as I did in my last post. The reason is that &lt;code&gt;apacite&lt;/code&gt; is not fully integrated with currvita. It is simply easier for my workflow to use &lt;code&gt;apacite&lt;/code&gt; for all my other documents, as described in my previous post, and &lt;code&gt;natbib&lt;/code&gt; for my CV.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.
+First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have.</description>
     </item>
     
     <item>
@@ -328,64 +68,7 @@ defaults &lt;code&gt;write com.apple.Finder AppleShowAllFiles YES&lt;/code&gt; i
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder &lt;code&gt;~\Dropbox&lt;/code&gt; exists).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Reference Management&lt;/strong&gt;: I have used a few different applications to deal with references (e.g. Mendeley, Papers, JabRef, and so on).  Each of these applications have their strengths and weaknesses, however I have found that I&amp;rsquo;ve fallen in love with one in particular: BibDesk.  I believe BibDesk balances aesthetics with functionality better than the aforementioned applications.  It is easy to use, customizable using scripts (a useful selection of which I will document in a future post), and extremely stable.&lt;/p&gt;
-
-&lt;p&gt;The first step is to install BibDesk.  Once installed, create a new .bib file that you will use to store all of your bibliography entries.  The important point is to not save it in your Documents folder, but somewhere in your Dropbox.  For instance, I called mine &amp;ldquo;ReferenceDesk.bib&amp;rdquo; and placed it in &lt;code&gt;~\Dropbox&lt;/code&gt;.  In the settings for BibDesk, I set the application to load ReferenceDesk.bib upon launch (under General), and changed the Cite Key Format to the present &lt;code&gt;&amp;quot;First Author + : + Year + Sufficient Unique Letters)&lt;/code&gt;.  If you want BibDesk to file your PDFs (e.g. to keep them all in a particular folder, in kind of an iTunes-esque fashion), you can specify how the application does so via the &amp;ldquo;AutoFile&amp;rdquo; settings. Once you have created your bibliography database and changed any settings you deem appropriate, you can start adding references to the database.  Add at least a couple before moving to the next step.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;BibDesk and LaTeX Integration&lt;/strong&gt;: So, we have a bibliographic database.  However, unless we create a LaTeX file in the same directory as our database, calling it will be difficult.  A much better solution is to have our &lt;code&gt;ReferenceDesk.bib&lt;/code&gt; always available to all of our LaTeX documents, no matter where they live on your computer.  To do so, we will create a symbolic link between the folder where our ReferenceDesk.bib exists and the bibtex folder that gets loaded upon launch.&lt;/p&gt;
-
-&lt;p&gt;To create this link, open the Terminal and type in:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /usr/local/texlive/texmf-local/bibtex/bib
-sudo ln -s /Users/TumblesPro/Dropbox/RefenceDesk.bib ReferenceDesk.bib
-sudo texhash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note: you will have to update the second line to point to where your ReferenceDesk.bib file lives.  Now, your master bibliography file is accessible from LaTeX.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;APA Style&lt;/strong&gt;: LaTeX is a fantastic type-setting application that is especially useful for mathematics and other scientific based documents. For working on any TeX file, I currently prefer the LaTeXian editor, although there are many others that could suffice.  It is relatively cheap, has a powerful live preview feature, decent code completion, among other features.  If you wish to write in APA style, it is highly recommended to install the following packages: apa6, and apacite, which pertain to general document style, and reference/bibliography style, respectively. Note: you can check that these are installed either using the TeX Live Utility, or via command line (e.g., in the Terminal type: &lt;code&gt;kpsewhich apa6.cls&lt;/code&gt; and make sure it returns something similar to &lt;code&gt;/usr/local/texlive/2011/texmf-dist/tex/latex/apa6/apa6.cls&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Working and Citing in APA Style&lt;/strong&gt;: So, now all the pieces are in place. The next step is to simply create a new document using your preferred LaTeX editor.  In the preamble you should specify the necessary packages, as well as the information for the title page:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\documentclass[man]{apa6}        % Available classes: journal [jou], manuscript [man], or document [doc]
-\usepackage[american]{babel}     
-\usepackage{csquotes}            % Required for quotation formatting
-\usepackage{apacite}             % Required for bibliography formatting
-\title{Title Placeholder}
-\shorttitle{Running Head Placeholder}
-\author{Matthew J. Sigal}
-\affiliation{York University}
-\abstract{This demonstration paper uses the \textsf{apa6} \LaTeX\ class to format the document in compliance with the $6^{th}$ edition of the American Psychological Association&#39;s \textit{Publication Manual.} The references are managed using \textsf{apacite}.  Sections and subsection commands are also demonstrated.}
-\keywords{APA style, references}  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In the body:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{document}
-\maketitle
-\section{Top Level (Section)}
-\subsection{Second Level (Subsection)}
-\subsubsection{Third Level (Subsubsection)}
-\paragraph{Fourth Level (Paragraph)}
-\subparagraph{Fifth Level (Subparagraph)}
-\bibliographystyle{apacite}         % This is important if you want the references formatted correctly.
-\bibliography{ReferenceDesk}        % Make sure you replace the filename with the one you chose earlier.
-\end{document}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So there you have it!  For citing in-text, here is a handy chart taken from the apacite manual:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;\cite&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; (e.g., Jones, 2001; Ross, 1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeA&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones (2001); Ross (1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeauthor&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones; Ross, p. 11&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeyear&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; (e.g., 2001; 1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeyearNP&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., 2001; 1987, p. 11&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeNP&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones, 2001; Ross, 1987, p. 11&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style. It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers; and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera). This is optimized for OS X. This workflow involves three main components: a reference management system (basically an application that maintains a .</description>
     </item>
     
   </channel>

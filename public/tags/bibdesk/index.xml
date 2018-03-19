@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Mon, 04 Jun 2012 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/bibdesk.html" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://www.matthewsigal.com/tags/bibdesk/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Converting a Curriculum Vitae to LaTeX</title>
@@ -16,110 +18,8 @@
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</guid>
-      <description>&lt;p&gt;A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.&lt;/p&gt;
-
-&lt;p&gt;First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have. I believe that TeX typesetting can be fairly easily differentiated from other programs, and showing this knowledge - especially if the CV is being distributed as part of a job search - can definitely make you a more appealing candidate.&lt;/p&gt;
-
-&lt;p&gt;Secondly, it is pretty nice not have to worry about references anymore. Just like how we can add references from our database to any paper we are working on, once a paper or conference lecture or any other type of event that you want to add to your CV is in your bibliography file, you can simply cite it anywhere afterward - including your new CV.&lt;/p&gt;
-
-&lt;p&gt;In any case, I decided to make the switch and I&amp;rsquo;m glad I did. See &lt;a href=&#34;http://www.matthewsigal.com/SigalCV_2017.pdf&#34; target=&#34;_blank&#34;&gt;this page&lt;/a&gt; for an example of what you are going to be working toward. The transition took me a few hours, but mainly that was due to a few bumps in the road, which I&amp;rsquo;ll document below to save you the trouble!&lt;/p&gt;
-
-&lt;p&gt;1) Choosing a style. Every document produced in TeX uses some sort of style template - whether it is fairly generic (e.g. &lt;code&gt;\documentclass[]{article}&lt;/code&gt;) or tailored to particular needs (like &lt;code&gt;\documentclass[doc]{apa6}&lt;/code&gt;, which formats your document to match the APA style guidelines). A quick search on Google will reveal that there are quite a few pre-made selections for producing a curriculum vitae (such as here), however not all of them will be fully integrated with your referencing system.&lt;/p&gt;
-
-&lt;p&gt;For my CV, I ended up using a generic document class, but supplementing it with the currvita package, which defines some nice spacing and list rules tailored for producing CVs. The benefit of doing this is that it is fully integrated with natbib, which I will use here to obtain my BibTeX references*. Plus, currvita is included in a basic installation of LaTeX, so you don&amp;rsquo;t even have to worry about installing it manually.&lt;/p&gt;
-
-&lt;p&gt;2) Defining the preamble. My preamble looks a bit intense, but I&amp;rsquo;ll comment about the inclusions I&amp;rsquo;ve made.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\documentclass[10pt]{article}
-\usepackage[NoDate,LabelsAligned]{currvita}
-\usepackage[american]{babel}
-\usepackage{csquotes, natbib, bibentry, anysize, titlesec}
-\usepackage[hmargin=1in,vmargin=1in]{geometry}
-\titlespacing*{\subsubsection}{10pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I redefine the spacing of subsubsections because I wanted them to be indented on the CV. I was happy with the formatting of the other section styles.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\pagestyle{headings}
-\setcounter{page}{1}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I wanted page numbers to start at 1 and appear in the upper right corner.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\newcommand{\bibverse}[1]{\begin{verse} \bibentry{#1}. \end{verse}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is where it gets a little less vanilla. Above, I define a new command &lt;code&gt;\bibverse&lt;/code&gt;, which creates full in-text citations. This is the primary tool used in referencing anything from your BibTeX library.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\newcommand{\squishlist}{
-      \begin{list}{$\bullet$}{
-           \setlength{\itemsep}{0pt}
-           \setlength{\parsep}{3pt}
-           \setlength{\topsep}{3pt}
-           \setlength{\partopsep}{0pt}
-           \setlength{\leftmargin}{1.5em}
-           \setlength{\labelwidth}{1em}
-           \setlength{\labelsep}{0.5em}}}
-\newcommand{\squishend}{
-     \end{list}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The above code defines two new functions that define a &amp;ldquo;squished list&amp;rdquo; environment, and is used because the regular itemize environment kept breaking the margins of the page. The first function, &lt;code&gt;\squishlist&lt;/code&gt;, begins a squished list. The second command, &lt;code&gt;\squishend&lt;/code&gt;, finishes it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\newcommand{\sectionline}{
-     \nointerlineskip \vspace{\baselineskip}
-     \hspace{\fill}\rule{0.8\linewidth}{.7pt}\hspace{\fill}
-     \par\nointerlineskip \vspace{\baselineskip}}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This final command defines the horizontal lines that I&amp;rsquo;ve placed on the front page of the CV.&lt;/p&gt;
-
-&lt;p&gt;3) Body Template. A simple template would be as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{document}
-  \nobibliography*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The \nobibliography command is invoked because we want all the references to appear in full in-text, not printed in the end as per usual conventions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{cv}{}
-
-\begin{cvlist}{Test List}
-     \item[2010-present] Test test test\\
-\end{cvlist}
-
-\end{cv}
-
-\bibliographystyle{apalike}
-\nobibliography{ReferenceDesk}
-\end{document}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The &lt;code&gt;\bibliographystyle&lt;/code&gt; command defines how the references will look in the document. The \nobibliography command tells LaTeX where to find your .bib file.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Further Troubleshooting&lt;/strong&gt;. If you have gotten this far, your CV will look almost complete. I was perfectly happy with mine, until I noticed one small detail: publications and presentations from the same year were getting letters placed behind them in an extremely unattractive manner. For instance, I have two conference presentations this summer. The apalike package wanted to format the dates as being (2012, Junea) and (2012, Julyb). While in most publications this is how you would approach multiple citations from a particular year from the same author, for the purposes of a CV it makes less sense (especially for citing presentations where the month is usually indicated). After lots of googling to try and solve the problem, I ended up making a post on the extremely helpful TeX StackExchange last night. By this morning, a contributor already had a beautiful and elegant answer for me.&lt;/p&gt;
-
-&lt;p&gt;So, for posterity (and with thanks to Mico) here is how to remove the automatic lettering from &lt;code&gt;apalike&lt;/code&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Navigate to &lt;code&gt;/usr/local/texlive/2011/texmf-dist/bibtex/bst/base/&lt;/code&gt; (Note: You will need to turn on &amp;ldquo;Show Invisible Files&amp;rdquo; to find this folder! (Either use
-defaults &lt;code&gt;write com.apple.Finder AppleShowAllFiles YES&lt;/code&gt; in the Terminal, or install TotalFinder for a handy keyboard shortcut).&lt;/li&gt;
-&lt;li&gt;Copy &lt;code&gt;apalike.bst&lt;/code&gt; to your Desktop.&lt;/li&gt;
-&lt;li&gt;Rename the file to &lt;code&gt;apalikecv.bst&lt;/code&gt; or something similar.&lt;/li&gt;
-&lt;li&gt;Open the file (e.g. with TextWrangler or TexShop).&lt;/li&gt;
-&lt;li&gt;Find the line that says:&lt;code&gt;&amp;quot; (&amp;quot; year * extra.label * &amp;quot;)&amp;quot; *&lt;/code&gt; (on mine it was on line 124).&lt;/li&gt;
-&lt;li&gt;Replace that line with: &lt;code&gt;&amp;quot; (&amp;quot; year * &amp;quot;)&amp;quot; *&lt;/code&gt; (we are getting rid of that pesky &lt;code&gt;&amp;quot;extra.label&amp;quot;&lt;/code&gt;).&lt;/li&gt;
-&lt;li&gt;Save the file and copy it back to the &lt;code&gt;/usr/local/texlive/2011/texmf-dist/bibtex/bst/base/&lt;/code&gt; directory (this will require you to supply your administrator account password).&lt;/li&gt;
-&lt;li&gt;In the Terminal, run &lt;code&gt;sudo texhash&lt;/code&gt; so LaTeX can find your new file.&lt;/li&gt;
-&lt;li&gt;In your CV, replace the &lt;code&gt;\bibliographystyle{apalike}&lt;/code&gt; line with &lt;code&gt;\bibliographystyle{apalikecv}&lt;/code&gt; or whatever you named the modified file as.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;And there you have it! A complete template/guide for creating a CV in LaTeX. I hope you find it useful!&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Careful readers will note that I&amp;rsquo;m not using &lt;code&gt;apacite&lt;/code&gt; here, as I did in my last post. The reason is that &lt;code&gt;apacite&lt;/code&gt; is not fully integrated with currvita. It is simply easier for my workflow to use &lt;code&gt;apacite&lt;/code&gt; for all my other documents, as described in my previous post, and &lt;code&gt;natbib&lt;/code&gt; for my CV.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.
+First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have.</description>
     </item>
     
     <item>
@@ -128,64 +28,7 @@ defaults &lt;code&gt;write com.apple.Finder AppleShowAllFiles YES&lt;/code&gt; i
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style.  It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers;  and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera).  This is optimized for OS X.  This workflow involves three main components: a reference management system (basically an application that maintains a .bib LaTeX bibliography file), a LaTeX editor with a few packages pertaining to APA style installed, and a synchronization application.  For the last component, a more sophisticated approach might be to use Git, however for simplicity, I will be using Dropbox.  I will assume you already have Dropbox installed (and, as such, the folder &lt;code&gt;~\Dropbox&lt;/code&gt; exists).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Reference Management&lt;/strong&gt;: I have used a few different applications to deal with references (e.g. Mendeley, Papers, JabRef, and so on).  Each of these applications have their strengths and weaknesses, however I have found that I&amp;rsquo;ve fallen in love with one in particular: BibDesk.  I believe BibDesk balances aesthetics with functionality better than the aforementioned applications.  It is easy to use, customizable using scripts (a useful selection of which I will document in a future post), and extremely stable.&lt;/p&gt;
-
-&lt;p&gt;The first step is to install BibDesk.  Once installed, create a new .bib file that you will use to store all of your bibliography entries.  The important point is to not save it in your Documents folder, but somewhere in your Dropbox.  For instance, I called mine &amp;ldquo;ReferenceDesk.bib&amp;rdquo; and placed it in &lt;code&gt;~\Dropbox&lt;/code&gt;.  In the settings for BibDesk, I set the application to load ReferenceDesk.bib upon launch (under General), and changed the Cite Key Format to the present &lt;code&gt;&amp;quot;First Author + : + Year + Sufficient Unique Letters)&lt;/code&gt;.  If you want BibDesk to file your PDFs (e.g. to keep them all in a particular folder, in kind of an iTunes-esque fashion), you can specify how the application does so via the &amp;ldquo;AutoFile&amp;rdquo; settings. Once you have created your bibliography database and changed any settings you deem appropriate, you can start adding references to the database.  Add at least a couple before moving to the next step.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;BibDesk and LaTeX Integration&lt;/strong&gt;: So, we have a bibliographic database.  However, unless we create a LaTeX file in the same directory as our database, calling it will be difficult.  A much better solution is to have our &lt;code&gt;ReferenceDesk.bib&lt;/code&gt; always available to all of our LaTeX documents, no matter where they live on your computer.  To do so, we will create a symbolic link between the folder where our ReferenceDesk.bib exists and the bibtex folder that gets loaded upon launch.&lt;/p&gt;
-
-&lt;p&gt;To create this link, open the Terminal and type in:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /usr/local/texlive/texmf-local/bibtex/bib
-sudo ln -s /Users/TumblesPro/Dropbox/RefenceDesk.bib ReferenceDesk.bib
-sudo texhash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note: you will have to update the second line to point to where your ReferenceDesk.bib file lives.  Now, your master bibliography file is accessible from LaTeX.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;APA Style&lt;/strong&gt;: LaTeX is a fantastic type-setting application that is especially useful for mathematics and other scientific based documents. For working on any TeX file, I currently prefer the LaTeXian editor, although there are many others that could suffice.  It is relatively cheap, has a powerful live preview feature, decent code completion, among other features.  If you wish to write in APA style, it is highly recommended to install the following packages: apa6, and apacite, which pertain to general document style, and reference/bibliography style, respectively. Note: you can check that these are installed either using the TeX Live Utility, or via command line (e.g., in the Terminal type: &lt;code&gt;kpsewhich apa6.cls&lt;/code&gt; and make sure it returns something similar to &lt;code&gt;/usr/local/texlive/2011/texmf-dist/tex/latex/apa6/apa6.cls&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Working and Citing in APA Style&lt;/strong&gt;: So, now all the pieces are in place. The next step is to simply create a new document using your preferred LaTeX editor.  In the preamble you should specify the necessary packages, as well as the information for the title page:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\documentclass[man]{apa6}        % Available classes: journal [jou], manuscript [man], or document [doc]
-\usepackage[american]{babel}     
-\usepackage{csquotes}            % Required for quotation formatting
-\usepackage{apacite}             % Required for bibliography formatting
-\title{Title Placeholder}
-\shorttitle{Running Head Placeholder}
-\author{Matthew J. Sigal}
-\affiliation{York University}
-\abstract{This demonstration paper uses the \textsf{apa6} \LaTeX\ class to format the document in compliance with the $6^{th}$ edition of the American Psychological Association&#39;s \textit{Publication Manual.} The references are managed using \textsf{apacite}.  Sections and subsection commands are also demonstrated.}
-\keywords{APA style, references}  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In the body:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;\begin{document}
-\maketitle
-\section{Top Level (Section)}
-\subsection{Second Level (Subsection)}
-\subsubsection{Third Level (Subsubsection)}
-\paragraph{Fourth Level (Paragraph)}
-\subparagraph{Fifth Level (Subparagraph)}
-\bibliographystyle{apacite}         % This is important if you want the references formatted correctly.
-\bibliography{ReferenceDesk}        % Make sure you replace the filename with the one you chose earlier.
-\end{document}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So there you have it!  For citing in-text, here is a handy chart taken from the apacite manual:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;\cite&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; (e.g., Jones, 2001; Ross, 1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeA&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones (2001); Ross (1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeauthor&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones; Ross, p. 11&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeyear&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; (e.g., 2001; 1987, p. 11)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeyearNP&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., 2001; 1987, p. 11&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;\citeNP&amp;lt;e.g.,&amp;gt;[p.~11]{Jone01,Ross87}&lt;/code&gt; e.g., Jones, 2001; Ross, 1987, p. 11&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style. It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers; and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera). This is optimized for OS X. This workflow involves three main components: a reference management system (basically an application that maintains a .</description>
     </item>
     
   </channel>
