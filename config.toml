@@ -31,7 +31,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   email = "msigal@sfu.ca"
   address = "6155 RCG Hall, Simon Fraser University, 8888 University Drive, Burnaby, British Columbia, Canada, V5A 1S6."
 #  office_hours = "Please email for an appointment."
-  phone = "(647) 835-3554"
+  phone = "(778) 782-5873"
   skype = ""
   telegram = ""
 
@@ -80,7 +80,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   # highlight_version = "9.9.0"
 
   # Enable native social sharing buttons?
-  sharing = true
+  sharing = false
 
   # Link custom CSS and JS assets
   #   (relative to /static/css and /static/js respectively)
