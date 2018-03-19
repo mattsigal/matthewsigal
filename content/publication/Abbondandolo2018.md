@@ -1,6 +1,6 @@
 +++
 
-authors = ["S. Abbondandolo", "Matthew J. Sigal"]
+authors = ["Sonia Abbondandolo", "Matthew J. Sigal"]
 title = "Self-compassion and proactive coping: Moving beyond ordinary to extraordinary coping"
 date = "2018-03-01"
 
