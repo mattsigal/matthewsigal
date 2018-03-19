@@ -37,8 +37,9 @@ weight = 1
 
 # Biography
 
-I have a PhD in Quantitative Methods from York University. QM is an area that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit [this page](http://www.matthewsigal.com/SigalCV.pdf) to peruse a recent version of my curriculum vitae (last updated: October 29th, 2017).
+I have a PhD in Quantitative Methods from York University. QM is an area that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit [this page](http://www.matthewsigal.com/SigalCV.pdf) to peruse a recent version of my curriculum vitae (last updated: March 18, 2017).
 
 I am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.  Some of my recent research pertains to the implementation of interactive graphics for model diagnostics.
 
 As of January 2018, I am a continuing lecturer in the [Psychology Department](https://www.sfu.ca/psychology.html) at [Simon Fraser University](https://www.sfu.ca/). I am currently teaching PSYC 210 (Introduction to Data Analysis in Psychology) and PSYC 391/715 (a special topics course on Data Communication) in the Spring semester.
+
