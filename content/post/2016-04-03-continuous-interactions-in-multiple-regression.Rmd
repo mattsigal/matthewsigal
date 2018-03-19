@@ -1,8 +1,8 @@
 ---
-title: Continuous Interactions in Multiple Regression in R
+title: Continuous Interactions in Multiple Regression
 author: Matthew Sigal
 date: '2016-04-03'
-slug: continuous-interactions-in-multiple-regression-in-r
+slug: continuous-interactions-in-multiple-regression
 categories:
   - Data Analysis
 tags:

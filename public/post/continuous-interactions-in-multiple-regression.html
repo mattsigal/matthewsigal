@@ -30,17 +30,17 @@
   <link rel="stylesheet" href="/css/override.css">
   
 
-  <link rel="alternate" href="http://www.matthewsigal.com/tags/r/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
-  <link rel="feed" href="http://www.matthewsigal.com/tags/r/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="alternate" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
+  <link rel="feed" href="http://www.matthewsigal.com/index.xml" type="application/rss+xml" title="Matthew J. Sigal">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.matthewsigal.com/tags/r.html">
+  <link rel="canonical" href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html">
 
   
 
-  <title>R | Matthew J. Sigal</title>
+  <title>Continuous Interactions in Multiple Regression | Matthew J. Sigal</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -159,58 +159,155 @@
 </nav>
 
 
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
 
 
+  <div class="article-container">
+    <h1 itemprop="name">Continuous Interactions in Multiple Regression</h1>
+    
 
-<div class="universal-wrapper">
+<div class="article-metadata">
 
-  <h1>R</h1>
+  <span class="article-date">
+    <time datetime="2016-04-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2016-04-03
+    </time>
+  </span>
 
+  
+  
+  
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/data-analysis">Data Analysis</a
+    >
+    
+  </span>
+  
   
 
   
   
-  <div>
-    <h2><a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html">Continuous Interactions in Multiple Regression</a></h2>
-    <div class="article-style">
-      
-      A brief vignette on incorporating interactions with continuous predictors.
-      
+  
+  <span class="article-tags">
+    <i class="fa fa-tags"></i>
+    
+    <a href="/tags/r">R</a
+    >, 
+    
+    <a href="/tags/regression">Regression</a
+    >, 
+    
+    <a href="/tags/interactions">Interactions</a
+    >
+    
+  </span>
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fcontinuous-interactions-in-multiple-regression.html"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Continuous%20Interactions%20in%20Multiple%20Regression&amp;url=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fcontinuous-interactions-in-multiple-regression.html"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fcontinuous-interactions-in-multiple-regression.html&amp;title=Continuous%20Interactions%20in%20Multiple%20Regression"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fcontinuous-interactions-in-multiple-regression.html&amp;title=Continuous%20Interactions%20in%20Multiple%20Regression"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Continuous%20Interactions%20in%20Multiple%20Regression&amp;body=http%3a%2f%2fwww.matthewsigal.com%2fpost%2fcontinuous-interactions-in-multiple-regression.html">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      <p>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically <code>*</code>, but also applies to formulas that use <code>^</code>).</p>
+<p>The vignette is posted here: <a href="http://rpubs.com/mattsigal/reg_interactions" class="uri">http://rpubs.com/mattsigal/reg_interactions</a></p>
+<p>The short-version: <code>*</code>, when used with <code>summary()</code> does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with <code>scale()</code> or looking at the effects using <code>car::Anova()</code>.</p>
+
     </div>
   </div>
-  
-  <div>
-    <h2><a href="http://www.matthewsigal.com/post/stratified-norms.html">Stratified Norms</a></h2>
-    <div class="article-style">
-      
-      A demonstration of a custom function for generating stratified random samples from an arbitrary number of factors.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html">The Grammar of (Interactive) Graphics</a></h2>
-    <div class="article-style">
-      
-      Lecture slides from a presentation on the structure and implementation of interactive graphics.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html">Splitting a Dataframe by Cluster</a></h2>
-    <div class="article-style">
-      
-      A demonstration of a custom function for splitting a dataframe while accounting for a cluster variable. Primarily intended for use with multi-level models.
-      
-    </div>
-  </div>
-  
 
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://www.matthewsigal.com/post/stratified-norms.html"><span
+      aria-hidden="true">&larr;</span> Stratified Norms</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
   
+<section id="comments">
+  <div id="disqus_thread">
+    <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "matthew-sigal" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</section>
 
 
 </div>
+
 <footer class="site-footer">
   <div class="container">
     <p class="powered-by">
