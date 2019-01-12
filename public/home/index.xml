@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/home.html</link>
+    <link>/home.html</link>
     <description>Recent content in Homes on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.matthewsigal.com/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://www.matthewsigal.com/home/about.html</link>
+      <link>/home/about.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/about.html</guid>
+      <guid>/home/about.html</guid>
       <description>Biography I have a PhD in Quantitative Methods from York University. QM is an area that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit this page to peruse a recent version of my curriculum vitae (last updated: March 18, 2017).
 I am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.</description>
     </item>
     
     <item>
       <title>Recent Publications</title>
-      <link>http://www.matthewsigal.com/home/publications.html</link>
+      <link>/home/publications.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/publications.html</guid>
+      <guid>/home/publications.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Presentations and Invited Lectures</title>
-      <link>http://www.matthewsigal.com/home/talks.html</link>
+      <link>/home/talks.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/talks.html</guid>
+      <guid>/home/talks.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teaching</title>
-      <link>http://www.matthewsigal.com/home/teaching.html</link>
+      <link>/home/teaching.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/teaching.html</guid>
+      <guid>/home/teaching.html</guid>
       <description>I have had the pleasure of directing the following classes:
  PSYC3256: Design and Analysis (Laurentian University, 2016) PSYC3031: Intermediate Statistics Laboratory (York University, 2015) PSYC2021: Introduction to Statistics (York University, 2013)  In addition, I have run the following short courses and workshops:
  (2014, Summer) Data Analysis with R, APA (2014, Summer) Data Analysis with R, ISR (2014, Winter) Data Analysis with R, ISR (2013, Summer) Data Analysis with R, APA (2013, Spring) Introduction to SPSS, ISR (2013, Winter) Introduction to SPSS, ISR (2012, Fall) Introduction to SPSS, ISR (2011) Introduction to SPSS, Ministry of Child and Youth Services  Finally, I have held the following teaching assistantships:</description>
@@ -53,28 +53,28 @@ I am particularly interested in methods of data visualization (especially for tr
     
     <item>
       <title>Scholarships &amp; Awards</title>
-      <link>http://www.matthewsigal.com/home/scholarships.html</link>
+      <link>/home/scholarships.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/scholarships.html</guid>
+      <guid>/home/scholarships.html</guid>
       <description> 2017 - M. Friendly Award for Quantitative Methodology Research, York University 2015 - Excellence in Innovation, Multi-Health Systems 2013 - Professional Development Fund, CUPE 3903, York University 2013 - Ontario Graduate Scholarship 2012 - Queen Elizabeth II Graduate Scholarship in Science and Technology, Ontario Ministry of Training, Colleges and Universities 2012 - Professional Development Fund, CUPE 3903, York University 2011 - Certificate of Teaching Excellence, Teaching Assistantship Award, Council of Canadian Departments of Psychology 2010 - Research Cost Fund, CUPE 3903, York University 2008 - Graduate Studies Entrance Scholarship, York University 2008 - Certificate of Academic Excellence in Undergraduate Research, Canadian Psychological Association 2004-2008 - Academic Honour Roll, Bishop&amp;rsquo;s University  </description>
     </item>
     
     <item>
       <title>Notes from Flatland</title>
-      <link>http://www.matthewsigal.com/home/posts.html</link>
+      <link>/home/posts.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/posts.html</guid>
+      <guid>/home/posts.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>http://www.matthewsigal.com/home/contact.html</link>
+      <link>/home/contact.html</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/home/contact.html</guid>
+      <guid>/home/contact.html</guid>
       <description></description>
     </item>
     

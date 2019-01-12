@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Latex on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/tags/latex.html</link>
+    <link>/tags/latex.html</link>
     <description>Recent content in Latex on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Mon, 04 Jun 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.matthewsigal.com/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/latex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Converting a Curriculum Vitae to LaTeX</title>
-      <link>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</link>
+      <link>/post/converting-a-curriculum-vitae-to-latex.html</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</guid>
+      <guid>/post/converting-a-curriculum-vitae-to-latex.html</guid>
       <description>A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.
 First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have.</description>
     </item>
     
     <item>
       <title>Integrating BibDesk with Dropbox.</title>
-      <link>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</link>
+      <link>/post/integrating-bibdesk-with-dropbox.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
+      <guid>/post/integrating-bibdesk-with-dropbox.html</guid>
       <description>I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style. It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers; and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera). This is optimized for OS X. This workflow involves three main components: a reference management system (basically an application that maintains a .</description>
     </item>
     
