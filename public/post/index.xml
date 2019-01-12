@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Matthew J. Sigal</title>
-    <link>/post.html</link>
+    <link>http://www.matthewsigal.com/post.html</link>
     <description>Recent content in Posts on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.matthewsigal.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Continuous Interactions in Multiple Regression</title>
-      <link>/post/continuous-interactions-in-multiple-regression.html</link>
+      <link>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html</link>
       <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/post/continuous-interactions-in-multiple-regression.html</guid>
+      <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html</guid>
       <description>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically *, but also applies to formulas that use ^).
 The vignette is posted here: http://rpubs.com/mattsigal/reg_interactions
 The short-version: *, when used with summary() does not center the variables, and so models will have issues with VIF.</description>
@@ -25,10 +25,10 @@ The short-version: *, when used with summary() does not center the variables, an
     
     <item>
       <title>Stratified Norms</title>
-      <link>/post/stratified-norms.html</link>
+      <link>http://www.matthewsigal.com/post/stratified-norms.html</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/stratified-norms.html</guid>
+      <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
       <description>This post describes how to use stratifiedNorm() to create a stratified random sample, given an arbitrary number of factors. The function is available via source_gist():
 library(&amp;#39;devtools&amp;#39;) source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;) I will create a small dataset to demonstrate how to use the function:
 set.seed(77) dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE), AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE), Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), size = 1500, replace = TRUE), X=rnorm(n=1500, mean=0, sd=1), Y=rnorm(n=1500, mean=0, sd=1), Z=rnorm(n=1500, mean=0, sd=1)) str(dat) ## &amp;#39;data.</description>
@@ -36,38 +36,38 @@ set.seed(77) dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, 
     
     <item>
       <title>The Grammar of (Interactive) Graphics</title>
-      <link>/post/the-grammar-of-interactive-graphics.html</link>
+      <link>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
+      <guid>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</guid>
       <description>I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.</description>
     </item>
     
     <item>
       <title>Splitting a Dataframe by Cluster</title>
-      <link>/post/splitting-a-dataframe-by-cluster.html</link>
+      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/splitting-a-dataframe-by-cluster.html</guid>
+      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
       <description>As part of an assignment for a course I’m taking on the Applications of Mixed Models, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the split command, or daply from the plyr package).</description>
     </item>
     
     <item>
       <title>Converting a Curriculum Vitae to LaTeX</title>
-      <link>/post/converting-a-curriculum-vitae-to-latex.html</link>
+      <link>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</link>
       <pubDate>Mon, 04 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/converting-a-curriculum-vitae-to-latex.html</guid>
+      <guid>http://www.matthewsigal.com/post/converting-a-curriculum-vitae-to-latex.html</guid>
       <description>A friend of mine recently goaded me a bit about knowing LaTeX but having my curriculum vitae in Word. This got me thinking: how hard would it be to convert? What would be the benefits? This post goes into some detail about the advantages of switching to LaTeX and some practical advice about a few useful commands and packages to make use of when doing so.
 First of all, having your CV in LaTeX demonstrates knowledge of a language that others might not have.</description>
     </item>
     
     <item>
       <title>Integrating BibDesk with Dropbox.</title>
-      <link>/post/integrating-bibdesk-with-dropbox.html</link>
+      <link>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</link>
       <pubDate>Thu, 24 May 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/integrating-bibdesk-with-dropbox.html</guid>
+      <guid>http://www.matthewsigal.com/post/integrating-bibdesk-with-dropbox.html</guid>
       <description>I&amp;rsquo;ve implemented a powerful workflow for generating reports in APA style. It allows for a) all references that I come across to be stored in a central location and easily accessed; b) for this file to be synced and editable across multiple computers; and, c) auto-applies the stylistic requirements of APA style (proper formatting of headings, references, et cetera). This is optimized for OS X. This workflow involves three main components: a reference management system (basically an application that maintains a .</description>
     </item>
     

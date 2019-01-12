@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Management on Matthew J. Sigal</title>
-    <link>/categories/data-management.html</link>
+    <link>http://www.matthewsigal.com/categories/data-management.html</link>
     <description>Recent content in Data Management on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Wed, 10 Dec 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/data-management/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.matthewsigal.com/categories/data-management/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stratified Norms</title>
-      <link>/post/stratified-norms.html</link>
+      <link>http://www.matthewsigal.com/post/stratified-norms.html</link>
       <pubDate>Wed, 10 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>/post/stratified-norms.html</guid>
+      <guid>http://www.matthewsigal.com/post/stratified-norms.html</guid>
       <description>This post describes how to use stratifiedNorm() to create a stratified random sample, given an arbitrary number of factors. The function is available via source_gist():
 library(&amp;#39;devtools&amp;#39;) source_gist(&amp;quot;https://gist.github.com/mattsigal/c17650d8a9b0f5b018af&amp;quot;) I will create a small dataset to demonstrate how to use the function:
 set.seed(77) dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;), size = 1500, replace = TRUE), AgeGrp=sample(c(&amp;quot;18-39&amp;quot;, &amp;quot;40-49&amp;quot;, &amp;quot;50+&amp;quot;), size = 1500, replace = TRUE), Relationship=sample(c(&amp;quot;Direct&amp;quot;, &amp;quot;Manager&amp;quot;, &amp;quot;Coworker&amp;quot;, &amp;quot;Friend&amp;quot;), size = 1500, replace = TRUE), X=rnorm(n=1500, mean=0, sd=1), Y=rnorm(n=1500, mean=0, sd=1), Z=rnorm(n=1500, mean=0, sd=1)) str(dat) ## &amp;#39;data.</description>
@@ -25,10 +25,10 @@ set.seed(77) dat &amp;lt;- data.frame(Gender=sample(c(&amp;quot;Male&amp;quot;, 
     
     <item>
       <title>Splitting a Dataframe by Cluster</title>
-      <link>/post/splitting-a-dataframe-by-cluster.html</link>
+      <link>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</link>
       <pubDate>Mon, 18 Jun 2012 00:00:00 +0000</pubDate>
       
-      <guid>/post/splitting-a-dataframe-by-cluster.html</guid>
+      <guid>http://www.matthewsigal.com/post/splitting-a-dataframe-by-cluster.html</guid>
       <description>As part of an assignment for a course I’m taking on the Applications of Mixed Models, we were asked to partition a multi-level dataset into two components: a training and a testing set. In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the split command, or daply from the plyr package).</description>
     </item>
     
