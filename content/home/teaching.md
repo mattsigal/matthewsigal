@@ -12,34 +12,21 @@ weight = 30
 
 I have had the pleasure of directing the following classes:
 
+- PSYC210: Introduction to Data Analyis (Simon Fraser University, 2018; 2019)
+- PSYC301: Intermediate Data Analysis and Research Methods (Simon Fraser University, 2018; 2019)
+- PSYC201: Introduction to Research Methods in Psychology (Simon Fraser University, 2018)
+- PSYC391/715: Special Topics course on Data Communication (Simon Fraser University, 2018)
 - PSYC3256: Design and Analysis (Laurentian University, 2016)
 - PSYC3031: Intermediate Statistics Laboratory (York University, 2015)
 - PSYC2021: Introduction to Statistics (York University, 2013)
 
 In addition, I have run the following short courses and workshops: 
 
-* (2014, Summer) Data Analysis with R, APA
-* (2014, Summer) Data Analysis with R, ISR
-* (2014, Winter) Data Analysis with R, ISR
-* (2013, Summer) Data Analysis with R, APA
-* (2013, Spring) Introduction to SPSS, ISR
-* (2013, Winter) Introduction to SPSS, ISR
-* (2012, Fall) Introduction to SPSS, ISR
+* (2014, Summer) Data Analysis with R, American Psychological Association
+* (2014, Summer) Data Analysis with R, Institute for Social Research
+* (2014, Winter) Data Analysis with R, Institute for Social Research
+* (2013, Summer) Data Analysis with R, American Psychological Association
+* (2013, Spring) Introduction to SPSS, Institute for Social Research
+* (2013, Winter) Introduction to SPSS, Institute for Social Research
+* (2012, Fall) Introduction to SPSS, Institute for Social Research
 * (2011) Introduction to SPSS, Ministry of Child and Youth Services
-
-Finally, I have held the following teaching assistantships:
-
-* PSYC3031 - Intermediate Statistics Laboratory (Prof. C. Smith, 2013)
-* Introduction to Regression (Dr. D. Flora, 2013)
-* Theory and Practice of Linear and Mixed Models (Dr. J. Fox, 2012)
-* Introduction to R (Dr. J. Fox, 2012)
-* A Gentle Introduction to R (Prof. C. Smith, 2012)
-* An Introduction to Structural Equation Modeling (Dr. C. Mara, 2012)
-* An Introduction to SPSS (Dr. L. Fiksenbaum, 2011)
-* PSYC6130 - Univariate Analysis (Dr. E. Ross, 2011-2012)
-* PSYC6130 - Univariate Analysis (Dr. R. Cribbie, 2011-2012)
-* Introduction to SPSS (Dr. L. Fiksenbaum, 2011)
-* PSYC2020 - Statistical Methods I and II (Dr. J. Check, 2010-2011)
-* Introduction to SPSS (Dr. S. Jones, 2010)
-* PSYC2020 - Statistical Methods I and II (Dr. J. Check, 2009-2010)
-* PSYC3090 - Psychological Measurement (Dr. Z. Marjanovic, 2008)

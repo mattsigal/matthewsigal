@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Visualization on Matthew J. Sigal</title>
-    <link>http://www.matthewsigal.com/tags/data-visualization.html</link>
+    <link>/tags/data-visualization.html</link>
     <description>Recent content in Data Visualization on Matthew J. Sigal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
     <lastBuildDate>Mon, 21 Oct 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://www.matthewsigal.com/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/data-visualization/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Grammar of (Interactive) Graphics</title>
-      <link>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</link>
+      <link>/post/the-grammar-of-interactive-graphics.html</link>
       <pubDate>Mon, 21 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/the-grammar-of-interactive-graphics.html</guid>
+      <guid>/post/the-grammar-of-interactive-graphics.html</guid>
       <description>I gave a presentation today (October 21st, 2013) on the “Grammar of (Interactive) Graphics”. The overarching ideas behind the talk were to discuss Leland Wilkinson’s Grammar of Graphics, its implementation in the R package ggplot2, to introduce some fundamental characteristics of interactive graphics and their present implementations (via R and some JavaScript libraries), and discuss how interactive graphics can be understood within the Grammar of Graphics theory. The presentation concluded with a discussion of one of Hadley Wickham’s latest R packages, ggvis, which refines the previous packages grammar to include some of these goals.</description>
     </item>
     
