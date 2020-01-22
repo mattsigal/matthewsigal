@@ -1,19 +1,16 @@
-+++
-date = "2016-04-20T00:00:00"
-draft = false
-
-title = "Presentations and Invited Lectures"
-subtitle = ""
-widget = "talks"
+---
+title: 'Presentations and Invited Lectures'
+date: '2020-01-22'
+draft: false
+subtitle: ""
+widget: "talks"
 
 # Order that this section will appear in.
-weight = 25
+weight: 25
 
 # Number of talks to list.
-count = 3
+count: 3
 
 # Show talk details (such as abstract)? (true/false)
-detailed_list = false
-
-+++
-
+detailed_list: false
+---
