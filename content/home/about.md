@@ -37,7 +37,7 @@ weight = 1
 
 # Biography
 
-I have a PhD in Quantitative Methods from York University. QM is an area that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit [this page](http://www.matthewsigal.com/SigalCV.pdf) to peruse a recent version of my curriculum vitae (last updated: January 11, 2019).
+I have a PhD in Quantitative Methods from York University. QM is an area that bridges the gaps between statistical theory, research design and methodology, and their applied aspects, such as client consultation and data interpretation. Please visit [this page](http://www.matthewsigal.com/SigalCV.pdf) to peruse a recent version of my curriculum vitae (last updated: February 25, 2020).
 
 I am particularly interested in methods of data visualization (especially for truly multivariate analyses), multilevel and structural equation modeling, and alternative modeling strategies within the framework of survival analysis.  Some of my recent research pertains to the implementation of interactive graphics for model diagnostics.
 
