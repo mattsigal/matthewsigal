@@ -21,7 +21,7 @@ Below are the files used for an Introduction to `R` workshop give at Simon Frase
 * [0-RunFirst.R](http://www.matthewsigal.com/StartR/0-RunFirst.R)
 * [1-IntroR.pdf](http://www.matthewsigal.com/StartR/1-IntroR.pdf)
 * [2a-Reproducible_Research.Rmd](http://www.matthewsigal.com/StartR/2a-Reproducible_Research.Rmd)
-* [2b-APA_Style](http://www.matthewsigal.com/StartR/2b-APA_Style.zip)
+* [2b-APA_Style.zip](http://www.matthewsigal.com/StartR/2b-APA_Style.zip)
 * [3-R_Packages_and_Support.Rmd](http://www.matthewsigal.com/StartR/3-R_Packages_and_Support.Rmd)
 
 Please feel to send comments or questions to me at [msigal@sfu.ca](mailto:msigal@sfu.ca).
