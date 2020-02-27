@@ -29,11 +29,47 @@
     </item>
     
     <item>
+      <title>Visualizing tests for equality of covariance matrices</title>
+      <link>http://www.matthewsigal.com/publication/friendly2018.html</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/publication/friendly2018.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Do It Again: An Introduction to Simulation Experiments</title>
+      <link>http://www.matthewsigal.com/talk/sigal2020-02.html</link>
+      <pubDate>Fri, 24 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/talk/sigal2020-02.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Do It Again: An Introduction to Simulation Experiments</title>
       <link>http://www.matthewsigal.com/talk/sigal-2020-01.html</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/talk/sigal-2020-01.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing multivariate linear models in R</title>
+      <link>http://www.matthewsigal.com/talk/friendly2019-07.html</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/talk/friendly2019-07.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Preparing for University: An Applied Analysis on the Efficacy of 4U and University Level Preparatory STEM Courses</title>
+      <link>http://www.matthewsigal.com/publication/sigal2019.html</link>
+      <pubDate>Fri, 31 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/publication/sigal2019.html</guid>
       <description></description>
     </item>
     
@@ -115,45 +151,6 @@
       <pubDate>Sat, 13 Aug 2016 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/talk/belliveau2016-08.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Visualizing multivariate linear models in R</title>
-      <link>http://www.matthewsigal.com/talk/friendly2016-06.html</link>
-      <pubDate>Wed, 01 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.matthewsigal.com/talk/friendly2016-06.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Continuous Interactions in Multiple Regression</title>
-      <link>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html</link>
-      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html</guid>
-      <description>&lt;p&gt;After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically &lt;code&gt;*&lt;/code&gt;, but also applies to formulas that use &lt;code&gt;^&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;The vignette is posted here: &lt;a href=&#34;http://rpubs.com/mattsigal/reg_interactions&#34;&gt;http://rpubs.com/mattsigal/reg_interactions&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;The short-version: &lt;code&gt;*&lt;/code&gt;, when used with &lt;code&gt;summary()&lt;/code&gt; does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with &lt;code&gt;scale()&lt;/code&gt; or looking at the effects using &lt;code&gt;car::Anova()&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Everything on the Table: Demystifying the Results of Simulation Studies and Other Complex Tables</title>
-      <link>http://www.matthewsigal.com/talk/sigal2016-02.html</link>
-      <pubDate>Mon, 29 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.matthewsigal.com/talk/sigal2016-02.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Introduction to Linear and Multiple Regression</title>
-      <link>http://www.matthewsigal.com/talk/sigal2015-12.html</link>
-      <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.matthewsigal.com/talk/sigal2015-12.html</guid>
       <description></description>
     </item>
     

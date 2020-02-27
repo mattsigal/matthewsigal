@@ -10,6 +10,7 @@ weight = 35
 
 +++
 
+* 2019 - Barry Beyerstein Award for Excellence in Teaching, Simon Fraser University
 * 2017 - M. Friendly Award for Quantitative Methodology Research, York University
 * 2015 - Excellence in Innovation, Multi-Health Systems
 * 2013 - Professional Development Fund, CUPE 3903, York University
