@@ -11,12 +11,12 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>StartR: An Introduction to Reproducable Research in R</title>
-      <link>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</link>
+      <title>StartR: An Introduction to Reproducible Research in R</title>
+      <link>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducible-research-in-r.html</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</guid>
-      <description>&lt;p&gt;Below are the files used for an Introduction to &lt;code&gt;R&lt;/code&gt; workshop given at Simon Fraser University on Tuesday, March 3rd, 2020, in conjunction with the Psychology Graduate Student Caucus.&lt;/p&gt;
+      <guid>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducible-research-in-r.html</guid>
+      <description>&lt;p&gt;Below are the files used for an Introduction to &lt;code&gt;R&lt;/code&gt; workshop given at Simon Fraser University on Tuesday, March 3rd, 2020, in conjunction with the Psychology Graduate Student Caucus. Due to time constraints, emphasis is placed on what &lt;code&gt;R&lt;/code&gt; can do.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/0-RunFirst.R&#34;&gt;0-RunFirst.R&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/1-IntroR.pdf&#34;&gt;1-IntroR.pdf&lt;/a&gt;&lt;/li&gt;

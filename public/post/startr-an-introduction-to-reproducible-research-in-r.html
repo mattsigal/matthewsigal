@@ -36,11 +36,11 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html">
+  <link rel="canonical" href="http://www.matthewsigal.com/post/startr-an-introduction-to-reproducible-research-in-r.html">
 
   
 
-  <title>Continuous Interactions in Multiple Regression | Matthew J. Sigal</title>
+  <title>StartR: An Introduction to Reproducible Research in R | Matthew J. Sigal</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -165,14 +165,14 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">Continuous Interactions in Multiple Regression</h1>
+    <h1 itemprop="name">StartR: An Introduction to Reproducible Research in R</h1>
     
 
 <div class="article-metadata">
 
   <span class="article-date">
-    <time datetime="2016-04-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">
-      2016-04-03
+    <time datetime="2020-02-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      2020-02-26
     </time>
   </span>
 
@@ -198,10 +198,7 @@
     <a href="/tags/r">R</a
     >, 
     
-    <a href="/tags/regression">Regression</a
-    >, 
-    
-    <a href="/tags/interactions">Interactions</a
+    <a href="/tags/workshop">Workshop</a
     >
     
   </span>
@@ -216,9 +213,15 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <p>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically <code>*</code>, but also applies to formulas that use <code>^</code>).</p>
-<p>The vignette is posted here: <a href="http://rpubs.com/mattsigal/reg_interactions">http://rpubs.com/mattsigal/reg_interactions</a></p>
-<p>The short-version: <code>*</code>, when used with <code>summary()</code> does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with <code>scale()</code> or looking at the effects using <code>car::Anova()</code>.</p>
+      <p>Below are the files used for an Introduction to <code>R</code> workshop given at Simon Fraser University on Tuesday, March 3rd, 2020, in conjunction with the Psychology Graduate Student Caucus. Due to time constraints, emphasis is placed on what <code>R</code> can do.</p>
+<ul>
+<li><a href="http://www.matthewsigal.com/StartR/0-RunFirst.R">0-RunFirst.R</a></li>
+<li><a href="http://www.matthewsigal.com/StartR/1-IntroR.pdf">1-IntroR.pdf</a></li>
+<li><a href="http://www.matthewsigal.com/StartR/2a-Reproducible_Research.Rmd">2a-Reproducible_Research.Rmd</a></li>
+<li><a href="http://www.matthewsigal.com/StartR/2b-APA_Style.zip">2b-APA_Style.zip</a></li>
+<li><a href="http://www.matthewsigal.com/StartR/3-R_Packages_and_Support.Rmd">3-R_Packages_and_Support.Rmd</a></li>
+</ul>
+<p>Please feel to send comments or questions to me at <a href="mailto:msigal@sfu.ca">msigal@sfu.ca</a>.</p>
 
     </div>
   </div>
@@ -229,13 +232,10 @@
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="http://www.matthewsigal.com/post/stratified-norms.html"><span
-      aria-hidden="true">&larr;</span> Stratified Norms</a></li>
+    <li class="previous"><a href="http://www.matthewsigal.com/post/continuous-interactions-in-multiple-regression.html"><span
+      aria-hidden="true">&larr;</span> Continuous Interactions in Multiple Regression</a></li>
     
 
-    
-    <li class="next"><a href="http://www.matthewsigal.com/post/startr-an-introduction-to-reproducible-research-in-r.html">StartR: An Introduction to Reproducible Research in R <span
-      aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
 </nav>

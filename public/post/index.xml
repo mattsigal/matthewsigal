@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>StartR: An Introduction to Reproducable Research in R</title>
-      <link>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</link>
+      <title>StartR: An Introduction to Reproducible Research in R</title>
+      <link>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducible-research-in-r.html</link>
       <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</guid>
-      <description>Below are the files used for an Introduction to R workshop given at Simon Fraser University on Tuesday, March 3rd, 2020, in conjunction with the Psychology Graduate Student Caucus.
+      <guid>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducible-research-in-r.html</guid>
+      <description>Below are the files used for an Introduction to R workshop given at Simon Fraser University on Tuesday, March 3rd, 2020, in conjunction with the Psychology Graduate Student Caucus. Due to time constraints, emphasis is placed on what R can do.
  0-RunFirst.R 1-IntroR.pdf 2a-Reproducible_Research.Rmd 2b-APA_Style.zip 3-R_Packages_and_Support.Rmd  Please feel to send comments or questions to me at msigal@sfu.ca.</description>
     </item>
     
