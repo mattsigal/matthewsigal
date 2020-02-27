@@ -16,7 +16,7 @@ math: no
 summary: "Files and scripts for a workshop on introducing R."
 ---
 
-Below are the files used for an Introduction to `R` workshop give at Simon Fraser University on Tuesday, March 3rd, 2020 in conjunction with the Psychology Graduate Student Caucus.
+Below are the files used for an Introduction to `R` workshop given at Simon Fraser University on Tuesday, March 3rd, 2020, in conjunction with the Psychology Graduate Student Caucus.
 
 * [0-RunFirst.R](http://www.matthewsigal.com/StartR/0-RunFirst.R)
 * [1-IntroR.pdf](http://www.matthewsigal.com/StartR/1-IntroR.pdf)
