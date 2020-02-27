@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Matthew J. Sigal</copyright>
-    <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://www.matthewsigal.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>StartR: An Introduction to Reproducable Research in R</title>
+      <link>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</guid>
+      <description>Below are the files used for an Introduction to R workshop give at Simon Fraser University on Tuesday, March 3rd, 2020 in conjunction with the Psychology Graduate Student Caucus.
+ 0-RunFirst.R 1-IntroR.pdf 2a-Reproducible_Research.Rmd 2b-APA_Style 3-R_Packages_and_Support.Rmd  Please feel to send comments or questions to me at mailto:msigal@sfu.ca.</description>
+    </item>
     
     <item>
       <title>Continuous Interactions in Multiple Regression</title>

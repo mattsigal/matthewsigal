@@ -1,0 +1,86 @@
+---
+title             : "Reproducible Research: An APA Style Report in `R`"
+shorttitle        : "Reproducible Research"
+author: 
+  - name          : "Matthew Sigal"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Department of Psychology, Simon Fraser University, 8888 University Dr., Burnaby, British Columbia, Canada"
+    email         : "msigal@sfu.ca"
+affiliation       :
+  - id            : "1"
+    institution   : "Simon Fraser University"
+
+author_note: |
+  This field can be used to add an author's note to the report.
+
+abstract: |
+  This is a sample document to show how R Markdown and papaja can be used to prepare an APA style manuscript. This can be converted into a PDF or Word document, as needed.
+  
+keywords: "APA style, knitr, R, R markdown, papaja"
+wordcount: "`r wordcountaddin::word_count('2b-APA_Style_Basic.Rmd')`"
+bibliography      : ["references.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+linkcolor         : "blue"
+mask              : no
+draft             : no
+header-includes:
+  - \raggedbottom
+
+classoption       : "man"
+output            : papaja::apa6_pdf # Switch to papaja::apa6_docx for Word documents
+---
+
+```{r message = FALSE, warning = FALSE}
+library("tidyverse") 
+library("papaja")
+library("afex") # Package for analysing factorial designs
+
+load("Data/mixed_data.rdata") # Load our data
+```
+
+The following document provides a template[^1] for using `R` to write reproducible reports, based upon the example provided by Frederik Aust. The creation of these reports relies on the `papaja`, `bookdown`, `rmarkdown,` and `knitr` packages and \LaTeX\ (to generate math notation, format references, and put it all together). 
+
+In the introduction to an article, it is common to cite previous research. For citations to work, you need to supply a .bib file to the `bibliography` parameter in the YAML front matter. These files are plain text, but can be edited in a GUI using JabRef (Windows) or bibDesk (OS X). Once this is done, `[e.g., @james_1890; @bem_2011]` produces a regular citation within parentheses [e.g., @bem_2011; @james_1890]. To cite a source in-text omit the brackets; for example, write `@james_1890` to cite @james_1890.
+
+If you need to display formulas, you can use \LaTeX\ syntax. Inline math must be enclosed in `$` and the result will look like this: $d' = z(H) - z(FA)$. For larger formulas, "displayed" equations are more appropriate and are enclosed in `$$`:
+$$d' = \frac{\mu_{old} - \mu_{new}}{\sqrt{0.5(\sigma^2_{old} + \sigma^2_{new})}}$$
+
+[^1]: A simple template can also be created by creating a new R Markdown file through the RStudio menu: File $\rightarrow$ New File $\rightarrow$ RMarkdown $\rightarrow$ From Template $\rightarrow$ APA article. This is shown in Figure\ \@ref(fig:menu).
+
+```{r menu, fig.cap = "papaja's APA6 template is available through the RStudio menu.", fig.align = "center"}
+knitr::include_graphics("Figures/template_selection.png", dpi = 108)
+```
+
+# Methods
+
+The following sections will discuss the characteristics of our sample, and the measures, the procedure, and the data analysis plan used for this study. 
+
+## Participants
+
+## Materials
+
+## Procedure
+
+## Data analysis
+
+# Results
+
+# Discussion
+
+\newpage
+
+# References
+
+\begingroup
+<!-- These lines ensure references are set with hanging indents in PDF documents; they are ignored in Word. -->
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup

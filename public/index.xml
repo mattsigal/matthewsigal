@@ -11,6 +11,24 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>StartR: An Introduction to Reproducable Research in R</title>
+      <link>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</guid>
+      <description>&lt;p&gt;Below are the files used for an Introduction to &lt;code&gt;R&lt;/code&gt; workshop give at Simon Fraser University on Tuesday, March 3rd, 2020 in conjunction with the Psychology Graduate Student Caucus.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/0-RunFirst.R&#34;&gt;0-RunFirst.R&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/1-IntroR.pdf&#34;&gt;1-IntroR.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/2a-Reproducible_Research.Rmd&#34;&gt;2a-Reproducible_Research.Rmd&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/2b-APA_Style.zip&#34;&gt;2b-APA_Style&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.matthewsigal.com/StartR/3-R_Packages_and_Support.Rmd&#34;&gt;3-R_Packages_and_Support.Rmd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please feel to send comments or questions to me at &lt;a href=&#34;msigal@sfu.ca&#34;&gt;mailto:msigal@sfu.ca&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Do It Again: An Introduction to Simulation Experiments</title>
       <link>http://www.matthewsigal.com/talk/sigal-2020-01.html</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
@@ -136,15 +154,6 @@
       <pubDate>Wed, 02 Dec 2015 00:00:00 +0000</pubDate>
       
       <guid>http://www.matthewsigal.com/talk/sigal2015-12.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Visualizing likert-type data</title>
-      <link>http://www.matthewsigal.com/publication/sigal2015.html</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://www.matthewsigal.com/publication/sigal2015.html</guid>
       <description></description>
     </item>
     

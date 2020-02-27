@@ -1,0 +1,146 @@
+---
+title: "Getting started with `R`"
+subtitle: "Recommended Supports and Packages"
+author: "Dr. M. Sigal"
+date: "21/02/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Learning `R` is hard!
+
+Getting started with `R`, especially if you do not have a programming background, is the hardest hurdle to overcome. With practice, it will get easier! But even people who have been using `R` for years still need to search the internet for help or to learn new approaches. The following is my curated list of resources I turn to when presented with various challenges:
+
+### Books
+
+* __`R` for Data Science__ (Garrett Grolemund and Hadley Wickham; 2017)
+* __The `R` Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics__, 2nd Edition (J.D. Long and Paul Teetor; 2019)
+* __The Art of `R` Programming: A Tour of Statistical Software Design__ (Norman Matloff; 2011)
+* __Advanced `R`__, 2nd Edition (Hadley Wickham; 2019) 
+
+### Online Resources
+
+* Stack Exchange ([http://www.stackexchange.com](http://www.stackexchange.com))
+    * [Stack Overflow](http://www.stackoverflow.com/questions/tagged/r/) (questions tagged [R])
+    * [Cross Validated](http://stats.stackexchange.com) (general statistics)
+* R-Bloggers ([r-bloggers.com](http://www.r-bloggers.com))
+* Listen Data's `R` Tutorials ([listendata.com](https://www.listendata.com/search/label/R))
+* DataCamp ([datacamp.com](http://www.datacamp.com/courses/introduction-to-r))
+* Quick-R ([statmethods.net](http://www.statmethods.net)) - examples and tips
+* R-seek ([rseek.org](http://www.rseek.org)) - restricted search of \texttt{R} specific sites
+* RStudio Cheat Sheets ([rstudio.com/resources/cheatsheets/](https://www.rstudio.com/resources/cheatsheets/))
+
+## Recommended Packages
+
+### Core Packages
+
+The `tidyverse` is a collection of packages that, in many ways, replaces base `R` functions and streamlines using `R` for data analysis.
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+```
+
+Among others, it includes and loads:
+
+* `ggplot2`: Functions for data visualization
+* `tibble` and `readr`: Functions for reading in and storing datasets
+* `dplyr`: Functions for dataset "wrangling"
+* `stringr` and `forcats`: Functions for working with and modifying character and categorical variables, respectively
+
+```{r, eval=FALSE}
+install.packages("devtools")
+```
+
+The `devtools` library provides conveneince functions for both a) authoring new `R` packages, and b) for downloading/installing `R` packages now yet available on CRAN. Most commonly this pertains to packages currently in beta and hosted on sites like [github.com](github.com) or [https://r-forge.r-project.org/](https://r-forge.r-project.org/).
+
+### Reproducible Reserach
+
+```{r, eval=FALSE}
+install.packages("knitr") # Functions for dynaminc report generation in R
+install.packages("rmarkdown") # Functions to integrate markdown into Rmd files
+install.packages("bookdown") # Functions for generating books or technical documents with Rmarkdown
+install.packages("blogdown") # Functions for creating blogs and entire websites using Rmarkdown
+install.packages("tinytex") # Install the bare minimum amount of LaTeX to produce PDF documents
+tinytext::install_tinytex()
+devtools::install_github("crsh/papaja") # Create an APA style report in R (requires devtools to install)
+devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE) # Required to automatically calculate word counts in papaja reports
+install.packages("officer") # Export R output to Microsoft Word or PowerPoint
+```
+
+### Fundamental Analyses 
+
+```{r, eval=FALSE}
+install.packages("skimr") # Brief dataset summaries
+install.packages(c("car","carData")) # John Fox's companion to his Applied Regression textbook
+install.packages("polycor") # Calculate polychoric and polyserial correlations
+install.packages("interactions") # Toolkit for probing interactions
+install.packages("ez") # Convenience functions for ANOVA designs
+install.packages(c("psych", "psychTools")) # Various procedures for Psychological, Psychometric, and Personality Research
+install.packages("pwr") # Basic functions for power analyses
+```
+
+### Special Topics
+
+```{r, eval=FALSE}
+install.packages("mirt") # Multi-dimensional item response theory models
+install.packages("lme4") # Multilevel Modeling
+install.packages("nlme") # Multilevel Modeling
+install.packages("lavaan") # Structural Equation Modeling
+install.packages(c("sem", "semTools")) # Structural Equation Modeling
+install.packages("SimDesign") # Design and run simulation study experiments
+install.packages(c("sp", "spData")) # Spatial analysis functions and datasets
+install.packages("survey") # Functions for working with complex survey samples
+install.packages("survival") # Survival Analysis
+install.packages("tidytext") # Functions for text/sentiment analysis 
+```
+
+### Data Visualization Packages
+
+```{r, eval=FALSE}
+install.packages("ggplot2") # Installed alongside tidyverse, but worth repeating
+install.packages("lattice") # Alternative to ggplot2; useful for "trellis" graphics
+install.packages("RColorBrewer") # Generate pleasing colour palettes
+install.packages("scatterplot3d") # Navigate three-dimensional scatterplots
+install.packages("sjPlot") # Data visualization library for the social sciences
+install.packages("tableplot") # Generate semi-graphic displays
+install.packages(c("vcd", "vcdExtra")) # Functions for visualizing categorical data
+install.packages("waffle") # Waffle plots
+install.packageS("wordcloud") # Generate word clouds
+```
+
+### Interactivity
+
+```{r, eval=FALSE}
+install.packages("shiny") # Web application framework for R
+install.packages(c("shinydashboard", "shinythemes", "shinyWidgets")) # Convenience functions for shiny web applications
+install.packages("leaflet") # Interactive maps with the JS leaflet library
+install.packages("plotly") # Interactive graphics for the web using plotly.js
+```
+
+### Some Datasets to Explore
+
+```{r, eval=FALSE}
+install.packages("babynames") # Baby name popularity from 1880-2017
+install.packages("gapminder") # Hans Rosling's "gapminder" data
+install.packages("HistData") # Datasets from the history of statistics and data visualization
+install.packages("Lahman") # Baseball statistics from 1871 through 2018
+install.packages("wakefield") # Generate realistic looking random datasets
+```
+
+## End Notes
+
+```{r, eval=FALSE}
+install.packages("learnr") # Interactive tutorials for learning R; try: run_tutorial("ex-data-basics", "learnr")
+install.packages("fun") # Yihui Xie's collection of R games (e.g., minesweeper) 
+install.packages("fortunes") # Receive a (very nerdy) fortune from R.
+install.packages("praise") # Have R give you or your colleagues a complement on a job well done!
+```
+
+```{r, eval=TRUE}
+if("praise" %in% rownames(installed.packages())){
+ praise::praise() 
+} else print("Try installing `praise` and knitting this again!")
+```

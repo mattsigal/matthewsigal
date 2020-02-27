@@ -1,0 +1,166 @@
+---
+title             : "Reproducible Research: An APA Style Report in `R`"
+shorttitle        : "Reproducible Research"
+
+author: 
+  - name          : "Matthew Sigal"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Department of Psychology, Simon Fraser University, 8888 University Dr., Burnaby, British Columbia, Canada, V5A 1S6"
+    email         : "msigal@sfu.ca"
+affiliation       :
+  - id            : "1"
+    institution   : "Simon Fraser University"
+
+author_note: |
+  This field can be used to add an author's note to the report.
+
+abstract: |
+  This is a sample document to show how R Markdown and papaja can be used to prepare an APA style manuscript. This can be converted into a PDF or Word document, as needed.
+  
+keywords: "APA style, knitr, R, R markdown, papaja"
+wordcount: "`r wordcountaddin::word_count('2b-APA_Style_Full.Rmd')`"
+bibliography      : ["references.bib"]
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+linkcolor         : "blue"
+mask              : no
+draft             : no
+header-includes:
+  - \raggedbottom
+
+classoption       : "man"
+output            : papaja::apa6_pdf # Switch to papaja::apa6_docx for Word documents
+---
+
+```{r setup, message = FALSE, warning = FALSE}
+library("tidyverse") 
+library("papaja")
+library("afex") # Package for analysing factorial designs
+
+load("Data/mixed_data.rdata") # Load our data
+```
+
+The following document provides a template[^1] for using `R` to write reproducible reports, based upon the example provided by Frederik Aust. The creation of these reports relies on the `papaja`, `bookdown`, `rmarkdown,` and `knitr` packages and \LaTeX\ (to generate math notation, format references, and put it all together). 
+
+In the introduction to an article, it is common to cite previous research. For citations to work, you need to supply a .bib file to the `bibliography` parameter in the YAML front matter. These files are plain text, but can be edited in a GUI using JabRef (Windows) or bibDesk (OS X). Once this is done, `[e.g., @james_1890; @bem_2011]` produces a regular citation within parentheses [e.g., @bem_2011; @james_1890]. To cite a source in-text omit the brackets; for example, write `@james_1890` to cite @james_1890.
+
+If you need to display formulas, you can use \LaTeX\ syntax. Inline math must be enclosed in `$` and the result will look like this: $d' = z(H) - z(FA)$. For larger formulas, "displayed" equations are more appropriate and are enclosed in `$$`:
+$$d' = \frac{\mu_{old} - \mu_{new}}{\sqrt{0.5(\sigma^2_{old} + \sigma^2_{new})}}$$
+
+[^1]: A simple template can also be created by creating a new R Markdown file through the RStudio menu: File $\rightarrow$ New File $\rightarrow$ RMarkdown $\rightarrow$ From Template $\rightarrow$ APA article. This is shown in Figure\ \@ref(fig:fig1).
+
+```{r fig1, fig.cap = "papaja's APA6 template is available through the RStudio menu.", fig.align = "center"}
+knitr::include_graphics("Figures/template_selection.png", dpi = 108)
+```
+
+# Methods
+
+The following sections will discuss the characteristics of our sample, and the measures, procedure and data analysis plan used for this study. 
+
+## Participants
+
+This section typically discusses the characteristics of the sample. Instead of tallying things by hand and copy/pasting the results in, we can use `R` code to pull the values in directly. For example, our present dataset had `r nrow(mixed_data)` participants, `r nrow(mixed_data[mixed_data$Gender == "F",])` of whom were female and `r nrow(mixed_data[mixed_data$Gender == "M",])` were male.
+
+## Materials
+
+Discuss the materials used in the study.
+
+## Procedure and data analysis
+
+Discuss your data analysis plan for the study, most likely with $\alpha = .05$.
+
+# Results
+
+With all of the housekeeping complete, the next step is to actually analyse your data. We will break this down into three sections: Descriptives, Inferential Statistics, and Graphics.
+
+## Descriptives
+
+There are many ways to include descriptive statistics in our article. For example, to include summary statistics of the present data you could use the following code[^2]:
+
+```{r summary, echo = FALSE, results = 'markup', strip.white=TRUE}
+summary(mixed_data[, -1])
+```
+
+[^2]: Note that, by using the `echo=FALSE` parameter, the raw `R` code will be hidden in the report.
+
+But it is kind of ugly. Thankfully, there are ways to print tables with better formatting. For example, using `apa_table()`, and some `dplyr` code:
+
+```{r descriptives, results = 'asis', echo = FALSE}
+descriptives <- mixed_data %>% group_by(Dosage) %>%
+  summarize(
+    Mean = mean(Recall)
+    , Median = median(Recall)
+    , SD = sd(Recall)
+    , Min = min(Recall)
+    , Max = max(Recall)
+  )
+descriptives[, -1] <- printnum(descriptives[, -1])
+
+apa_table(
+  descriptives,
+  caption = "Descriptive statistics of correct recall by dosage.",
+  note = "This table was created with apa_table()"
+)
+```
+
+## Inferential analyses
+
+We can include the code to run our analysis, as well as generate the output from it within the same document. The function `apa_print()` works on many models and help you report your results (run `methods(apa_print)` for the full list). For example, we could run a factorial ANOVA on the present dataset as follows.
+
+```{r anova, echo = FALSE}
+recall_anova <- afex::aov_car(
+  Recall ~ (Task * Valence * Dosage) + Error(Subject/(Task * Valence)) + Dosage, 
+  data = mixed_data,
+  type = 3)
+recall_anova_results <- apa_print(recall_anova, es = "pes") # Partial eta-square effect size
+```
+
+Now, you can report the results of your analyses. Item valence, `r recall_anova_results$full$Valence`, and the task affected recall performance, `r recall_anova_results$full$Task`; dosage, however, had no effect on recall, `r recall_anova_results$full$Dosage`. Further, there were no significant interactions. This analsis is then typically summarised into an APA style table, which we can produce using `apa_table()`.
+
+```{r anovatable, results = "asis", echo = FALSE}
+apa_table(
+  recall_anova_results$table,
+  align = c("l", "r", "c", "r", "r", "r"),
+  caption = "ANOVA table for the analyis of the example data set.",
+  note = "This is a table created using apa\\_print() and apa\\_table().", 
+  escape = FALSE)
+```
+
+## Graphical output
+
+It is also customary (and good practice) to include some plots in a manuscript. While you can dive into a separate graphic library like `ggplot2` or `lattice`, `papaja` has a few built-in graphical templates to assist you in producing APA style plots (see `apa_barplot()`, `apa_beeplot()`, `apa_factorial_plot()`, and `apa_lineplot()`). For instance, we might want to generate a beeswarm plot for the present data. 
+
+```{r beeplot, fig.cap = "Bee plot of the example data set. Small points represent individual observations, large points represent means, and error bars represent 95% confidence intervals.", echo = FALSE, dev.args = list(bg = 'white')}
+apa_beeplot(mixed_data,
+  id = "Subject",
+  dv = "Recall",
+  factors = c("Task", "Valence", "Dosage"),
+  dispersion = conf_int,
+  ylim = c(0, 30),
+  las = 1,
+  args_points = list(cex = 1.5),
+  args_arrows = list(length = 0.025))
+```
+
+As required by the APA guidelines, figures are deferred to the final pages of the document unless you set `figsintext` to `yes` in the YAML header.
+
+# Discussion
+
+We can finally conclude our article. In doing so, we may want to refer back to some of our tables or figures created above. To do so, use `\@ref(fig:chunk-name)` for figures (e.g., see Figure\ \@ref(fig:beeplot) for our beeswarm plot) or `\@ref(tab:chunk-name)` for tables (e.g., see Table\ \@ref(tab:anovatable) for the ANOVA table).
+
+\newpage
+
+# References
+
+\begingroup
+<!-- These lines ensure references are set with hanging indents in PDF documents; they are ignored in Word. -->
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id="refs" custom-style="Bibliography"></div>
+\endgroup

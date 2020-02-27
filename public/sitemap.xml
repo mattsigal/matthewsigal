@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>http://www.matthewsigal.com/post/startr-an-introduction-to-reproducable-research-in-r.html</loc>
+      <lastmod>2020-02-26T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://www.matthewsigal.com/talk/sigal-2020-01.html</loc>
       <lastmod>2020-01-22T00:00:00+00:00</lastmod>
     </url>
@@ -535,7 +544,7 @@
     <url>
     
       <loc>http://www.matthewsigal.com/categories/data-analysis.html</loc>
-      <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -635,7 +644,7 @@
     <url>
     
       <loc>http://www.matthewsigal.com/tags/r.html</loc>
-      <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+      <lastmod>2020-02-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -656,6 +665,16 @@
     
       <loc>http://www.matthewsigal.com/tags.html</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://www.matthewsigal.com/tags/workshop.html</loc>
+      <lastmod>2020-02-26T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

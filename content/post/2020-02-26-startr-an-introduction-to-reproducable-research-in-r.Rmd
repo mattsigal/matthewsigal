@@ -1,0 +1,27 @@
+---
+title: 'StartR: An Introduction to Reproducable Research in R'
+author: Matthew Sigal
+date: '2020-02-26'
+slug: startr-an-introduction-to-reproducable-research-in-r
+categories:
+  - Data Analysis
+tags:
+  - R
+  - Workshop
+header:
+  caption: ''
+  image: ''
+highlight: yes
+math: no
+summary: "Files and scripts for a workshop on introducing R."
+---
+
+Below are the files used for an Introduction to `R` workshop give at Simon Fraser University on Tuesday, March 3rd, 2020 in conjunction with the Psychology Graduate Student Caucus.
+
+* [0-RunFirst.R](http://www.matthewsigal.com/StartR/0-RunFirst.R)
+* [1-IntroR.pdf](http://www.matthewsigal.com/StartR/1-IntroR.pdf)
+* [2a-Reproducible_Research.Rmd](http://www.matthewsigal.com/StartR/2a-Reproducible_Research.Rmd)
+* [2b-APA_Style](http://www.matthewsigal.com/StartR/2b-APA_Style.zip)
+* [3-R_Packages_and_Support.Rmd](http://www.matthewsigal.com/StartR/3-R_Packages_and_Support.Rmd)
+
+Please feel to send comments or questions to me at [mailto:msigal@sfu.ca](msigal@sfu.ca).
