@@ -24,4 +24,4 @@ Below are the files used for an Introduction to `R` workshop give at Simon Frase
 * [2b-APA_Style](http://www.matthewsigal.com/StartR/2b-APA_Style.zip)
 * [3-R_Packages_and_Support.Rmd](http://www.matthewsigal.com/StartR/3-R_Packages_and_Support.Rmd)
 
-Please feel to send comments or questions to me at [mailto:msigal@sfu.ca](msigal@sfu.ca).
+Please feel to send comments or questions to me at [msigal@sfu.ca](mailto:msigal@sfu.ca).
