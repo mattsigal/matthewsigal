@@ -1,0 +1,87 @@
+---
+title: "A Study of Perfectionism"
+author: "Dr. M. Sigal"
+date: "02/03/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+A researcher is interested in evaluating two therapeutic interventions for perfectionism; specifically investigating whether they might be effective in reducing levels of perfectionism. Levels of perfectionism were recorded at baseline (`perf1`), 1 month (mid-intervention; `perf2`), and at 2 months (post-intervention; `perf3`) for three experimental conditions (`group`): a CBT-based intervention (1), a general stress induced intervention (2) and a control condition (3).
+
+The researcher also collected a depression measure (`dep1`) as well as the age of the subject (`age`, where 1 = less than 50 and 2 = 50+), and saved the data as `perfect.csv`.
+
+```{r}
+dat <- read_csv("perfect.csv", col_names = TRUE) # uses the readr package, loaded via tidyverse.
+dat
+```
+
+## Potential Problems to Solve
+
+1. How to convert categorical variables to factors?
+
+```{r}
+dat$age <- factor(dat$age)
+dat$group <- factor(dat$group)
+```
+
+2. How to explore the data using graphs and summary statistics by group and age?
+
+```{r}
+summary(dat)
+dat %>% 
+  group_by(group) %>%
+  summarise(
+    dep1 = mean(dep1),
+    perf1 = mean(perf1),
+    perf2 = mean(perf2),
+    perf3 = mean(perf3))
+```
+
+3. We might be interested in an independent sample t-test between age categories to see if they differ on mean levels of depression?
+
+```{r}
+t.test(dep1 ~ age, data=dat, var.equal=TRUE)  # Student
+t.test(dep1 ~ age, data=dat, var.equal=FALSE) # Welch
+```
+
+4. We might be interested in a paired sample t-test to determine whether there is a significant difference between perfectionism scores at time 1 and time 3 (ignoring group membership)
+
+```{r}
+t.test(dat$perf3, dat$perf1, paired=TRUE)
+```
+
+5. Might be interested in a one-way ANOVA to see whether the means differ on perfectionism scores at time 3 between the 3 groups. 
+
+```{r}
+mod.aov <- aov(perf3 ~ group, data=dat)
+summary(mod.aov)
+TukeyHSD(mod.aov)  # Non-significant ombnibus, but what the heck
+```
+
+6. Test a factorial ANOVA for group by age category on perfection scores at time 3.
+
+```{r}
+mod.aov2 <- aov(perf3 ~ group * age, data=dat)
+summary(mod.aov2)
+interaction.plot(dat$group, dat$age, dat$perf3)
+```
+
+7. Conduct a multiple regression to see whether depression predicts post-test (time 3) perfectionism scores controlling for pre-test (time 1) perfectionism.
+
+```{r}
+# Linear Regresion
+ggplot(dat, aes(y = perf1, x = dep1)) + geom_point() + geom_smooth(method = "lm")
+reg.mod <- lm(perf1 ~ dep1, data = dat)
+summary( reg.mod )
+
+# Multiple regression
+reg.mod2 <- lm(perf3 ~ dep1 + perf1, data = dat)
+summary(reg.mod2)
+
+reg.mod3 <- lm(perf3 ~ dep1 * perf1, data = dat)
+summary(reg.mod3)
+```

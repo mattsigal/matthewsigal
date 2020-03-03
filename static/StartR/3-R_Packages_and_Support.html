@@ -378,6 +378,7 @@ summary {
 <ul>
 <li><strong><code>R</code> for Data Science</strong> (Garrett Grolemund and Hadley Wickham; 2017)</li>
 <li><strong>The <code>R</code> Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics</strong>, 2nd Edition (J.D. Long and Paul Teetor; 2019)</li>
+<li><strong>Learning Statistics with <code>R</code></strong> (Danielle Navarro, <a href="https://learningstatisticswithr.com/">online</a>)</li>
 <li><strong>The Art of <code>R</code> Programming: A Tour of Statistical Software Design</strong> (Norman Matloff; 2011)</li>
 <li><strong>Advanced <code>R</code></strong>, 2nd Edition (Hadley Wickham; 2019)</li>
 </ul>
@@ -426,6 +427,14 @@ tinytext::install_tinytex()
 devtools::install_github(&quot;crsh/papaja&quot;) # Create an APA style report in R (requires devtools to install)
 devtools::install_github(&quot;benmarwick/wordcountaddin&quot;, type = &quot;source&quot;, dependencies = TRUE) # Required to automatically calculate word counts in papaja reports
 install.packages(&quot;officer&quot;) # Export R output to Microsoft Word or PowerPoint</code></pre>
+</div>
+<div id="data-import" class="section level3">
+<h3>Data Import</h3>
+<p>While you can use <code>saveRDS()</code> and <code>readRDS()</code> to save and load <code>.rds</code> (<code>R</code> data) files, we often will be importing datasets created in other software applications. Here are some recommended packages for doing so.</p>
+<pre class="r"><code>install.packages(&quot;readr&quot;) # For reading rectangular data (e.g., .csv, .tsv, .txt)
+install.packages(&quot;readxl&quot;)  # For importing .xls and .xlsx files
+install.packages(&quot;haven&quot;) # For importing files from SPSS, Stats, and SAS
+install.packages(&quot;googlesheets4&quot;) # For importing data from a Google Sheet</code></pre>
 </div>
 <div id="fundamental-analyses" class="section level3">
 <h3>Fundamental Analyses</h3>
@@ -487,7 +496,7 @@ install.packages(&quot;praise&quot;) # Have R give you or your colleagues a comp
 <pre class="r"><code>if(&quot;praise&quot; %in% rownames(installed.packages())){
  praise::praise() 
 } else print(&quot;Try installing `praise` and knitting this again!&quot;)</code></pre>
-<pre><code>## [1] &quot;You are hunky-dory!&quot;</code></pre>
+<pre><code>## [1] &quot;You are exceptional!&quot;</code></pre>
 </div>
 
 

@@ -18,6 +18,7 @@ Getting started with `R`, especially if you do not have a programming background
 
 * __`R` for Data Science__ (Garrett Grolemund and Hadley Wickham; 2017)
 * __The `R` Cookbook: Proven Recipes for Data Analysis, Statistics, and Graphics__, 2nd Edition (J.D. Long and Paul Teetor; 2019)
+* __Learning Statistics with `R`__ (Danielle Navarro, [online](https://learningstatisticswithr.com/))
 * __The Art of `R` Programming: A Tour of Statistical Software Design__ (Norman Matloff; 2011)
 * __Advanced `R`__, 2nd Edition (Hadley Wickham; 2019) 
 
@@ -68,6 +69,17 @@ tinytext::install_tinytex()
 devtools::install_github("crsh/papaja") # Create an APA style report in R (requires devtools to install)
 devtools::install_github("benmarwick/wordcountaddin", type = "source", dependencies = TRUE) # Required to automatically calculate word counts in papaja reports
 install.packages("officer") # Export R output to Microsoft Word or PowerPoint
+```
+
+### Data Import
+
+While you can use `saveRDS()` and `readRDS()` to save and load `.rds` (`R` data) files, we often will be importing datasets created in other software applications. Here are some recommended packages for doing so.
+
+```{r, eval=FALSE}
+install.packages("readr") # For reading rectangular data (e.g., .csv, .tsv, .txt)
+install.packages("readxl")  # For importing .xls and .xlsx files
+install.packages("haven") # For importing files from SPSS, Stats, and SAS
+install.packages("googlesheets4") # For importing data from a Google Sheet
 ```
 
 ### Fundamental Analyses 
