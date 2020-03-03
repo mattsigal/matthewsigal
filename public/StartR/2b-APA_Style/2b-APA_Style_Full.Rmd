@@ -19,7 +19,7 @@ abstract: |
   This is a sample document to show how R Markdown and papaja can be used to prepare an APA style manuscript. This can be converted into a PDF or Word document, as needed.
   
 keywords: "APA style, knitr, R, R markdown, papaja"
-wordcount: "`r wordcountaddin::word_count('2b-APA_Style_Full.Rmd')`"
+wordcount: "X"
 bibliography      : ["references.bib"]
 
 floatsintext      : no
