@@ -12,7 +12,7 @@ weight = 30
 
 I have had the pleasure of directing the following classes:
 
-- PSYC210: Introduction to Data Analyis (Simon Fraser University, 2018-2020)
+- PSYC210: Introduction to Data Analysis (Simon Fraser University, 2018-2020)
 - PSYC301: Intermediate Data Analysis and Research Methods (Simon Fraser University, 2018-2019)
 - PSYC201: Introduction to Research Methods in Psychology (Simon Fraser University, 2018)
 - PSYC391/715: Special Topics course on Data Communication (Simon Fraser University, 2018-2020)

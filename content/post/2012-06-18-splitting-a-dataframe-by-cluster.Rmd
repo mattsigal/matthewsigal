@@ -10,7 +10,7 @@ tags:
 summary: "A demonstration of a custom function for splitting a dataframe while accounting for a cluster variable. Primarily intended for use with multi-level models."
 ---
 
-As part of an assignment for a course I'm taking on the [Applications of Mixed Models](http://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models), we were asked to partition a multi-level dataset into two components: a training and a testing set.  In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the `split` command, or `daply` from the `plyr` package).  However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, "since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other" (2012, p. 126).  In this post, I explain a function in `R` that allows us to split a dataframe into these two components.
+As part of an assignment for a course I'm taking on the [Applications of Mixed Models](https://scs.math.yorku.ca/index.php/MATH_6643_Summer_2012_Applications_of_Mixed_Models), we were asked to partition a multi-level dataset into two components: a training and a testing set.  In most applications, this is rather straight-forward, since we can just randomly sample half of our subjects and assign them to the training set, and allocate the other half to testing the model (e.g. using the `split` command, or `daply` from the `plyr` package).  However, in mixed models, it is slightly more complicated. As Snijders and Bosker point out, "since the two subsets should be independent, it would be best to select half the schools [the level 2 clustering variable] at random and use all pupils in these schools for one subset, and the other schools and their pupils for the other" (2012, p. 126).  In this post, I explain a function in `R` that allows us to split a dataframe into these two components.
 
 This function, `splitdfbygp` (for split dataframe by group), takes four arguments: `df`, a dataframe; `group`, the name of the grouping variable (e.g. "school"); `prop`, a value between 0 and 1 indicating the proportion for the split (defaults to .5 for a 50/50 split); and `seed`, where the user can supply a seed value in case they want the case selection to be replicable.  The function is as follows:
 
@@ -37,7 +37,7 @@ splitdfbygp <- function(df, group, prop = .5, seed = NULL) {
 
 Testing the function:
 
-First, obtain the datasets for Snijders and Bosker's book from [this link](http://www.stats.ox.ac.uk/~snijders/mlbook.htm).
+First, obtain the datasets for Snijders and Bosker's book from [this link](https://www.stats.ox.ac.uk/~snijders/mlbook.htm).
 
 ```{r, echo=TRUE, eval=FALSE}
 mlbook_red <- read.table("mlbook2_r.dat", header=TRUE) # Load the data. 

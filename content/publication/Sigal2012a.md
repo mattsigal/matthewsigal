@@ -24,7 +24,7 @@ abstract = "This research was designed to investigate Neisser's (1997) hypothesi
 abstract_short = ""
 
 # Links (optional)
-url_pdf = "http://www.jasnh.com/pdf/Vol9-No1-article2.pdf"
+url_pdf = "https://www.jasnh.com/pdf/Vol9-No1-article2.pdf"
 url_code = ""
 url_dataset = ""
 url_project = ""

@@ -36,7 +36,7 @@ image_preview = ""
 selected = false
 
 # Links (optional)
-url_pdf = "http://www.tandfonline.com/doi/pdf/10.1080/10691898.2016.1246953?needAccess=true"
+url_pdf = "https://www.tandfonline.com/doi/pdf/10.1080/10691898.2016.1246953?needAccess=true"
 url_code = ""
 url_dataset = ""
 url_project = ""

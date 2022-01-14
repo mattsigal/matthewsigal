@@ -1,7 +1,7 @@
 +++
 
 authors = ["Matthew J. Sigal"]
-title = "Visualizing likert-type data"
+title = "Visualizing Likert-type data"
 date = "2015-04-01"
 
 # Publication type.
@@ -20,7 +20,7 @@ publication = "Psychostatistics: Newsletter of the Quantitative Methods Section 
 publication_short = ""
 
 # Abstract and optional shortened version.
-abstract = "Brief report on methods for visualizing likert-type data."
+abstract = "Brief report on methods for visualizing Likert-type data."
 abstract_short = ""
 
 # Does this page contain LaTeX math? (true/false)
@@ -36,7 +36,7 @@ image_preview = ""
 selected = false
 
 # Links (optional)
-url_pdf = "http://www.cpa.ca/docs/File/Sections/quantitativemethods/Newsletter/2015_spring_qm_newsletter.pdf"
+url_pdf = "https://www.cpa.ca/docs/File/Sections/quantitativemethods/Newsletter/2015_spring_qm_newsletter.pdf"
 url_code = ""
 url_dataset = ""
 url_project = ""

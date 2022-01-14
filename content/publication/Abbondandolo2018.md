@@ -36,7 +36,7 @@ image_preview = ""
 selected = false
 
 # Links (optional)
-url_pdf = "http://escijournals.net/index.php/IJES/article/view/2347"
+url_pdf = "https://escijournals.net/index.php/IJES/article/view/2347"
 url_code = ""
 url_dataset = ""
 url_project = ""

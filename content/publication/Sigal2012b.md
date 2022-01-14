@@ -24,7 +24,7 @@ abstract = "Course material prepared for the introduction to SPSS short course. 
 abstract_short = ""
 
 # Links (optional)
-url_pdf = "http://www.isr.yorku.ca/courses/fall2012/index.html#spss"
+url_pdf = "https://www.isr.yorku.ca/courses/fall2012/index.html#spss"
 url_code = ""
 url_dataset = ""
 url_project = ""

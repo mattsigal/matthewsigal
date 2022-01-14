@@ -24,7 +24,7 @@ abstract = "Reviews the book 'A history of modern psychology: Third edition' by 
 abstract_short = ""
 
 # Links (optional)
-url_pdf = "http://psycnet.apa.org/journals/cap/51/1/73/"
+url_pdf = "https://psycnet.apa.org/journals/cap/51/1/73/"
 url_code = ""
 url_dataset = ""
 url_project = ""

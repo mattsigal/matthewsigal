@@ -17,7 +17,7 @@ First of all, having your CV in LaTeX demonstrates knowledge of a language that 
 
 Secondly, it is pretty nice not have to worry about references anymore. Just like how we can add references from our database to any paper we are working on, once a paper or conference lecture or any other type of event that you want to add to your CV is in your bibliography file, you can simply cite it anywhere afterward - including your new CV.
 
-In any case, I decided to make the switch and I'm glad I did. See [this page](http://www.matthewsigal.com/SigalCV_2017.pdf) for an example of what you are going to be working toward. The transition took me a few hours, but mainly that was due to a few bumps in the road, which I'll document below to save you the trouble!
+In any case, I decided to make the switch and I'm glad I did. See [this page](https://www.matthewsigal.com/SigalCV_2017.pdf) for an example of what you are going to be working toward. The transition took me a few hours, but mainly that was due to a few bumps in the road, which I'll document below to save you the trouble!
 
 1) Choosing a style. Every document produced in TeX uses some sort of style template - whether it is fairly generic (e.g. `\documentclass[]{article}`) or tailored to particular needs (like `\documentclass[doc]{apa6}`, which formats your document to match the APA style guidelines). A quick search on Google will reveal that there are quite a few pre-made selections for producing a curriculum vitae (such as here), however not all of them will be fully integrated with your referencing system.
 

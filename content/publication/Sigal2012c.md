@@ -24,7 +24,7 @@ abstract = "This article examines the origins of psychology's adoption of a stan
 abstract_short = ""
 
 # Links (optional)
-url_pdf = "http://psycnet.apa.org/psycinfo/2012-28756-001/"
+url_pdf = "https://psycnet.apa.org/psycinfo/2012-28756-001/"
 url_code = ""
 url_dataset = ""
 url_project = ""
