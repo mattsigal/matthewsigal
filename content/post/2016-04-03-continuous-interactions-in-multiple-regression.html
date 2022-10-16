@@ -15,5 +15,5 @@ summary: "A brief vignette on incorporating interactions with continuous predict
 
 
 <p>After some brief conversations during consulting about how to construct interaction terms for multiple regression (and why centering variables beforehand is important), I put together a short demonstration of R’s default behaviour when using the built-in convenience functions (specifically <code>*</code>, but also applies to formulas that use <code>^</code>).</p>
-<p>The vignette is posted here: <a href="http://rpubs.com/mattsigal/reg_interactions">http://rpubs.com/mattsigal/reg_interactions</a></p>
+<p>The vignette is posted here: <a href="https://rpubs.com/mattsigal/reg_interactions">https://rpubs.com/mattsigal/reg_interactions</a></p>
 <p>The short-version: <code>*</code>, when used with <code>summary()</code> does not center the variables, and so models will have issues with VIF. This can be avoided either by creating the interaction terms with <code>scale()</code> or looking at the effects using <code>car::Anova()</code>.</p>
